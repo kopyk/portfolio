@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jordan Yan – Technical Writing Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body { 
+      font-family: 'Inter', sans-serif; 
+      margin: 0; 
+      padding: 0; 
+      line-height: 1.6; 
+      color: #333; 
+      background: #f8f9fa; 
+    }
+    .container { 
+      max-width: 900px; 
+      margin: 0 auto; 
+      padding: 40px 20px; 
+      text-align: center; 
+    }
+    h1 { 
+      font-size: 2.5em; 
+      font-weight: 600; 
+      color: #2c3e50; 
+      margin-bottom: 10px; 
+    }
+    h2 { 
+      font-size: 1.8em; 
+      color: #34495e; 
+      border-bottom: 2px solid #3498db; 
+      padding-bottom: 10px; 
+      text-align: left; 
+    }
+    .intro { 
+      font-size: 1.1em; 
+      color: #555; 
+      margin: 20px 0; 
+      font-style: italic; 
+    }
+    .section { 
+      text-align: left; 
+      margin: 40px 0; 
+      padding: 20px; 
+      background: white; 
+      border-radius: 8px; 
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+    }
+    .grid { 
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+      gap: 20px; 
+      margin: 20px 0; 
+    }
+    .card { 
+      border: 1px solid #ddd; 
+      border-radius: 8px; 
+      padding: 20px; 
+      background: #fff; 
+      text-align: center; 
+      transition: box-shadow 0.3s; 
+    }
+    .card:hover { 
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
+    }
+    .card img { 
+      width: 100%; 
+      max-width: 250px; 
+      height: auto; 
+      border-radius: 4px; 
+      margin-bottom: 10px; 
+    }
+    .card a { 
+      color: #3498db; 
+      font-weight: 600; 
+      text-decoration: none; 
+    }
+    .card a:hover { 
+      text-decoration: underline; 
+    }
+    .skills { 
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+      gap: 10px; 
+      margin: 20px 0; 
+    }
+    .skill-badge { 
+      background: #3498db; 
+      color: white; 
+      padding: 8px 16px; 
+      border-radius: 20px; 
+      font-size: 0.9em; 
+    }
+    footer { 
+      text-align: center; 
+      padding: 20px; 
+      color: #777; 
+      font-size: 0.9em; 
+      border-top: 1px solid #ddd; 
+      margin-top: 40px; 
+    }
+    @media (max-width: 768px) { 
+      .grid { grid-template-columns: 1fr; } 
+      h1 { font-size: 2em; } 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Jordan Yan</h1>
+  <p><strong>Technical Writer</strong> • Missouri City, TX</p>
+  <p>
+    <a href="mailto:jordanxianyan@gmail.com">jordanxianyan@gmail.com</a> • 
+    <a href="https://x.com/dontkopy">X: @dontkopy</a> • 
+    <a href="https://kopyk.github.io/portfolio/">Portfolio</a>
+  </p>
+  <div class="intro">
+    <em>"Great documentation doesn't just explain — it enables."</em>
+  </div>
+</div>
+
+<div class="container">
+  <div class="section">
+    <h2>Gainwell Technologies Internship (Summer 2025)</h2>
+    <p>As a Technical Writing Intern at Gainwell, I authored <strong>public, HIPAA-compliant Companion Guides</strong> for DC Medicaid (DHCF). These guides clarify ASC X12N 5010 standards for trading partners, ensuring compliant electronic claims submission.</p>
+    
+    <div class="grid">
+      <div class="card">
+        <img src="https://github.com/kopyk/gainwell-dhcf-companion-guides/raw/main/837I-title.png" alt="837I Companion Guide Title">
+        <h3>837I FFS Claims Guide</h3>
+        <p>v1.3 • 21 pages • June 17, 2025</p>
+        <p>Defines institutional claim submission rules, segments, and SNIP validation.</p>
+        <a href="https://github.com/kopyk/gainwell-dhcf-companion-guides/raw/main/pdfs/837I-v1.3.pdf" target="_blank">Download PDF</a>
+      </div>
+      <div class="card">
+        <img src="https://github.com/kopyk/gainwell-dhcf-companion-guides/raw/main/276-title.png" alt="276/277 Companion Guide Title">
+        <h3>276/277 FFS Claims Guide</h3>
+        <p>v1.1 • 30 pages • February 5, 2025</p>
+        <p>Documents real-time/batch claim status inquiry and TA1/999/277 acknowledgements.</p>
+        <a href="https://github.com/kopyk/gainwell-dhcf-companion-guides/raw/main/pdfs/276-277-v1.1.pdf" target="_blank">Download PDF</a>
+      </div>
+    </div>
+    
+    <p style="text-align: center;">
+      <a href="https://kopyk.github.io/gainwell-dhcf-companion-guides/" target="_blank" style="font-size: 1.1em; font-weight: 600;">
+        → View Interactive Site (Mermaid Diagrams & Enhanced Tables)
+      </a>
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Personal Project: mem-analyzer</h2>
+    <p>Built and documented a high-performance C++ memory analysis tool with 4× faster pattern scanning. Full API guides showcase my ability to document complex software.</p>
+    <div style="text-align: center;">
+      <a href="https://github.com/kopyk/mem-analyzer" target="_blank" style="font-size: 1.1em; font-weight: 600;">
+        → View on GitHub (Doxygen + Markdown Docs)
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Other Contributions (Under NDA)</h2>
+    <p>Authored additional technical documentation for healthcare systems, EDI workflows, and compliance tools — details available upon request.</p>
+  </div>
+
+  <div class="section">
+    <h2>Skills</h2>
+    <div class="skills">
+      <span class="skill-badge">HIPAA Compliance</span>
+      <span class="skill-badge">X12N 5010</span>
+      <span class="skill-badge">Markdown</span>
+      <span class="skill-badge">Doxygen</span>
+      <span class="skill-badge">Mermaid Diagrams</span>
+      <span class="skill-badge">Power BI</span>
+      <span class="skill-badge">GitHub Pages</span>
+      <span class="skill-badge">Proofreading</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Download Resume</h2>
+    <p style="text-align: center;">
+      <a href="Jordan_Yan_Resume.pdf" target="_blank" style="font-size: 1.1em; font-weight: 600;">
+        → Download PDF Resume
+      </a>
+    </p>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Jordan Yan • Built with GitHub Pages • <a href="https://github.com/kopyk/portfolio">View Source</a></p>
+</footer>
+
+</body>
+</html
