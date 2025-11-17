@@ -1,4 +1,4 @@
-# Hey, I'm Jordan (@dontkopy)
+# Hey, I'm Jordan 
 
 **Technical Writer**  
 
