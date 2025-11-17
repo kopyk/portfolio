@@ -7,7 +7,7 @@
 
 
 ---
-
+<div align="left">
 ## Pinned Projects
 
 | Project | Description | Tech |
