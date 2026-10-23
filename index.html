@@ -1,14 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, "js");</script>
   <title>Jordan Yan | Technical Writer: AI &amp; Developer Documentation</title>
   <meta name="description" content="Jordan Yan is a technical writer in San Luis Obispo, CA, creating AI and developer documentation: model cards, tutorials, API references and evaluation guides.">
   <link rel="canonical" href="https://www.jordanyan.com/">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.jordanyan.com/">
@@ -242,6 +246,11 @@
       color: var(--text);
     }
     .shell-title, .rail-list, .rail-foot { display: none; }
+    /* Without JS nothing closes the sheet, so hide the whole nav below 1024px;
+       the brand link and the hero jump chips are the navigation there. */
+    @media (max-width: 1023.98px) {
+      .no-js .shell-nav { display: none; }
+    }
 
     /* Top bar: "Sections" disclosure */
     .sheet > summary {
@@ -401,6 +410,7 @@
     .btn-primary { background: var(--accent); color: var(--on-accent); }
     .btn-secondary { background: var(--bg); color: var(--text); border-color: var(--border-strong); }
     .hero .contact-line { font-size: 14px; color: var(--muted); margin: 0; }
+    .hero .contact-line a { text-decoration: underline; }
 
     /* Jump chips: the visible navigation on mobile and tablet */
     .jump {
@@ -448,7 +458,7 @@
     main section:last-of-type { min-height: 55vh; }
     main h2[tabindex="-1"]:focus:not(:focus-visible) { outline: none; }
     .group-title { margin: 32px 0 16px; }
-    .group-title:first-of-type { margin-top: 0; }
+    #samples .group-title:first-of-type { margin-top: 0; }
 
     /* Tiles: focus areas, and education & recognition */
     .focus-list, .tile-list {
@@ -747,6 +757,10 @@
     /* Touch layouts (below 1024px): taller targets */
     @media (max-width: 1023px) {
       .btn { min-height: 48px; }
+      .links a { min-height: 44px; }
+      .links { gap: 0 20px; }
+      .browse { margin-top: 12px; }
+      .browse a { display: inline-block; padding: 10px 0; }
     }
 
     /* ==========================================================
@@ -791,6 +805,12 @@
       main.container, .site-footer { grid-column: 2; }
       main.container { grid-row: 1; }
       .site-footer { grid-row: 2; }
+      /* Keep the column near the rail on wide screens: the gap grows from 24px at 1024px
+         to a fixed 120px from 1216px up, with no jump at any width. */
+      main.container, .site-footer > .container {
+        margin-left: clamp(0px, calc((100% - var(--column) - 2 * var(--gutter)) / 2), 96px);
+        margin-right: auto;
+      }
       .hero { padding: 88px 0 72px; }
     }
 
@@ -880,11 +900,11 @@
       <ul class="focus-list">
         <li>
           <h3>AI documentation</h3>
-          <p>Model cards, responsible-AI disclosures, and LLM evaluation guides aligned to the NIST AI RMF.</p>
+          <p>Model cards and responsible-AI disclosures mapped to the NIST AI RMF, and LLM evaluation rubrics.</p>
         </li>
         <li>
           <h3>Developer documentation</h3>
-          <p>API references, tutorials, and quickstarts with working, tested code.</p>
+          <p>API references and tutorials, with tutorial code tested in CI.</p>
         </li>
         <li>
           <h3>Defense &amp; aerospace</h3>
@@ -911,7 +931,8 @@
             <h4><a href="https://ai.jordanyan.com/docs/ai/model-card" target="_blank" rel="noopener noreferrer">AI Model Card: Runway Debris Detection<span class="vh"> (opens in a new tab)</span></a></h4>
             <p>Intended use, condition-level performance, failure modes, and human-oversight controls for a computer-vision model.</p>
             <p class="tags">DoD AI Ethical Principles · NIST AI RMF</p>
-            <ul class="proof" aria-label="Proof">
+            <p class="vh">Proof:</p>
+            <ul class="proof">
               <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Sources checked</li>
               <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Totals verified</li>
             </ul>
@@ -924,7 +945,8 @@
             <h4><a href="https://ai.jordanyan.com/docs/ai/rag-tutorial" target="_blank" rel="noopener noreferrer">Tutorial: Build a Q&amp;A Bot Over Your Docs<span class="vh"> (opens in a new tab)</span></a></h4>
             <p>Explains retrieval-augmented generation and walks developers through working, tested code for my ask-my-docs tool.</p>
             <p class="tags">RAG · Python · Claude API</p>
-            <ul class="proof" aria-label="Proof">
+            <p class="vh">Proof:</p>
+            <ul class="proof">
               <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Code tested in CI</li>
             </ul>
             <span class="more" aria-hidden="true">Read sample ↗</span>
@@ -936,7 +958,8 @@
             <h4><a href="https://ai.jordanyan.com/docs/ai/api-reference" target="_blank" rel="noopener noreferrer">API Reference: Document Classification<span class="vh"> (opens in a new tab)</span></a></h4>
             <p>Parameters, request and response examples, error handling, and rate limits for an AI classification endpoint.</p>
             <p class="tags">REST API reference</p>
-            <ul class="proof" aria-label="Proof">
+            <p class="vh">Proof:</p>
+            <ul class="proof">
               <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>OpenAPI spec validated</li>
             </ul>
             <span class="more" aria-hidden="true">Read sample ↗</span>
@@ -948,7 +971,8 @@
             <h4><a href="https://ai.jordanyan.com/docs/ai/eval-rubric" target="_blank" rel="noopener noreferrer">LLM Evaluation Rubric: Documentation Q&amp;A<span class="vh"> (opens in a new tab)</span></a></h4>
             <p>Pass/fail grading criteria, a balanced test set, and reporting by question type to catch hallucinated answers.</p>
             <p class="tags">Test-set design</p>
-            <ul class="proof" aria-label="Proof">
+            <p class="vh">Proof:</p>
+            <ul class="proof">
               <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Math verified</li>
             </ul>
             <span class="more" aria-hidden="true">Read sample ↗</span>
@@ -963,8 +987,9 @@
             <p class="eyebrow">Maintenance procedure</p>
             <h4><a href="https://ai.jordanyan.com/docs/defense/maintenance-procedure" target="_blank" rel="noopener noreferrer">Maintenance Procedure: UAS Propeller Replacement<span class="vh"> (opens in a new tab)</span></a></h4>
             <p>Field-level removal and installation procedure with WARNING/CAUTION/NOTE advisories, tools and parts tables, and torque values.</p>
-            <p class="tags">Work package (MIL-STD-40051-2 layout) · MIL-STD-38784 advisories</p>
-            <ul class="proof" aria-label="Proof">
+            <p class="tags">Work package (MIL-STD-40051-2 layout) · MIL-STD-38784B advisories</p>
+            <p class="vh">Proof:</p>
+            <ul class="proof">
               <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Standards cited</li>
             </ul>
             <span class="more" aria-hidden="true">Read sample ↗</span>
@@ -976,7 +1001,8 @@
             <h4><a href="https://ai.jordanyan.com/docs/defense/interface-control-document" target="_blank" rel="noopener noreferrer">Interface Control Document: Telemetry Message<span class="vh"> (opens in a new tab)</span></a></h4>
             <p>Byte-level air-vehicle-to-ground-station message definition with units, scaling, ranges, and verification methods.</p>
             <p class="tags">ICD excerpt · Requirements traceability</p>
-            <ul class="proof" aria-label="Proof">
+            <p class="vh">Proof:</p>
+            <ul class="proof">
               <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Layout verified</li>
             </ul>
             <span class="more" aria-hidden="true">Read sample ↗</span>
@@ -984,7 +1010,7 @@
         </li>
       </ul>
 
-      <p class="browse"><a href="https://ai.jordanyan.com/" target="_blank" rel="noopener noreferrer">Browse all samples at ai.jordanyan.com<span class="vh"> (opens in a new tab)</span> <span aria-hidden="true">↗</span></a></p>
+      <p class="browse"><a href="https://ai.jordanyan.com/" target="_blank" rel="noopener noreferrer">Browse all samples at <span class="nowrap">ai.jordanyan.com<span class="vh"> (opens in a new tab)</span> <span aria-hidden="true">↗</span></span></a></p>
     </section>
 
     <section id="experience" aria-labelledby="experience-title">
@@ -1009,7 +1035,7 @@
           </div>
           <div class="media-body">
             <h4>837I FFS Claims Companion Guide</h4>
-            <p class="meta">v1.3 · 21 pages · <span class="nowrap">June 2025</span></p>
+            <p class="meta">v1.3 · 21 pages <span class="nowrap">· June 2025</span></p>
             <p>Wrote the 837I v1.3 update: institutional claims rules, SNIP validation, and submission constraints.</p>
             <ul class="links">
               <li><a href="https://www.gainwelltechnologies.com/wp-content/uploads/2025/07/DC_837I-FFS-Claims-Companion-Guide-v1.3.pdf" target="_blank" rel="noopener noreferrer">Official PDF (Gainwell)<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
@@ -1023,7 +1049,7 @@
           </div>
           <div class="media-body">
             <h4>276/277 FFS Claims Companion Guide</h4>
-            <p class="meta">v1.1 · 30 pages · <span class="nowrap">February 2025</span></p>
+            <p class="meta">v1.1 · 30 pages <span class="nowrap">· February 2025</span></p>
             <p>Edited and enhanced the 276/277 v1.1 guide, then reformatted it into a cited, scannable Markdown version.</p>
             <ul class="links">
               <li><a href="https://www.gainwelltechnologies.com/wp-content/uploads/2025/07/DC_276_277FFS-FFS-Claims-Companion-Guide-v1.1.pdf" target="_blank" rel="noopener noreferrer">Official PDF (Gainwell)<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
@@ -1071,7 +1097,7 @@
           <p class="lede">
             A command-line tool that answers questions about a folder of Markdown documentation.
             It finds the relevant sections, sends them to Claude, and returns an answer with sources.
-            The companion tutorial explains how it works and how to evaluate its retrieval.
+            The companion tutorial builds a simplified version step by step.
           </p>
           <ul class="points">
             <li>56 pytest tests pass, and a retrieval eval scores Recall@4 at 10/10 on frozen fixtures (10 questions, so a rough check rather than a precise score).</li>
@@ -1079,7 +1105,8 @@
             <li>An MCP server exposes the same retrieval as a <code>search_docs</code> tool for Claude Code and Claude Desktop.</li>
             <li>CHANGELOG written from the real commit history.</li>
           </ul>
-          <ul class="proof" aria-label="Proof">
+          <p class="vh">Proof:</p>
+          <ul class="proof">
             <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>56 tests · CI · Recall@4 10/10</li>
           </ul>
           <ul class="links">
@@ -1184,7 +1211,8 @@
 
   <script>
     (function () {
-      // Progressive enhancement only: every link and the <details> sheet work without this.
+      // Progressive enhancement: every link works without this. The <details> sheet is
+      // JS-only (hidden by .no-js below 1024px) because only this script closes it.
       var sheet = document.getElementById("sheet");
       if (sheet) {
         var summary = sheet.querySelector("summary");
