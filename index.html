@@ -158,6 +158,10 @@
     /* Anchor jumps land 16px below the sticky bar (bar is 0px tall on desktop),
        and keyboard focus is never scrolled underneath it. */
     main section, .hero { scroll-margin-top: calc(var(--bar-h) + 16px); }
+    /* The skip link's target starts with the hero's own padding, so it only needs to clear the bar;
+       the programmatic focus it receives draws no ring around the whole column. */
+    #main { scroll-margin-top: var(--bar-h); }
+    main:focus { outline: none; }
     main :where(a[href], button, summary, [tabindex]) {
       scroll-margin-top: calc(var(--bar-h) + 16px);
       scroll-margin-bottom: 16px;
@@ -454,7 +458,8 @@
        Sections
        ========================================================== */
     main section { padding: 0 0 64px; }
-    /* Lets the last section reach the scroll-spy band (40-45% of the viewport) at max scroll. */
+    /* Keeps the last section tall enough to reach the scroll spy's 25% line at max scroll
+       (the spy also marks it whenever the page is scrolled to the bottom). */
     main section:last-of-type { min-height: 55vh; }
     main h2[tabindex="-1"]:focus:not(:focus-visible) { outline: none; }
     .group-title { margin: 32px 0 16px; }
@@ -717,6 +722,10 @@
       /* Portrait cover floats beside the text; long lines then use the full width. */
       .deliverable.media { display: flow-root; }
       .deliverable .thumb { float: left; width: 96px; margin: 0 14px 8px 0; }
+      /* The date takes its own line in the narrow column beside the cover (so at 320px it never
+         drops under the cover), and the separator that led into it goes away. */
+      .deliverable .meta .nowrap { display: block; }
+      .deliverable .meta .sep { display: none; }
       .deliverable .links { clear: left; padding-top: 4px; }
 
       /* Jungle tree: under the text, shown whole. */
@@ -908,7 +917,7 @@
         </li>
         <li>
           <h3>Defense &amp; aerospace</h3>
-          <p>Technical manuals, maintenance procedures, and interface control documents written to MIL-STD conventions.</p>
+          <p>Technical manual work packages and maintenance procedures written to MIL-STD conventions, and interface control documents with test-verified byte layouts.</p>
         </li>
         <li>
           <h3>Compliance &amp; traceability</h3>
@@ -969,7 +978,7 @@
           <article class="card card-link">
             <p class="eyebrow">Evaluation guide</p>
             <h4><a href="https://ai.jordanyan.com/docs/ai/eval-rubric" target="_blank" rel="noopener noreferrer">LLM Evaluation Rubric: Documentation Q&amp;A<span class="vh"> (opens in a new tab)</span></a></h4>
-            <p>Pass/fail grading criteria, a balanced test set, and reporting by question type to catch hallucinated answers.</p>
+            <p>Pass/fail grading criteria, a test set covering four question types, and reporting by question type to catch hallucinated answers.</p>
             <p class="tags">Test-set design</p>
             <p class="vh">Proof:</p>
             <ul class="proof">
@@ -1035,7 +1044,7 @@
           </div>
           <div class="media-body">
             <h4>837I FFS Claims Companion Guide</h4>
-            <p class="meta">v1.3 · 21 pages <span class="nowrap">· June 2025</span></p>
+            <p class="meta">v1.3 · 21 pages <span class="nowrap"><span class="sep">· </span>June 2025</span></p>
             <p>Wrote the 837I v1.3 update: institutional claims rules, SNIP validation, and submission constraints.</p>
             <ul class="links">
               <li><a href="https://www.gainwelltechnologies.com/wp-content/uploads/2025/07/DC_837I-FFS-Claims-Companion-Guide-v1.3.pdf" target="_blank" rel="noopener noreferrer">Official PDF (Gainwell)<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
@@ -1049,7 +1058,7 @@
           </div>
           <div class="media-body">
             <h4>276/277 FFS Claims Companion Guide</h4>
-            <p class="meta">v1.1 · 30 pages <span class="nowrap">· February 2025</span></p>
+            <p class="meta">v1.1 · 30 pages <span class="nowrap"><span class="sep">· </span>February 2025</span></p>
             <p>Edited and enhanced the 276/277 v1.1 guide, then reformatted it into a cited, scannable Markdown version.</p>
             <ul class="links">
               <li><a href="https://www.gainwelltechnologies.com/wp-content/uploads/2025/07/DC_276_277FFS-FFS-Claims-Companion-Guide-v1.1.pdf" target="_blank" rel="noopener noreferrer">Official PDF (Gainwell)<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
@@ -1126,7 +1135,7 @@
               </p>
               <ul class="points">
                 <li>Multi-page documentation architecture</li>
-                <li>Visual decision trees (SVG + Mermaid)</li>
+                <li>Visual decision trees (SVG)</li>
                 <li>User progression from beginner to advanced</li>
               </ul>
               <ul class="links">
@@ -1237,20 +1246,64 @@
         });
       }
 
-      // Scroll spy: one observer drives every [data-spy] link (rail and sheet).
-      if (!("IntersectionObserver" in window)) return;
-      var spyLinks = document.querySelectorAll("a[data-spy]");
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          var id = entry.target.id;
-          spyLinks.forEach(function (a) {
-            if (a.hash === "#" + id) a.setAttribute("aria-current", "location");
-            else a.removeAttribute("aria-current");
-          });
+      // Scroll spy: position-based, so it also holds on tall screens where the last sections can
+      // never reach the top. The active link (rail and sheet share [data-spy]) is the last of
+      // '#top, main section[id]' whose top is at or above the 25% line of the viewport, or the
+      // last section once the page is scrolled to the bottom. A click or hash change sets the
+      // link right away and pauses recomputing until that scroll ends and the user scrolls again.
+      var spyLinks = Array.prototype.slice.call(document.querySelectorAll("a[data-spy]"));
+      var targets = Array.prototype.slice.call(document.querySelectorAll("#top, main section[id]"));
+      if (!spyLinks.length || !targets.length) return;
+
+      var setCurrent = function (id) {
+        spyLinks.forEach(function (a) {
+          if (a.hash === "#" + id) a.setAttribute("aria-current", "location");
+          else a.removeAttribute("aria-current");
         });
-      }, { rootMargin: "-40% 0px -55% 0px" });
-      document.querySelectorAll("#top, main section[id]").forEach(function (s) { observer.observe(s); });
+      };
+
+      var compute = function () {
+        var line = window.innerHeight * 0.25;
+        var atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+        var active = targets[0];
+        if (atBottom) active = targets[targets.length - 1];
+        else targets.forEach(function (t) { if (t.getBoundingClientRect().top <= line) active = t; });
+        setCurrent(active.id);
+      };
+
+      var frame = 0;
+      var schedule = function () {
+        if (frame) return;
+        frame = requestAnimationFrame(function () { frame = 0; compute(); });
+      };
+
+      // While a navigation scroll is in flight, the chosen link stays current.
+      var held = false, holdTimer = 0;
+      var release = function () { held = false; clearTimeout(holdTimer); holdTimer = 0; };
+      var armRelease = function (ms) { clearTimeout(holdTimer); holdTimer = setTimeout(release, ms); };
+      var hold = function (hash) {
+        var id = hash.charAt(0) === "#" ? hash.slice(1) : hash;
+        if (!id || !document.getElementById(id)) return;
+        if (frame) { cancelAnimationFrame(frame); frame = 0; }
+        setCurrent(id);
+        held = true;
+        armRelease(1000); // the target may already be in place: nothing scrolls and 'scrollend' never fires
+      };
+
+      document.addEventListener("click", function (e) {
+        var link = e.target.closest && e.target.closest('a[href^="#"]');
+        if (link) hold(link.hash);
+      });
+      window.addEventListener("hashchange", function () { hold(location.hash); });
+      window.addEventListener("scroll", function () {
+        if (held) { armRelease(150); return; } // quiet-time fallback for browsers without 'scrollend'
+        schedule();
+      }, { passive: true });
+      window.addEventListener("scrollend", function () { if (held) release(); });
+      window.addEventListener("resize", schedule);
+
+      if (location.hash && document.getElementById(location.hash.slice(1))) hold(location.hash);
+      else compute();
     })();
   </script>
 </body>
