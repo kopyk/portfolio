@@ -1,434 +1,818 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jordan Yan – Technical Writer | AI &amp; Developer Documentation</title>
-  <meta name="description" content="Jordan Yan is a technical writer in San Luis Obispo, CA, focused on AI and developer documentation." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jordan Yan | Technical Writer: AI &amp; Developer Documentation</title>
+  <meta name="description" content="Jordan Yan is a technical writer in San Luis Obispo, CA, creating AI and developer documentation: model cards, tutorials, API references and evaluation guides.">
+  <link rel="canonical" href="https://www.jordanyan.com/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.jordanyan.com/">
+  <meta property="og:title" content="Jordan Yan | Technical Writer: AI &amp; Developer Documentation">
+  <meta property="og:description" content="Technical writer creating AI and developer documentation: model cards, tutorials, API references and evaluation guides, plus defense and aerospace samples.">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jordan Yan",
+    "jobTitle": "Technical Writer",
+    "url": "https://www.jordanyan.com/",
+    "email": "mailto:jordanxianyan@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "San Luis Obispo",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/jordanxyan/",
+      "https://github.com/kopyk"
+    ],
+    "knowsAbout": [
+      "Technical writing",
+      "AI documentation",
+      "Model cards",
+      "LLM evaluation",
+      "Retrieval-augmented generation",
+      "API documentation",
+      "Technical manuals",
+      "Interface control documents",
+      "Requirements traceability",
+      "ASC X12N 5010"
+    ]
+  }
+  </script>
 
   <style>
-    :root{
-      --text:#111;
-      --muted:#555;
-      --line:#eaeaea;
-      --link:#0a66c2;
-      --bg:#fff;
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --surface: #f7f7f8;
+      --surface-2: #f0efec;
+      --text: #1a1a1a;
+      --text-2: #5f6368;
+      --muted: #6e6e73;
+      --border: #e5e5e7;
+      --border-strong: #d2d2d7;
+      --accent: #0f6cbd;
+      --accent-hover: #0b5ca3;
+      --on-accent: #ffffff;
+      --note-bg: #e8f0fe;
+      --note-text: #1a4fa3;
+      --note-border: #c6d8f7;
+      --header-bg: rgba(255, 255, 255, 0.86);
+
+      --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --column: 720px;
+      --gutter: 24px;
+      --header-h: 56px;
+      --r-sm: 6px;
+      --r-md: 8px;
+      --r-lg: 12px;
     }
 
-    *{box-sizing:border-box}
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f10;
+        --surface: #19191a;
+        --surface-2: #1f1f21;
+        --text: #ededed;
+        --text-2: #a1a1a6;
+        --muted: #8e8e93;
+        --border: #2a2a2c;
+        --border-strong: #3a3a3d;
+        --accent: #4da3ff;
+        --accent-hover: #7cbcff;
+        --on-accent: #0f0f10;
+        --note-bg: rgba(77, 163, 255, 0.12);
+        --note-text: #9ccaff;
+        --note-border: rgba(77, 163, 255, 0.28);
+        --header-bg: rgba(15, 15, 16, 0.86);
+      }
+    }
 
-    body{
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      margin:0;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.7;
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Layout */
-    .wrap{
-      max-width: 860px;
+    img { display: block; max-width: 100%; height: auto; }
+
+    a { color: var(--accent); text-decoration: none; text-underline-offset: 3px; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    .vh {
+      position: absolute !important;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: 8px; left: 8px;
+      z-index: 100;
+      padding: 10px 16px;
+      background: var(--accent);
+      color: var(--on-accent);
+      border-radius: var(--r-sm);
+      font-weight: 600;
+      transform: translateY(-200%);
+    }
+    .skip-link:focus { transform: none; color: var(--on-accent); text-decoration: none; }
+
+    .container {
+      max-width: calc(var(--column) + 2 * var(--gutter));
       margin: 0 auto;
-      padding: 56px 20px;
+      padding: 0 var(--gutter);
     }
 
-    .topbar{
-      border-bottom:1px solid var(--line);
-      background:#fff;
+    /* Header */
+    .site-header {
       position: sticky;
-      top:0;
-      z-index:10;
+      top: 0;
+      z-index: 50;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      backdrop-filter: saturate(180%) blur(12px);
     }
-
-    .topbar .wrap{
-      padding: 14px 20px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      height: var(--header-h);
     }
-
-    .brand{
-      font-size:14px;
-      color:var(--muted);
+    .brand {
+      flex: none;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+      color: var(--text);
+      padding: 10px 0;
     }
+    .brand:hover { color: var(--text); text-decoration: none; }
 
-    .nav a{
-      margin-left:16px;
-      text-decoration:none;
-      color:var(--muted);
-      font-size:14px;
+    .site-nav {
+      margin-left: auto;
+      min-width: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
     }
-
-    .nav a:hover{color:var(--text)}
+    .site-nav::-webkit-scrollbar { display: none; }
+    .site-nav ul {
+      display: flex;
+      gap: 2px;
+      margin: 0;
+      padding: 0 2px;
+      list-style: none;
+    }
+    .site-nav a {
+      display: flex;
+      align-items: center;
+      height: 44px;
+      padding: 0 10px;
+      border-radius: var(--r-sm);
+      color: var(--text-2);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+    .site-nav a:hover { color: var(--text); background: var(--surface); text-decoration: none; }
+    .site-nav a[aria-current="location"] {
+      color: var(--text);
+      font-weight: 600;
+      box-shadow: inset 0 -2px 0 var(--accent);
+      border-radius: var(--r-sm) var(--r-sm) 0 0;
+    }
+    .site-nav :focus-visible { outline-offset: -2px; }
 
     /* Typography */
-    h1{
-      font-size:40px;
-      line-height:1.15;
-      letter-spacing:-0.03em;
-      margin: 0 0 10px;
+    h1, h2, h3, h4 {
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      color: var(--text);
     }
-
-    .subtitle{
-      color:var(--muted);
-      margin:0 0 18px;
-      font-size:15px;
+    h1 { font-size: 36px; line-height: 1.2; letter-spacing: -0.025em; }
+    h2 {
+      font-size: 24px;
+      line-height: 1.3;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 24px;
     }
+    h3 { font-size: 20px; line-height: 1.35; }
+    h4 { font-size: 16px; line-height: 1.4; }
+    p { margin: 0 0 16px; }
 
-    h2{
-      font-size:18px;
-      margin: 42px 0 10px;
-      letter-spacing:-0.01em;
+    .eyebrow {
+      margin: 0 0 8px;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--accent);
     }
+    .meta { font-size: 14px; line-height: 1.5; color: var(--muted); margin: 0; }
+    .lede { color: var(--text-2); }
 
-    p{margin: 0 0 14px}
-
-    .muted{color:var(--muted)}
-
-    .quote{
-      border-left:3px solid var(--line);
-      padding-left:12px;
-      color:var(--muted);
-      margin: 16px 0 28px;
+    /* Hero */
+    .hero { padding: 72px 0 56px; }
+    .hero h1 { margin-bottom: 16px; }
+    .hero .abstract {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text-2);
+      margin-bottom: 32px;
     }
-
-    a{color:var(--link); text-decoration:none}
-    a:hover{text-decoration:underline}
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 10px 20px;
+      border-radius: var(--r-sm);
+      border: 1px solid transparent;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.2;
+      text-decoration: none;
+      transition: background-color .15s ease, border-color .15s ease;
+    }
+    .btn:hover { text-decoration: none; }
+    .btn-primary { background: var(--accent); color: var(--on-accent); }
+    .btn-primary:hover { background: var(--accent-hover); color: var(--on-accent); }
+    .btn-secondary { background: var(--bg); color: var(--text); border-color: var(--border-strong); }
+    .btn-secondary:hover { background: var(--surface); color: var(--text); border-color: var(--muted); }
+    .hero .contact-line { font-size: 14px; color: var(--muted); margin: 0; }
 
     /* Sections */
-    .section{
-      padding-top: 10px;
-      border-top: 1px solid var(--line);
-      margin-top: 28px;
+    main section { padding: 0 0 64px; scroll-margin-top: calc(var(--header-h) + 16px); }
+    .group-title { margin: 32px 0 16px; }
+    .group-title:first-of-type { margin-top: 0; }
+
+    /* Focus areas */
+    .focus-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .focus-list li {
+      padding: 16px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+    }
+    .focus-list h3 { font-size: 16px; line-height: 1.4; margin-bottom: 4px; }
+    .focus-list p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--text-2); }
+
+    /* Note (alert) */
+    .note {
+      margin: 0 0 32px;
+      padding: 14px 16px 14px 18px;
+      background: var(--note-bg);
+      border: 1px solid var(--note-border);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--r-md);
+      color: var(--note-text);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    .note p { margin: 0; }
+    .note strong { display: block; margin-bottom: 2px; }
+
+    /* Cards */
+    .card-grid {
+      display: grid;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 20px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      transition: border-color .15s ease, background-color .15s ease;
+    }
+    .card h4 { margin-bottom: 8px; }
+    .card p { font-size: 15px; line-height: 1.55; color: var(--text-2); }
+    .card .eyebrow { font-size: 13px; line-height: 1.4; color: var(--muted); margin-bottom: 6px; }
+    .card .tags { font-size: 13px; color: var(--muted); margin: 0 0 16px; }
+    .card .more {
+      margin-top: auto;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .card-link:hover { border-color: var(--accent); }
+    .card-link h4 a { color: var(--text); }
+    .card-link h4 a::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: var(--r-lg);
+    }
+    .card-link h4 a:hover { text-decoration: none; }
+    .card-link:hover .more { text-decoration: underline; }
+    .card-link h4 a:focus-visible { outline: none; }
+    .card-link h4 a:focus-visible::after {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
     }
 
-    /* Projects */
-    .projects{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 14px;
-    }
+    .browse { margin: 24px 0 0; font-size: 15px; }
+    .browse a { font-weight: 600; }
 
-    .proj{
-      padding: 14px 0;
-      border-bottom: 1px solid var(--line);
-      display:flex;
-      gap: 14px;
-      align-items:center;
+    /* Media cards (experience, projects) */
+    .stack { display: grid; gap: 16px; }
+    .entry {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      background: var(--bg);
     }
+    .entry > h3, .entry .media-body > h3 { margin-bottom: 4px; }
+    .entry > .meta, .entry .media-body > .meta { margin-bottom: 12px; }
+    .entry > p { color: var(--text-2); }
+    .entry p:last-child { margin-bottom: 0; }
+    .entry ul.points { margin: 0 0 16px; padding-left: 20px; color: var(--text-2); font-size: 15px; }
+    .entry ul.points li + li { margin-top: 4px; }
 
-    .thumb{
-      width:110px;
-      border-radius:10px;
-      border:1px solid var(--line);
-      overflow:hidden;
-      flex:0 0 auto;
-      background:#fafafa;
+    .media { display: flex; gap: 20px; align-items: flex-start; }
+    .media-body { min-width: 0; flex: 1; }
+    .thumb {
+      flex: none;
+      width: 112px;
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      overflow: hidden;
+      background: var(--surface);
     }
+    .deliverable {
+      margin-top: 20px;
+      padding: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+    }
+    .deliverable h4 { margin-bottom: 2px; }
+    .deliverable .meta { margin-bottom: 8px; }
+    .deliverable p { font-size: 15px; color: var(--text-2); }
 
-    .thumb img{
-      width:100%;
-      height:auto;
-      display:block;
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 20px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 600;
     }
-
-    .proj h3{
-      margin:0 0 4px;
-      font-size:16px;
-    }
-
-    .meta{
-      font-size:13px;
-      color:var(--muted);
-      margin-bottom:8px;
-    }
-
-    .actions a{
-      font-size:14px;
-      margin-right:14px;
-    }
+    .links a { display: inline-flex; align-items: center; min-height: 32px; }
+    .ext { font-weight: 400; margin-left: 3px; }
 
     /* Skills */
-    .skills{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:10px;
+    .skill-groups { display: grid; gap: 24px; }
+    .skill-groups h3 {
+      font-size: 13px;
+      line-height: 1.4;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .badges li {
+      padding: 4px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text);
     }
 
-    .badge{
-      border:1px solid var(--line);
-      color:var(--muted);
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:13px;
+    /* Contact */
+    .contact-list {
+      display: grid;
+      gap: 0;
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--border);
+    }
+    .contact-list li {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 4px 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+    }
+    .contact-list .label { color: var(--muted); }
+    .contact-list a { overflow-wrap: anywhere; }
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0 40px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .site-footer p { margin: 0; }
+
+    @media (min-width: 640px) {
+      .card-grid, .focus-list { grid-template-columns: 1fr 1fr; }
+      .skill-groups { grid-template-columns: 1fr 1fr; gap: 28px 32px; }
+      .hero { padding: 96px 0 72px; }
+      main section { padding-bottom: 72px; }
     }
 
-    footer{
-      border-top:1px solid var(--line);
-      margin-top:48px;
-      padding-top:18px;
-      color:var(--muted);
-      font-size:13px;
+    @media (max-width: 639px) {
+      :root { --gutter: 16px; }
+      h1 { font-size: 30px; }
+      .hero { padding: 48px 0 48px; }
+      .hero .abstract { font-size: 17px; }
+      .cta-row { flex-direction: column; }
+      .cta-row .btn { width: 100%; }
+      .brand { font-size: 14px; }
+      .site-header .container { gap: 8px; padding-right: 0; }
+      .site-nav {
+        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 12px, #000 calc(100% - 24px), transparent);
+        mask-image: linear-gradient(to right, transparent 0, #000 12px, #000 calc(100% - 24px), transparent);
+      }
+      .site-nav ul { padding: 0 16px 0 8px; }
+      .entry { padding: 20px; }
+      .media { gap: 16px; }
+      .thumb { width: 84px; }
+      .deliverable { padding: 14px; }
+      .media:has(.thumb-banner) { flex-direction: column; }
+      .thumb-banner { order: -1; width: 100%; aspect-ratio: 16 / 7; }
+      .thumb-banner img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
     }
 
-    @media (max-width:640px){
-      h1{font-size:32px}
-      .proj{flex-direction:column; align-items:flex-start}
-      .thumb{width:100%}
-      .topbar .wrap{flex-direction:column; align-items:flex-start}
-      .nav a{margin-left:0; margin-right:14px}
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
     }
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-<div class="topbar">
-  <div class="wrap">
-    <div class="brand">Jordan Yan • Technical Writer • AI &amp; Developer Docs</div>
-    <div class="nav">
-      <a href="#focus">Focus</a>
-      <a href="#samples">Samples</a>
-      <a href="#work">Work</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#resume">Resume</a>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="#top">Jordan Yan</a>
+      <nav class="site-nav" aria-label="Sections">
+        <ul>
+          <li><a href="#focus">Focus</a></li>
+          <li><a href="#samples">Samples</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#resume">Resume</a></li>
+        </ul>
+      </nav>
     </div>
-  </div>
-</div>
+  </header>
 
-<div class="wrap">
-  <h1>Jordan Yan</h1>
-  <p class="subtitle">
-    <strong>Technical Writer — AI &amp; Developer Documentation</strong> • San Luis Obispo, CA •
-    <a href="mailto:jordanxianyan@gmail.com">jordanxianyan@gmail.com</a>
-  </p>
-
-  <p class="quote">“If you can’t explain it simply, you don’t understand it well enough.”</p>
-
-  <p class="muted">
-    I write clear, accurate documentation for AI systems: model cards, developer tutorials,
-    API references, and evaluation guides that help engineers build with AI and help users trust it.
-    I also write for defense and aerospace, where the same precision and traceability matter.
-    My background is in compliance-driven documentation, including public HIPAA and ASC X12 companion
-    guides for DC Medicaid EDI transactions.
-  </p>
-
-  <!-- Focus -->
-  <div id="focus" class="section">
-    <h2>Focus Areas</h2>
-    <ul class="muted" style="padding-left:18px">
-      <li><strong>AI documentation:</strong> model cards, responsible-AI disclosures, and LLM evaluation guides aligned to the NIST AI RMF</li>
-      <li><strong>Developer documentation:</strong> API references, tutorials, and quickstarts with working, tested code</li>
-      <li><strong>Defense &amp; aerospace:</strong> technical manuals, maintenance procedures, and interface control documents written to MIL-STD conventions</li>
-      <li><strong>Compliance &amp; traceability:</strong> regulated documentation, requirements traceability, revision control, and SME review cycles</li>
-    </ul>
-  </div>
-
-  <!-- Samples -->
-  <div id="samples" class="section">
-    <h2>AI Writing Samples</h2>
-    <p class="muted">
-      Original samples published on my documentation site. Systems are fictional unless noted.
-    </p>
-
-    <div class="projects">
-      <div class="proj">
-        <div>
-          <h3>AI Model Card: Runway Debris Detection</h3>
-          <p class="meta">Model documentation • DoD AI Ethical Principles • NIST AI RMF</p>
-          <p class="muted">Intended use, condition-level performance, failure modes, and human-oversight controls for a computer-vision model.</p>
-          <div class="actions">
-            <a href="https://docs.jordanyan.com/docs/samples/model-card" target="_blank">Read sample</a>
-          </div>
-        </div>
+  <main id="main" class="container" tabindex="-1">
+    <div class="hero" id="top">
+      <p class="eyebrow">Technical Writer · AI &amp; Developer Documentation · San Luis Obispo, CA</p>
+      <h1>Jordan Yan</h1>
+      <p class="abstract">
+        I write clear, accurate documentation for AI systems: model cards, developer tutorials,
+        API references, and evaluation guides that help engineers build with AI and help users trust it.
+        I also write for defense and aerospace, where the same precision and traceability matter.
+        My background is in compliance-driven documentation, including public HIPAA and ASC X12 companion
+        guides for DC Medicaid EDI transactions.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#samples">View writing samples</a>
+        <a class="btn btn-secondary" href="Jordan_Yan_Technical_Writer_2026.pdf" type="application/pdf">Download resume (PDF)</a>
       </div>
-      <div class="proj">
-        <div>
-          <h3>Tutorial: Build a Q&amp;A Bot Over Your Docs</h3>
-          <p class="meta">Developer tutorial • RAG • Python • Claude API</p>
-          <p class="muted">Explains retrieval-augmented generation and walks developers through working, tested code for my ask-my-docs tool.</p>
-          <div class="actions">
-            <a href="https://docs.jordanyan.com/docs/samples/rag-tutorial" target="_blank">Read sample</a>
-          </div>
-        </div>
-      </div>
-      <div class="proj">
-        <div>
-          <h3>API Reference: Document Classification</h3>
-          <p class="meta">REST API reference</p>
-          <p class="muted">Parameters, request and response examples, error handling, and rate limits for an AI classification endpoint.</p>
-          <div class="actions">
-            <a href="https://docs.jordanyan.com/docs/samples/api-reference" target="_blank">Read sample</a>
-          </div>
-        </div>
-      </div>
-      <div class="proj">
-        <div>
-          <h3>LLM Evaluation Rubric: Documentation Q&amp;A</h3>
-          <p class="meta">Evaluation guide • Test-set design</p>
-          <p class="muted">Pass/fail grading criteria, a balanced test set, and reporting by question type to catch hallucinated answers.</p>
-          <div class="actions">
-            <a href="https://docs.jordanyan.com/docs/samples/eval-rubric" target="_blank">Read sample</a>
-          </div>
-        </div>
-      </div>
+      <p class="contact-line">Or email <a href="mailto:jordanxianyan@gmail.com">jordanxianyan@gmail.com</a></p>
     </div>
 
-    <h2>Defense &amp; Aerospace Writing Samples</h2>
-    <div class="projects">
-      <div class="proj">
-        <div>
-          <h3>Maintenance Procedure: UAS Propeller Replacement</h3>
-          <p class="meta">Work package (MIL-STD-40051-2 layout) • MIL-STD-38784 advisories</p>
-          <p class="muted">Field-level removal and installation procedure with WARNING/CAUTION/NOTE advisories, tools and parts tables, and torque values.</p>
-          <div class="actions">
-            <a href="https://docs.jordanyan.com/docs/samples/maintenance-procedure" target="_blank">Read sample</a>
+    <section id="focus" aria-labelledby="focus-title">
+      <h2 id="focus-title">Focus areas</h2>
+      <ul class="focus-list">
+        <li>
+          <h3>AI documentation</h3>
+          <p>Model cards, responsible-AI disclosures, and LLM evaluation guides aligned to the NIST AI RMF.</p>
+        </li>
+        <li>
+          <h3>Developer documentation</h3>
+          <p>API references, tutorials, and quickstarts with working, tested code.</p>
+        </li>
+        <li>
+          <h3>Defense &amp; aerospace</h3>
+          <p>Technical manuals, maintenance procedures, and interface control documents written to MIL-STD conventions.</p>
+        </li>
+        <li>
+          <h3>Compliance &amp; traceability</h3>
+          <p>Regulated documentation, requirements traceability, revision control, and SME review cycles.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="samples" aria-labelledby="samples-title">
+      <h2 id="samples-title">Writing samples</h2>
+      <div class="note" role="note">
+        <p><strong>About these samples</strong>All samples are original work written for this portfolio. Systems, part numbers and data are fictional. No CUI, export-controlled (ITAR/EAR) or proprietary information is included.</p>
+      </div>
+
+      <h3 class="group-title">AI</h3>
+      <ul class="card-grid">
+        <li>
+          <article class="card card-link">
+            <p class="eyebrow">Model card</p>
+            <h4><a href="https://ai.jordanyan.com/docs/ai/model-card" target="_blank" rel="noopener noreferrer">AI Model Card: Runway Debris Detection<span class="vh"> (opens in a new tab)</span></a></h4>
+            <p>Intended use, condition-level performance, failure modes, and human-oversight controls for a computer-vision model.</p>
+            <p class="tags">DoD AI Ethical Principles · NIST AI RMF</p>
+            <span class="more" aria-hidden="true">Read sample ↗</span>
+          </article>
+        </li>
+        <li>
+          <article class="card card-link">
+            <p class="eyebrow">Developer tutorial</p>
+            <h4><a href="https://ai.jordanyan.com/docs/ai/rag-tutorial" target="_blank" rel="noopener noreferrer">Tutorial: Build a Q&amp;A Bot Over Your Docs<span class="vh"> (opens in a new tab)</span></a></h4>
+            <p>Explains retrieval-augmented generation and walks developers through working, tested code for my ask-my-docs tool.</p>
+            <p class="tags">RAG · Python · Claude API</p>
+            <span class="more" aria-hidden="true">Read sample ↗</span>
+          </article>
+        </li>
+        <li>
+          <article class="card card-link">
+            <p class="eyebrow">API reference</p>
+            <h4><a href="https://ai.jordanyan.com/docs/ai/api-reference" target="_blank" rel="noopener noreferrer">API Reference: Document Classification<span class="vh"> (opens in a new tab)</span></a></h4>
+            <p>Parameters, request and response examples, error handling, and rate limits for an AI classification endpoint.</p>
+            <p class="tags">REST API reference</p>
+            <span class="more" aria-hidden="true">Read sample ↗</span>
+          </article>
+        </li>
+        <li>
+          <article class="card card-link">
+            <p class="eyebrow">Evaluation guide</p>
+            <h4><a href="https://ai.jordanyan.com/docs/ai/eval-rubric" target="_blank" rel="noopener noreferrer">LLM Evaluation Rubric: Documentation Q&amp;A<span class="vh"> (opens in a new tab)</span></a></h4>
+            <p>Pass/fail grading criteria, a balanced test set, and reporting by question type to catch hallucinated answers.</p>
+            <p class="tags">Test-set design</p>
+            <span class="more" aria-hidden="true">Read sample ↗</span>
+          </article>
+        </li>
+      </ul>
+
+      <h3 class="group-title">Defense &amp; aerospace</h3>
+      <ul class="card-grid">
+        <li>
+          <article class="card card-link">
+            <p class="eyebrow">Maintenance procedure</p>
+            <h4><a href="https://ai.jordanyan.com/docs/defense/maintenance-procedure" target="_blank" rel="noopener noreferrer">Maintenance Procedure: UAS Propeller Replacement<span class="vh"> (opens in a new tab)</span></a></h4>
+            <p>Field-level removal and installation procedure with WARNING/CAUTION/NOTE advisories, tools and parts tables, and torque values.</p>
+            <p class="tags">Work package (MIL-STD-40051-2 layout) · MIL-STD-38784 advisories</p>
+            <span class="more" aria-hidden="true">Read sample ↗</span>
+          </article>
+        </li>
+        <li>
+          <article class="card card-link">
+            <p class="eyebrow">Interface control document</p>
+            <h4><a href="https://ai.jordanyan.com/docs/defense/interface-control-document" target="_blank" rel="noopener noreferrer">Interface Control Document: Telemetry Message<span class="vh"> (opens in a new tab)</span></a></h4>
+            <p>Byte-level air-vehicle-to-ground-station message definition with units, scaling, ranges, and verification methods.</p>
+            <p class="tags">ICD excerpt · Requirements traceability</p>
+            <span class="more" aria-hidden="true">Read sample ↗</span>
+          </article>
+        </li>
+      </ul>
+
+      <p class="browse"><a href="https://ai.jordanyan.com/" target="_blank" rel="noopener noreferrer">Browse all samples at ai.jordanyan.com<span class="vh"> (opens in a new tab)</span> <span aria-hidden="true">↗</span></a></p>
+    </section>
+
+    <section id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title">Experience</h2>
+      <article class="entry">
+        <h3>Technical Writing Intern</h3>
+        <p class="meta">Gainwell Technologies</p>
+        <p>
+          Authored public, HIPAA-compliant Companion Guides for DC Medicaid (DHCF),
+          clarifying ASC X12N 5010 standards for trading partners.
+        </p>
+        <div class="deliverable media">
+          <div class="thumb">
+            <img src="assets/837I-title.png" width="480" height="626" loading="lazy" decoding="async"
+                 alt="Title page of the DC Medicaid 837I Fee-for-Service Claims Companion Guide, Version 1.3, dated June 17, 2025">
+          </div>
+          <div class="media-body">
+            <h4>837I FFS Claims Companion Guide</h4>
+            <p class="meta">21 pages · June 2025</p>
+            <p>Institutional claims rules, SNIP validation, and submission constraints.</p>
+            <ul class="links">
+              <li><a href="https://github.com/kopyk/gainwell-dhcf-companion-guides/raw/main/DC_837I-FFS-Claims-Companion-Guide-v1.3.pdf" target="_blank" rel="noopener noreferrer">PDF<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+              <li><a href="https://github.com/kopyk/gainwell-dhcf-companion-guides" target="_blank" rel="noopener noreferrer">Repository<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+            </ul>
           </div>
         </div>
-      </div>
-      <div class="proj">
-        <div>
-          <h3>Interface Control Document: Telemetry Message</h3>
-          <p class="meta">ICD excerpt • Requirements traceability</p>
-          <p class="muted">Byte-level air-vehicle-to-ground-station message definition with units, scaling, ranges, and verification methods.</p>
-          <div class="actions">
-            <a href="https://docs.jordanyan.com/docs/samples/interface-control-document" target="_blank">Read sample</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+      </article>
+    </section>
 
-  <!-- Work -->
-  <div id="work" class="section">
-    <h2>Gainwell Technologies — Technical Writing Intern</h2>
-    <p class="muted">
-      Authored public, HIPAA-compliant Companion Guides for DC Medicaid (DHCF),
-      clarifying ASC X12N 5010 standards for trading partners.
-    </p>
-
-    <div class="projects">
-      <div class="proj">
-        <div class="thumb">
-          <img src="https://github.com/kopyk/gainwell-dhcf-companion-guides/raw/main/837I-title.png" alt="837I Companion Guide">
-        </div>
-        <div>
-          <h3>837I FFS Claims Companion Guide</h3>
-          <p class="meta">21 pages • June 2025</p>
-          <p class="muted">Institutional claims rules, SNIP validation, and submission constraints.</p>
-          <div class="actions">
-            <a href="https://github.com/kopyk/gainwell-dhcf-companion-guides/raw/main/DC_837I-FFS-Claims-Companion-Guide-v1.3.pdf" target="_blank">PDF</a>
-            <a href="https://github.com/kopyk/gainwell-dhcf-companion-guides" target="_blank">Repo</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Projects -->
-  <div id="projects" class="section">
-    <h2>Personal Projects</h2>
-
-    <div class="projects">
-      <div class="proj">
-        <div>
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Projects</h2>
+      <div class="stack">
+        <article class="entry">
           <h3>ask-my-docs</h3>
-          <p class="meta">Python • Claude API • Retrieval-augmented generation</p>
-          <p class="muted">
+          <p class="meta">Python · Claude API · Retrieval-augmented generation</p>
+          <p>
             A command-line tool that answers questions about a folder of Markdown documentation.
             It finds the relevant sections, sends them to Claude, and returns an answer with sources.
+            The companion tutorial explains how it works and how to evaluate its retrieval.
           </p>
-          <div class="actions">
-            <a href="https://github.com/kopyk/ask-my-docs" target="_blank">GitHub</a>
-            <a href="https://docs.jordanyan.com/docs/samples/rag-tutorial" target="_blank">Tutorial</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj">
-        <div class="thumb">
-          <img src="https://raw.githubusercontent.com/kopyk/jungle-framework/main/static/img/decision-tree-early.svg" alt="Jungle Decision Framework">
-        </div>
-        <div>
-          <h3>Jungle Decision Framework</h3>
-          <p class="meta">Documentation system • Docusaurus • GitHub Pages</p>
-          <p class="muted">
-            Designed and authored a structured documentation site that teaches complex decision-making
-            through rules, flowcharts, and progressive mental models.
-          </p>
-          <ul class="muted" style="padding-left:18px">
-            <li>Multi-page documentation architecture</li>
-            <li>Visual decision trees (SVG + Mermaid)</li>
-            <li>User progression from beginner to advanced</li>
+          <ul class="links">
+            <li><a href="https://github.com/kopyk/ask-my-docs" target="_blank" rel="noopener noreferrer">GitHub<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+            <li><a href="https://ai.jordanyan.com/docs/ai/rag-tutorial" target="_blank" rel="noopener noreferrer">Tutorial<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
           </ul>
-          <div class="actions">
-            <a href="https://docs.jordanyan.com/docs/jungle-decision-framework" target="_blank">Live site</a>
-            <a href="https://github.com/kopyk/jungle-framework" target="_blank">Source</a>
-          </div>
-        </div>
-      </div>
+        </article>
 
-      <div class="proj">
-        <div class="thumb"></div>
-        <div>
+        <article class="entry">
+          <div class="media">
+            <div class="media-body">
+              <h3>Jungle Decision Framework</h3>
+              <p class="meta">Personal documentation project · Docusaurus · GitHub Pages</p>
+              <p class="lede">
+                Designed and authored a structured documentation site that teaches complex decision-making
+                through rules, flowcharts, and progressive mental models.
+              </p>
+              <ul class="points">
+                <li>Multi-page documentation architecture</li>
+                <li>Visual decision trees (SVG + Mermaid)</li>
+                <li>User progression from beginner to advanced</li>
+              </ul>
+              <ul class="links">
+                <li><a href="https://docs.jordanyan.com/docs/jungle-decision-framework" target="_blank" rel="noopener noreferrer">Live site<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+                <li><a href="https://github.com/kopyk/jungle-framework" target="_blank" rel="noopener noreferrer">Source<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+              </ul>
+            </div>
+            <div class="thumb thumb-banner">
+              <img src="assets/decision-tree-early.svg" width="780" height="1180" loading="lazy" decoding="async"
+                   alt="Early-game decision tree from the Jungle Decision Framework: a flowchart of yes/no questions leading to recommended actions">
+            </div>
+          </div>
+        </article>
+
+        <article class="entry">
           <h3>mem-analyzer</h3>
-          <p class="meta">C++ • Doxygen • Markdown</p>
-          <p class="muted">
+          <p class="meta">C++ · Doxygen · Markdown</p>
+          <p>
             Built and documented a low-level C++ memory analysis tool for Windows processes, with
             anchor-optimized pattern scanning (4–5× faster than a naïve scan) and full API documentation.
           </p>
-          <div class="actions">
-            <a href="https://github.com/kopyk/mem-analyzer" target="_blank">GitHub</a>
-          </div>
+          <ul class="links">
+            <li><a href="https://github.com/kopyk/mem-analyzer" target="_blank" rel="noopener noreferrer">GitHub<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title">Skills</h2>
+      <div class="skill-groups">
+        <div>
+          <h3>Writing &amp; docs</h3>
+          <ul class="badges">
+            <li>Technical Writing</li>
+            <li>API Documentation</li>
+            <li>Technical Manuals</li>
+            <li>SME Interviews &amp; Review</li>
+          </ul>
+        </div>
+        <div>
+          <h3>AI &amp; evaluation</h3>
+          <ul class="badges">
+            <li>AI Model Cards</li>
+            <li>LLM Evaluation</li>
+            <li>RAG</li>
+            <li>Claude API</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Defense &amp; compliance</h3>
+          <ul class="badges">
+            <li>Interface Control Documents</li>
+            <li>Requirements Traceability</li>
+            <li>Regulatory Compliance</li>
+            <li>X12N 5010</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tools &amp; languages</h3>
+          <ul class="badges">
+            <li>Python</li>
+            <li>C++</li>
+            <li>Markdown</li>
+            <li>Docusaurus</li>
+            <li>Mermaid</li>
+            <li>GitHub Pages</li>
+            <li>Power BI</li>
+            <li>Figma</li>
+          </ul>
         </div>
       </div>
+    </section>
+
+    <section id="resume" aria-labelledby="resume-title">
+      <h2 id="resume-title">Resume &amp; contact</h2>
+      <p class="lede">For a full summary of experience and education, download the resume. The best way to reach me is email.</p>
+      <a class="btn btn-secondary" href="Jordan_Yan_Technical_Writer_2026.pdf" type="application/pdf">Download resume (PDF)</a>
+      <ul class="contact-list">
+        <li><span class="label">Email</span><a href="mailto:jordanxianyan@gmail.com">jordanxianyan@gmail.com</a></li>
+        <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/jordanxyan/" target="_blank" rel="noopener noreferrer">linkedin.com/in/jordanxyan<span class="vh"> (opens in a new tab)</span></a></li>
+        <li><span class="label">GitHub</span><a href="https://github.com/kopyk" target="_blank" rel="noopener noreferrer">github.com/kopyk<span class="vh"> (opens in a new tab)</span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Jordan Yan · San Luis Obispo, CA</p>
     </div>
-  </div>
-
-  <!-- Skills -->
-  <div id="skills" class="section">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span class="badge">Technical Writing</span>
-      <span class="badge">AI Model Cards</span>
-      <span class="badge">LLM Evaluation</span>
-      <span class="badge">RAG</span>
-      <span class="badge">API Documentation</span>
-      <span class="badge">Python</span>
-      <span class="badge">Claude API</span>
-      <span class="badge">Technical Manuals</span>
-      <span class="badge">Interface Control Documents</span>
-      <span class="badge">Requirements Traceability</span>
-      <span class="badge">SME Interviews &amp; Review</span>
-      <span class="badge">Regulatory Compliance</span>
-      <span class="badge">C++</span>
-      <span class="badge">Power BI</span>
-      <span class="badge">Markdown</span>
-      <span class="badge">Docusaurus</span>
-      <span class="badge">Mermaid</span>
-      <span class="badge">X12N 5010</span>
-      <span class="badge">GitHub Pages</span>
-      <span class="badge">Figma</span>
-    </div>
-  </div>
-
-  <!-- Resume -->
-  <div id="resume" class="section">
-    <h2>Resume</h2>
-    <p><a href="Jordan_Yan_Technical_Writer_2026.pdf" target="_blank">Download PDF</a></p>
-  </div>
-
-  <footer>
-    © 2026 Jordan Yan • San Luis Obispo, CA • Built with GitHub Pages
   </footer>
-</div>
 
+  <script>
+    (function () {
+      if (!("IntersectionObserver" in window)) return;
+      var nav = document.querySelector(".site-nav");
+      var links = {};
+      nav.querySelectorAll('a[href^="#"]').forEach(function (a) {
+        links[a.getAttribute("href").slice(1)] = a;
+      });
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var active = links[entry.target.id];
+          Object.keys(links).forEach(function (id) { links[id].removeAttribute("aria-current"); });
+          if (!active) return;
+          active.setAttribute("aria-current", "location");
+          if (nav.scrollWidth > nav.clientWidth) {
+            nav.scrollTo({ left: active.offsetLeft - 24, behavior: reduce ? "auto" : "smooth" });
+          }
+        });
+      }, { rootMargin: "-40% 0px -55% 0px" });
+      document.querySelectorAll("#top, main section[id]").forEach(function (s) { observer.observe(s); });
+    })();
+  </script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <div align="center">
 
-# Jordan Y
+# Jordan Yan
 
 **Technical Writer · AI & Developer Documentation**  
 San Luis Obispo, CA  
@@ -15,9 +15,10 @@ San Luis Obispo, CA
 | Project | Description | Tech |
 |--------|-------------|------|
 | [**gainwell-dhcf-companion-guides**](https://github.com/kopyk/gainwell-dhcf-companion-guides) | **Authored public HIPAA-compliant 837I & 276/277 Companion Guides** for DC Medicaid (Gainwell) | <img src="https://img.shields.io/badge/HIPAA-X12N_5010-4CAF50?logoColor=white"> |
-| [**mem-analyzer**](https://github.com/kopyk/mem-analyzer) | **Built & documented** a high-performance memory analysis tool with 4× faster scanning | <img src="https://img.shields.io/badge/C++-17-00599C?logo=cplusplus&logoColor=white"> |
+| [**mem-analyzer**](https://github.com/kopyk/mem-analyzer) | **Built & documented** a high-performance memory analysis tool with 4–5× faster scanning | <img src="https://img.shields.io/badge/C++-17-00599C?logo=cplusplus&logoColor=white"> |
 | [**ask-my-docs**](https://github.com/kopyk/ask-my-docs) | **Built & documented** a Python tool that answers questions about Markdown docs using Claude (RAG) | <img src="https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white"> |
-| [**docs site**](https://docs.jordanyan.com) | **AI writing samples** (model card, RAG tutorial, API reference, eval rubric) plus defense & aerospace samples | <img src="https://img.shields.io/badge/Docusaurus-3-3ECC5F?logo=docusaurus&logoColor=white"> |
+| [**AI writing samples**](https://ai.jordanyan.com) | **AI writing samples** (model card, RAG tutorial, API reference, eval rubric) plus defense & aerospace samples | <img src="https://img.shields.io/badge/Docusaurus-3-3ECC5F?logo=docusaurus&logoColor=white"> |
+| [**Jungle Decision Framework**](https://docs.jordanyan.com) | **Personal documentation project:** decision-making guide with rules, flowcharts and progressive mental models | <img src="https://img.shields.io/badge/Docusaurus-3-3ECC5F?logo=docusaurus&logoColor=white"> |
 | [**portfolio**](https://www.jordanyan.com) | **Central hub** | <img src="https://img.shields.io/badge/Portfolio-Live-brightgreen"> |
 
 ---

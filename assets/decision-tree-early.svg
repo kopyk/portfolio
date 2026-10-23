@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" width="780" height="1180" viewBox="0 0 780 1180">
+  <ns0:defs>
+    <ns0:style>
+      .bg { fill: #0b0c0f; }
+      .box { fill: #12141a; stroke: rgba(255,255,255,0.22); stroke-width: 2; rx: 16; ry: 16; }
+      .diamond { fill: #12141a; stroke: rgba(255,255,255,0.22); stroke-width: 2; }
+      .arrow { stroke: rgba(255,255,255,0.35); stroke-width: 2.2; fill: none; marker-end: url(#arrowhead); }
+      .label { fill: rgba(255,255,255,0.92); font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Arial,sans-serif; font-size: 18px; font-weight: 600; }
+      .small { fill: rgba(255,255,255,0.78); font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Arial,sans-serif; font-size: 14px; font-weight: 500; }
+      .tiny { fill: rgba(255,255,255,0.66); font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Inter,Arial,sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.03em; }
+    
+      .arrowYes { stroke: rgba(74,222,128,0.65); }
+      .arrowNo { stroke: rgba(251,146,60,0.65); }
+      .arrowNeutral { stroke: rgba(255,255,255,0.35); }
+      .diamond { stroke: rgba(255,255,255,0.24); }
+</ns0:style>
+    <ns0:marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <ns0:polygon points="0 0, 10 3.5, 0 7" fill="rgba(255,255,255,0.45)" />
+    </ns0:marker>
+  </ns0:defs>
+
+  <ns0:rect class="bg" x="0" y="0" width="780" height="1180" />
+
+  
+  <ns0:rect class="box" x="140" y="40" width="500" height="86" />
+  <ns0:text class="label" x="390" y="78" text-anchor="middle">Early Game: Levels 1–6</ns0:text>
+  <ns0:text class="small" x="390" y="104" text-anchor="middle">Ward → Path → Scuttle → Reset</ns0:text>
+
+  
+  <ns0:path class="arrow arrowNeutral" d="M390 126 L390 170" />
+
+  
+  <ns0:polygon class="diamond" points="390,190 470,260 390,330 310,260" />
+  <ns0:text class="label" x="390" y="255" text-anchor="middle">Level 1 Ward?</ns0:text>
+  <ns0:text class="small" x="390" y="280" text-anchor="middle">Enemy buff / pixel</ns0:text>
+
+  
+  <ns0:text class="tiny" x="482" y="260">YES</ns0:text>
+  <ns0:text class="tiny" x="275" y="260">NO</ns0:text>
+
+  
+  <ns0:path class="arrow arrowNo" d="M310 260 L170 260" />
+  <ns0:rect class="box" x="40" y="220" width="250" height="86" />
+  <ns0:text class="label" x="165" y="255" text-anchor="middle">Ward Now</ns0:text>
+  <ns0:text class="small" x="165" y="280" text-anchor="middle">Buy time + info</ns0:text>
+
+  
+  <ns0:path class="arrow arrowYes" d="M290 260 L310 260" />
+
+  
+  <ns0:path class="arrow arrowNeutral" d="M390 330 L390 372" />
+
+  
+  <ns0:polygon class="diamond" points="390,392 490,472 390,552 290,472" />
+  <ns0:text class="label" x="390" y="465" text-anchor="middle">Strong-side Priority?</ns0:text>
+  <ns0:text class="small" x="390" y="490" text-anchor="middle">Lanes pushing your way</ns0:text>
+  <ns0:text class="tiny" x="505" y="475">YES</ns0:text>
+  <ns0:text class="tiny" x="265" y="475">NO</ns0:text>
+
+  
+  <ns0:path class="arrow arrowYes" d="M490 472 L640 472" />
+  <ns0:rect class="box" x="560" y="430" width="200" height="96" />
+  <ns0:text class="label" x="660" y="465" text-anchor="middle">3-Camp Path</ns0:text>
+  <ns0:text class="small" x="660" y="490" text-anchor="middle">Pressure a lane</ns0:text>
+
+  
+  <ns0:path class="arrow arrowNeutral" d="M660 526 L660 566" />
+
+  
+  <ns0:polygon class="diamond" points="660,586 740,656 660,726 580,656" />
+  <ns0:text class="label" x="660" y="650" text-anchor="middle">Gank Setup?</ns0:text>
+  <ns0:text class="small" x="660" y="675" text-anchor="middle">CC + wave + sums</ns0:text>
+  <ns0:text class="tiny" x="748" y="657">YES</ns0:text>
+  <ns0:text class="tiny" x="545" y="657">NO</ns0:text>
+
+  
+  <ns0:path class="arrow arrowNeutral" d="M740 656 L740 800" />
+  <ns0:rect class="box" x="560" y="800" width="200" height="110" />
+  <ns0:text class="label" x="660" y="838" text-anchor="middle">Gank</ns0:text>
+  <ns0:text class="small" x="660" y="865" text-anchor="middle">Push wave →</ns0:text>
+  <ns0:text class="small" x="660" y="888" text-anchor="middle">Scuttle / invade</ns0:text>
+
+  
+  <ns0:path class="arrow arrowNeutral" d="M580 656 L520 656 L520 800" />
+  <ns0:rect class="box" x="340" y="800" width="200" height="110" />
+  <ns0:text class="label" x="440" y="838" text-anchor="middle">Continue Clear</ns0:text>
+  <ns0:text class="small" x="440" y="865" text-anchor="middle">Opposite Scuttle</ns0:text>
+  <ns0:text class="small" x="440" y="888" text-anchor="middle">if contested</ns0:text>
+
+  
+  <ns0:path class="arrow arrowNo" d="M290 472 L140 472" />
+  <ns0:rect class="box" x="20" y="430" width="240" height="110" />
+  <ns0:text class="label" x="140" y="468" text-anchor="middle">Full Clear</ns0:text>
+  <ns0:text class="small" x="140" y="495" text-anchor="middle">All 6 camps</ns0:text>
+  <ns0:text class="small" x="140" y="518" text-anchor="middle">Lvl ~4 at 3:15–3:30</ns0:text>
+
+  
+  <ns0:path class="arrow arrowNeutral" d="M140 540 L140 585" />
+  <ns0:polygon class="diamond" points="140,605 220,675 140,745 60,675" />
+  <ns0:text class="label" x="140" y="670" text-anchor="middle">Scuttle / Obj?</ns0:text>
+  <ns0:text class="small" x="140" y="695" text-anchor="middle">Vision + Smite</ns0:text>
+  <ns0:text class="tiny" x="232" y="678">YES</ns0:text>
+  <ns0:text class="tiny" x="35" y="678">NO</ns0:text>
+
+  
+  <ns0:path class="arrow arrowYes" d="M220 675 L340 675" />
+  <ns0:rect class="box" x="300" y="620" width="260" height="110" />
+  <ns0:text class="label" x="430" y="660" text-anchor="middle">Contest</ns0:text>
+  <ns0:text class="small" x="430" y="687" text-anchor="middle">Prio + vision</ns0:text>
+  <ns0:text class="small" x="430" y="710" text-anchor="middle">Smite ready</ns0:text>
+
+  
+  <ns0:path class="arrow arrowNeutral" d="M60 675 L20 675 L20 830 L160 830" />
+  <ns0:rect class="box" x="160" y="775" width="170" height="110" />
+  <ns0:text class="label" x="245" y="815" text-anchor="middle">Vertical</ns0:text>
+  <ns0:text class="small" x="245" y="842" text-anchor="middle">Farm or invade</ns0:text>
+  <ns0:text class="small" x="245" y="865" text-anchor="middle">with info</ns0:text>
+
+  
+  <ns0:rect class="box" x="220" y="980" width="340" height="96" />
+  <ns0:text class="label" x="390" y="1018" text-anchor="middle">Reset → Next Cycle</ns0:text>
+  <ns0:text class="small" x="390" y="1044" text-anchor="middle">Recall → buy → re-enter on tempo</ns0:text>
+
+  
+  <ns0:path class="arrow arrowNeutral" d="M660 910 L660 940 L390 940" marker-end="none" />
+  <ns0:path class="arrow arrowNeutral" d="M440 910 L440 940 L390 940" marker-end="none" />
+  <ns0:path class="arrow arrowNeutral" d="M430 730 L430 940 L390 940" marker-end="none" />
+  <ns0:path class="arrow arrowNeutral" d="M245 885 L245 940 L390 940" marker-end="none" />
+
+  
+  <ns0:text class="tiny" x="390" y="1140" text-anchor="middle">Heuristic: If uncertain, full clear + add vision + re-evaluate</ns0:text>
+<path class="arrow" d="M390 940 L390 980" /><circle cx="390" cy="940" r="4.5" fill="rgba(255,255,255,0.35)" stroke="none" /></ns0:svg>
