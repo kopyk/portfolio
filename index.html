@@ -1,434 +1,1257 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jordan Yan – Technical Writer | AI &amp; Developer Documentation</title>
-  <meta name="description" content="Jordan Yan is a technical writer in San Luis Obispo, CA, focused on AI and developer documentation." />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, "js");</script>
+  <title>Jordan Yan | Technical Writer: AI &amp; Developer Documentation</title>
+  <meta name="description" content="Jordan Yan is a technical writer in San Luis Obispo, CA, creating AI and developer documentation: model cards, tutorials, API references and evaluation guides.">
+  <link rel="canonical" href="https://www.jordanyan.com/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f0f10" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="favicon.ico" sizes="32x32">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.jordanyan.com/">
+  <meta property="og:title" content="Jordan Yan | Technical Writer: AI &amp; Developer Documentation">
+  <meta property="og:description" content="Technical writer creating AI and developer documentation: model cards, tutorials, API references and evaluation guides, plus defense and aerospace samples.">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;display=swap">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jordan Yan",
+    "jobTitle": "Technical Writer",
+    "url": "https://www.jordanyan.com/",
+    "email": "mailto:jordanxianyan@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "San Luis Obispo",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/jordanxyan/",
+      "https://github.com/kopyk"
+    ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Houston",
+      "sameAs": "https://www.uh.edu/"
+    },
+    "knowsLanguage": ["English", "Mandarin", "Cantonese"],
+    "knowsAbout": [
+      "Technical writing",
+      "AI documentation",
+      "Model cards",
+      "LLM evaluation",
+      "Retrieval-augmented generation",
+      "API documentation",
+      "Technical manuals",
+      "Interface control documents",
+      "Requirements traceability",
+      "ASC X12 EDI 5010"
+    ]
+  }
+  </script>
 
   <style>
-    :root{
-      --text:#111;
-      --muted:#555;
-      --line:#eaeaea;
-      --link:#0a66c2;
-      --bg:#fff;
+    /* ==========================================================
+       Tokens (shared by every layout)
+       ========================================================== */
+    :root {
+      color-scheme: light dark;
+      --bg: #ffffff;
+      --surface: #f7f7f8;
+      --surface-2: #f0efec;
+      --text: #1a1a1a;
+      --text-2: #5f6368;
+      --muted: #6e6e73;
+      --border: #e5e5e7;
+      --border-strong: #d2d2d7;
+      --accent: #0f6cbd;
+      --accent-hover: #0b5ca3;
+      --on-accent: #ffffff;
+      --note-bg: #e8f0fe;
+      --note-text: #1a4fa3;
+      --note-border: #c6d8f7;
+      --header-bg: rgba(255, 255, 255, 0.86);
+      --scrim: rgba(17, 17, 19, 0.28);
+      --shadow: 0 16px 32px -16px rgba(17, 17, 19, 0.22);
+
+      --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      --column: 720px;
+      --gutter: 24px;
+      --bar-h: 56px;
+      --rail-w: 256px;
+      --r-sm: 6px;
+      --r-md: 8px;
+      --r-lg: 12px;
     }
 
-    *{box-sizing:border-box}
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f10;
+        --surface: #19191a;
+        --surface-2: #1f1f21;
+        --text: #ededed;
+        --text-2: #a1a1a6;
+        --muted: #8e8e93;
+        --border: #2a2a2c;
+        --border-strong: #3a3a3d;
+        --accent: #4da3ff;
+        --accent-hover: #7cbcff;
+        --on-accent: #0f0f10;
+        --note-bg: rgba(77, 163, 255, 0.12);
+        --note-text: #9ccaff;
+        --note-border: rgba(77, 163, 255, 0.28);
+        --header-bg: rgba(15, 15, 16, 0.86);
+        --scrim: rgba(0, 0, 0, 0.56);
+        --shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.7);
+      }
+    }
 
-    body{
-      font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      margin:0;
-      color:var(--text);
-      background:var(--bg);
-      line-height:1.7;
+    /* ==========================================================
+       Base
+       ========================================================== */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      -webkit-text-size-adjust: 100%;
+      text-size-adjust: 100%;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* Layout */
-    .wrap{
-      max-width: 860px;
+    img { display: block; max-width: 100%; height: auto; }
+
+    a { color: var(--accent); text-decoration: none; text-underline-offset: 3px; }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+      border-radius: 2px;
+    }
+
+    /* Anchor jumps land 16px below the sticky bar (bar is 0px tall on desktop),
+       and keyboard focus is never scrolled underneath it. */
+    main section, .hero { scroll-margin-top: calc(var(--bar-h) + 16px); }
+    main :where(a[href], button, summary, [tabindex]) {
+      scroll-margin-top: calc(var(--bar-h) + 16px);
+      scroll-margin-bottom: 16px;
+    }
+
+    .vh {
+      position: absolute !important;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: 8px; left: 8px;
+      z-index: 100;
+      padding: 10px 16px;
+      background: var(--accent);
+      color: var(--on-accent);
+      border-radius: var(--r-sm);
+      font-weight: 600;
+      transform: translateY(-200%);
+    }
+    .skip-link:focus { transform: none; color: var(--on-accent); text-decoration: none; }
+
+    .container {
+      width: 100%;
+      max-width: calc(var(--column) + 2 * var(--gutter));
       margin: 0 auto;
-      padding: 56px 20px;
+      padding-left: max(var(--gutter), env(safe-area-inset-left));
+      padding-right: max(var(--gutter), env(safe-area-inset-right));
     }
 
-    .topbar{
-      border-bottom:1px solid var(--line);
-      background:#fff;
+    /* ==========================================================
+       Shell: shared navigation link (rail + sheet)
+       ========================================================== */
+    .navlist { display: grid; margin: 0; padding: 0; list-style: none; }
+    .navlink {
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      border-radius: 0 var(--r-sm) var(--r-sm) 0;
+      color: var(--text-2);
+      line-height: 1.3;
+    }
+    .navlink[aria-current="location"] {
+      color: var(--text);
+      font-weight: 600;
+      background: var(--surface);
+      box-shadow: inset 3px 0 0 var(--accent);
+    }
+    .navlink:focus-visible { outline-offset: -2px; }
+
+    /* ==========================================================
+       Shell: one <header> and one <nav aria-label="Sections">.
+       Below 1024px it is a 56px sticky top bar with a "Sections"
+       sheet; from 1024px it is the sticky left rail. The half that
+       does not apply is display:none, so one nav is exposed per width.
+       ========================================================== */
+    .shell {
       position: sticky;
-      top:0;
-      z-index:10;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      height: var(--bar-h);
+      padding-left: max(var(--gutter), env(safe-area-inset-left), calc((100% - var(--column)) / 2));
+      padding-right: max(var(--gutter), env(safe-area-inset-right), calc((100% - var(--column)) / 2));
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      -webkit-backdrop-filter: saturate(180%) blur(12px);
+      backdrop-filter: saturate(180%) blur(12px);
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: -0.01em;
+      color: var(--text);
+    }
+    .shell-title, .rail-list, .rail-foot { display: none; }
+    /* Without JS nothing closes the sheet, so hide the whole nav below 1024px;
+       the brand link and the hero jump chips are the navigation there. */
+    @media (max-width: 1023.98px) {
+      .no-js .shell-nav { display: none; }
     }
 
-    .topbar .wrap{
-      padding: 14px 20px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
+    /* Top bar: "Sections" disclosure */
+    .sheet > summary {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 44px;
+      padding: 0 12px 0 14px;
+      list-style: none;
+      background: var(--bg);
+      border: 1px solid var(--border-strong);
+      border-radius: var(--r-sm);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .sheet > summary::-webkit-details-marker { display: none; }
+    .sheet[open] > summary { background: var(--surface); border-color: var(--muted); }
+    .sheet .chev { flex: none; color: var(--muted); }
+    .sheet[open] .chev { transform: rotate(180deg); }
+
+    /* Scrim: part of the summary, so a tap outside the panel closes it even without JS. */
+    .sheet[open] > summary::after {
+      content: "";
+      position: absolute;
+      top: calc(100% + 1px);
+      left: 0;
+      right: 0;
+      height: calc(100vh - var(--bar-h));
+      height: calc(100dvh - var(--bar-h));
+      background: var(--scrim);
+      cursor: default;
+    }
+    .sheet-panel {
+      position: absolute;
+      top: calc(100% + 1px);
+      left: 0;
+      right: 0;
+      max-height: calc(100vh - var(--bar-h));
+      max-height: calc(100dvh - var(--bar-h));
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .sheet-panel .navlist {
+      gap: 2px;
+      margin: 0 auto;
+      padding: 8px max(0px, calc(var(--gutter) - 16px)) 16px;
+    }
+    .sheet-panel .navlink { min-height: 48px; padding: 0 16px; font-size: 16px; }
+
+    /* Rail parts (shown from 1024px) */
+    .shell-title {
+      margin: 6px 0 0;
+      padding: 0 12px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .rail-list { gap: 4px; }
+    .rail-list .navlink { min-height: 40px; font-size: 15px; }
+    .rail-foot {
+      margin-top: auto;
+      padding-top: 24px;
+    }
+    .rail-foot-inner { padding-top: 16px; border-top: 1px solid var(--border); }
+    .rail-label {
+      margin: 0 0 4px;
+      padding: 0 12px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .rail-contact { margin: 0; padding: 0; list-style: none; }
+    .rail-contact a {
+      display: flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 12px;
+      border-radius: var(--r-sm);
+      font-size: 14px;
+      color: var(--text-2);
+    }
+    .rail-contact a:focus-visible { outline-offset: -2px; }
+
+    /* ==========================================================
+       Typography
+       ========================================================== */
+    h1, h2, h3, h4 {
+      margin: 0;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      color: var(--text);
+    }
+    h1 { font-size: 36px; line-height: 1.2; letter-spacing: -0.025em; }
+    h2 {
+      font-size: 24px;
+      line-height: 1.3;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+    h3 { font-size: 20px; line-height: 1.35; }
+    h4 { font-size: 16px; line-height: 1.4; }
+    p { margin: 0 0 16px; }
+
+    .eyebrow {
+      margin: 0 0 8px;
+      font-size: 13px;
+      font-weight: 600;
+      line-height: 1.4;
+      color: var(--accent);
+    }
+    .meta { font-size: 14px; line-height: 1.5; color: var(--muted); margin: 0; }
+    .nowrap { white-space: nowrap; }
+    .lede { color: var(--text-2); }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.92em;
     }
 
-    .brand{
-      font-size:14px;
-      color:var(--muted);
+    /* ==========================================================
+       Hero
+       ========================================================== */
+    .hero { padding: 72px 0 64px; }
+    .hero h1 { margin-bottom: 16px; }
+    .hero .abstract {
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--text-2);
+      margin-bottom: 32px;
+    }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 10px 20px;
+      border-radius: var(--r-sm);
+      border: 1px solid transparent;
+      font-size: 15px;
+      font-weight: 600;
+      line-height: 1.2;
+      text-decoration: none;
+    }
+    .btn-primary { background: var(--accent); color: var(--on-accent); }
+    .btn-secondary { background: var(--bg); color: var(--text); border-color: var(--border-strong); }
+    .hero .contact-line { font-size: 14px; color: var(--muted); margin: 0; }
+    .hero .contact-line a { text-decoration: underline; }
+
+    /* Jump chips: the visible navigation on mobile and tablet */
+    .jump {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .jump-label {
+      margin: 0 0 12px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .jump-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .jump-list a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
     }
 
-    .nav a{
-      margin-left:16px;
-      text-decoration:none;
-      color:var(--muted);
-      font-size:14px;
+    /* ==========================================================
+       Sections
+       ========================================================== */
+    main section { padding: 0 0 64px; }
+    /* Lets the last section reach the scroll-spy band (40-45% of the viewport) at max scroll. */
+    main section:last-of-type { min-height: 55vh; }
+    main h2[tabindex="-1"]:focus:not(:focus-visible) { outline: none; }
+    .group-title { margin: 32px 0 16px; }
+    #samples .group-title:first-of-type { margin-top: 0; }
+
+    /* Tiles: focus areas, and education & recognition */
+    .focus-list, .tile-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .focus-list li, .tile-list li {
+      padding: 16px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+    }
+    .focus-list h3 { font-size: 16px; line-height: 1.4; margin-bottom: 4px; }
+    .focus-list p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--text-2); }
+    .tile-list h4 { margin-bottom: 2px; }
+    .tile-list p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--text-2); }
+    .tile-list .meta { margin-bottom: 6px; }
+    .languages { margin: 16px 0 0; font-size: 15px; color: var(--text-2); }
+
+    /* Note (alert) */
+    .note {
+      margin: 0 0 32px;
+      padding: 14px 16px 14px 18px;
+      background: var(--note-bg);
+      border: 1px solid var(--note-border);
+      border-left: 4px solid var(--accent);
+      border-radius: var(--r-md);
+      color: var(--note-text);
+      font-size: 15px;
+      line-height: 1.55;
+    }
+    .note p { margin: 0; }
+    .note strong { display: block; margin-bottom: 2px; }
+
+    /* Cards */
+    .card-grid {
+      display: grid;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 20px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+    }
+    .card h4 { margin-bottom: 8px; }
+    .card p { font-size: 15px; line-height: 1.55; color: var(--text-2); }
+    .card .eyebrow { font-size: 13px; line-height: 1.4; color: var(--muted); margin-bottom: 6px; }
+    .card .tags { font-size: 13px; color: var(--muted); margin: 0 0 12px; }
+    .card .more {
+      margin-top: auto;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent);
+    }
+    .card-link h4 a { color: var(--text); }
+    .card-link h4 a::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: var(--r-lg);
+    }
+    .card-link h4 a:focus-visible { outline: none; }
+    .card-link h4 a:focus-visible::after {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
     }
 
-    .nav a:hover{color:var(--text)}
-
-    /* Typography */
-    h1{
-      font-size:40px;
-      line-height:1.15;
-      letter-spacing:-0.03em;
-      margin: 0 0 10px;
+    /* Proof chips: what was checked, said in words (never by color alone) */
+    .proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 0 0 16px;
+      padding: 0;
+      list-style: none;
     }
-
-    .subtitle{
-      color:var(--muted);
-      margin:0 0 18px;
-      font-size:15px;
+    .proof li {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 2px 10px 2px 8px;
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--text);
     }
+    .proof svg { flex: none; color: var(--accent); }
 
-    h2{
-      font-size:18px;
-      margin: 42px 0 10px;
-      letter-spacing:-0.01em;
+    .browse { margin: 24px 0 0; font-size: 15px; }
+    .browse a { font-weight: 600; }
+
+    /* Media entries (experience, projects) */
+    .stack { display: grid; gap: 16px; }
+    .entry {
+      padding: 24px;
+      border: 1px solid var(--border);
+      border-radius: var(--r-lg);
+      background: var(--bg);
     }
+    .entry > h3, .entry .media-body > h3 { margin-bottom: 4px; }
+    .entry > .meta, .entry .media-body > .meta { margin-bottom: 12px; }
+    .entry > p { color: var(--text-2); }
+    .entry p:last-child { margin-bottom: 0; }
+    .entry ul.points { margin: 0 0 16px; padding-left: 20px; color: var(--text-2); font-size: 15px; }
+    .entry ul.points li + li { margin-top: 4px; }
+    .entry > .links { margin-top: 16px; }
 
-    p{margin: 0 0 14px}
-
-    .muted{color:var(--muted)}
-
-    .quote{
-      border-left:3px solid var(--line);
-      padding-left:12px;
-      color:var(--muted);
-      margin: 16px 0 28px;
+    .media { display: flex; gap: 20px; align-items: flex-start; }
+    .media-body { min-width: 0; flex: 1; }
+    .thumb {
+      flex: none;
+      width: 112px;
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      overflow: hidden;
+      background: var(--surface);
     }
-
-    a{color:var(--link); text-decoration:none}
-    a:hover{text-decoration:underline}
-
-    /* Sections */
-    .section{
-      padding-top: 10px;
-      border-top: 1px solid var(--line);
-      margin-top: 28px;
+    .thumb-banner { width: 160px; }
+    .deliverable {
+      margin-top: 20px;
+      padding: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
     }
+    .deliverable h4 { margin-bottom: 2px; }
+    .deliverable .meta { margin-bottom: 8px; }
+    .deliverable p { font-size: 15px; color: var(--text-2); }
 
-    /* Projects */
-    .projects{
-      display:grid;
-      grid-template-columns: 1fr;
-      gap: 14px;
-      margin-top: 14px;
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px 20px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 14px;
+      font-weight: 600;
     }
-
-    .proj{
-      padding: 14px 0;
-      border-bottom: 1px solid var(--line);
-      display:flex;
-      gap: 14px;
-      align-items:center;
-    }
-
-    .thumb{
-      width:110px;
-      border-radius:10px;
-      border:1px solid var(--line);
-      overflow:hidden;
-      flex:0 0 auto;
-      background:#fafafa;
-    }
-
-    .thumb img{
-      width:100%;
-      height:auto;
-      display:block;
-    }
-
-    .proj h3{
-      margin:0 0 4px;
-      font-size:16px;
-    }
-
-    .meta{
-      font-size:13px;
-      color:var(--muted);
-      margin-bottom:8px;
-    }
-
-    .actions a{
-      font-size:14px;
-      margin-right:14px;
-    }
+    .links a { display: inline-flex; align-items: center; min-height: 32px; }
+    .ext { font-weight: 400; margin-left: 3px; }
 
     /* Skills */
-    .skills{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-top:10px;
+    .skill-groups { display: grid; gap: 24px; }
+    .skill-groups h3 {
+      font-size: 13px;
+      line-height: 1.4;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+    .badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .badges li {
+      padding: 4px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--text);
     }
 
-    .badge{
-      border:1px solid var(--line);
-      color:var(--muted);
-      padding:6px 10px;
-      border-radius:999px;
-      font-size:13px;
+    /* Contact */
+    .contact-list {
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--border);
+    }
+    .contact-list li { border-bottom: 1px solid var(--border); }
+    .contact-list a {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2px 16px;
+      min-height: 48px;
+      padding: 10px 0;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .contact-list .label { color: var(--muted); }
+    .contact-list .value { color: var(--accent); overflow-wrap: anywhere; }
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0 calc(40px + env(safe-area-inset-bottom));
+      font-size: 14px;
+      color: var(--muted);
+    }
+    .site-footer p { margin: 0; }
+
+    /* ==========================================================
+       Hover (pointer devices only) and motion (opt-in only)
+       ========================================================== */
+    @media (hover: hover) {
+      a:hover { color: var(--accent-hover); text-decoration: underline; }
+      .brand:hover { color: var(--text); text-decoration: none; }
+      .navlink:hover { color: var(--text); background: var(--surface); text-decoration: none; }
+      .rail-contact a:hover { color: var(--text); background: var(--surface); text-decoration: none; }
+      .sheet > summary:hover { background: var(--surface); }
+      .jump-list a:hover { color: var(--text); border-color: var(--accent); text-decoration: none; }
+      .btn:hover { text-decoration: none; }
+      .btn-primary:hover { background: var(--accent-hover); color: var(--on-accent); }
+      .btn-secondary:hover { background: var(--surface); color: var(--text); border-color: var(--muted); }
+      .card-link:hover { border-color: var(--accent); }
+      .card-link h4 a:hover { color: var(--text); text-decoration: none; }
+      .card-link:hover .more { text-decoration: underline; }
+      .contact-list a:hover { text-decoration: none; }
+      .contact-list a:hover .value { color: var(--accent-hover); text-decoration: underline; }
     }
 
-    footer{
-      border-top:1px solid var(--line);
-      margin-top:48px;
-      padding-top:18px;
-      color:var(--muted);
-      font-size:13px;
+    @media (prefers-reduced-motion: no-preference) {
+      .btn { transition: background-color .15s ease, border-color .15s ease; }
+      .card { transition: border-color .15s ease, background-color .15s ease; }
+      .navlink, .rail-contact a, .jump-list a, .sheet > summary { transition: background-color .15s ease, border-color .15s ease, color .15s ease; }
+      .sheet .chev { transition: transform .15s ease; }
     }
 
-    @media (max-width:640px){
-      h1{font-size:32px}
-      .proj{flex-direction:column; align-items:flex-start}
-      .thumb{width:100%}
-      .topbar .wrap{flex-direction:column; align-items:flex-start}
-      .nav a{margin-left:0; margin-right:14px}
+    /* ==========================================================
+       Mobile: below 640px (16px gutter, one column)
+       ========================================================== */
+    @media (max-width: 639px) {
+      :root { --gutter: 16px; }
+      h1 { font-size: 30px; }
+      .hero { padding: 40px 0 48px; }
+      .hero .abstract { font-size: 17px; margin-bottom: 28px; }
+      .cta-row { flex-direction: column; }
+      .cta-row .btn, #resume .btn { width: 100%; }
+      .brand { font-size: 14px; }
+
+      .entry { padding: 20px; }
+      .deliverable { padding: 14px; }
+      /* Portrait cover floats beside the text; long lines then use the full width. */
+      .deliverable.media { display: flow-root; }
+      .deliverable .thumb { float: left; width: 96px; margin: 0 14px 8px 0; }
+      .deliverable .links { clear: left; padding-top: 4px; }
+
+      /* Jungle tree: under the text, shown whole. */
+      .media-banner { flex-direction: column; align-items: stretch; gap: 16px; }
+      .thumb-banner {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 12px;
+      }
+      .thumb-banner img {
+        width: auto;
+        height: 240px; /* reserves the box before the lazy image loads (no layout shift) */
+        max-height: 240px;
+        object-fit: contain;
+        border-radius: var(--r-sm);
+      }
+
+      .contact-list a {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 0;
+        padding: 8px 0;
+      }
+      .contact-list .label { font-size: 13px; line-height: 1.4; }
+    }
+
+    /* ==========================================================
+       Tablet and up: 640px+ (2-up grids)
+       ========================================================== */
+    @media (min-width: 640px) {
+      .card-grid, .focus-list, .tile-list { grid-template-columns: 1fr 1fr; }
+      .skill-groups { grid-template-columns: 1fr 1fr; gap: 28px 32px; }
+      main section { padding-bottom: 72px; }
+    }
+
+    /* Touch layouts (below 1024px): taller targets */
+    @media (max-width: 1023px) {
+      .btn { min-height: 48px; }
+      .links a { min-height: 44px; }
+      .links { gap: 0 20px; }
+      .browse { margin-top: 12px; }
+      .browse a { display: inline-block; padding: 10px 0; }
+    }
+
+    /* ==========================================================
+       Desktop: 1024px+ (256px rail + 720px column, no top bar)
+       ========================================================== */
+    @media (min-width: 1024px) {
+      :root { --bar-h: 0px; }
+      body {
+        display: grid;
+        grid-template-columns: var(--rail-w) minmax(0, 1fr);
+      }
+      .sheet, .jump { display: none; }
+      .shell {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        align-self: start;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+        height: 100vh;
+        height: 100dvh;
+        overflow-y: auto;
+        padding: 40px 16px 24px;
+        background: var(--bg);
+        border-bottom: 0;
+        border-right: 1px solid var(--border);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+      }
+      .brand {
+        display: block;
+        min-height: 0;
+        padding: 0 12px;
+        font-size: 17px;
+        line-height: 1.3;
+        letter-spacing: -0.015em;
+      }
+      .shell-title, .rail-foot { display: block; }
+      .shell-nav { margin-top: 32px; }
+      .rail-list { display: grid; }
+      main.container, .site-footer { grid-column: 2; }
+      main.container { grid-row: 1; }
+      .site-footer { grid-row: 2; }
+      /* Keep the column near the rail on wide screens: the gap grows from 24px at 1024px
+         to a fixed 120px from 1216px up, with no jump at any width. */
+      main.container, .site-footer > .container {
+        margin-left: clamp(0px, calc((100% - var(--column) - 2 * var(--gutter)) / 2), 96px);
+        margin-right: auto;
+      }
+      .hero { padding: 88px 0 72px; }
+    }
+
+    @media print {
+      .shell, .jump, .skip-link { display: none !important; }
+      body { display: block; }
     }
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
-<div class="topbar">
-  <div class="wrap">
-    <div class="brand">Jordan Yan • Technical Writer • AI &amp; Developer Docs</div>
-    <div class="nav">
-      <a href="#focus">Focus</a>
-      <a href="#samples">Samples</a>
-      <a href="#work">Work</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#resume">Resume</a>
+  <header class="shell">
+    <a class="brand" href="#top">Jordan Yan</a>
+    <p class="shell-title">Technical Writer<br>AI &amp; Developer Documentation</p>
+    <nav class="shell-nav" aria-label="Sections">
+      <details class="sheet" id="sheet">
+        <summary>Sections
+          <svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="sheet-panel">
+          <ul class="navlist container">
+            <li><a class="navlink" href="#focus" data-spy>Focus areas</a></li>
+            <li><a class="navlink" href="#samples" data-spy>Writing samples</a></li>
+            <li><a class="navlink" href="#experience" data-spy>Experience &amp; education</a></li>
+            <li><a class="navlink" href="#projects" data-spy>Projects</a></li>
+            <li><a class="navlink" href="#skills" data-spy>Skills</a></li>
+            <li><a class="navlink" href="#resume" data-spy>Resume &amp; contact</a></li>
+          </ul>
+        </div>
+      </details>
+      <ul class="navlist rail-list">
+        <li><a class="navlink" href="#focus" data-spy>Focus areas</a></li>
+        <li><a class="navlink" href="#samples" data-spy>Writing samples</a></li>
+        <li><a class="navlink" href="#experience" data-spy>Experience &amp; education</a></li>
+        <li><a class="navlink" href="#projects" data-spy>Projects</a></li>
+        <li><a class="navlink" href="#skills" data-spy>Skills</a></li>
+        <li><a class="navlink" href="#resume" data-spy>Resume &amp; contact</a></li>
+      </ul>
+    </nav>
+    <div class="rail-foot">
+      <div class="rail-foot-inner">
+        <p class="rail-label" id="rail-contact-label">Contact</p>
+        <ul class="rail-contact" aria-labelledby="rail-contact-label">
+          <li><a href="mailto:jordanxianyan@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/jordanxyan/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+          <li><a href="https://github.com/kopyk" target="_blank" rel="noopener noreferrer">GitHub<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+          <li><a href="Jordan_Yan_Technical_Writer_2026.pdf" type="application/pdf">Resume (PDF)</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</div>
+  </header>
 
-<div class="wrap">
-  <h1>Jordan Yan</h1>
-  <p class="subtitle">
-    <strong>Technical Writer — AI &amp; Developer Documentation</strong> • San Luis Obispo, CA •
-    <a href="mailto:jordanxianyan@gmail.com">jordanxianyan@gmail.com</a>
-  </p>
-
-  <p class="quote">“If you can’t explain it simply, you don’t understand it well enough.”</p>
-
-  <p class="muted">
-    I write clear, accurate documentation for AI systems: model cards, developer tutorials,
-    API references, and evaluation guides that help engineers build with AI and help users trust it.
-    I also write for defense and aerospace, where the same precision and traceability matter.
-    My background is in compliance-driven documentation, including public HIPAA and ASC X12 companion
-    guides for DC Medicaid EDI transactions.
-  </p>
-
-  <!-- Focus -->
-  <div id="focus" class="section">
-    <h2>Focus Areas</h2>
-    <ul class="muted" style="padding-left:18px">
-      <li><strong>AI documentation:</strong> model cards, responsible-AI disclosures, and LLM evaluation guides aligned to the NIST AI RMF</li>
-      <li><strong>Developer documentation:</strong> API references, tutorials, and quickstarts with working, tested code</li>
-      <li><strong>Defense &amp; aerospace:</strong> technical manuals, maintenance procedures, and interface control documents written to MIL-STD conventions</li>
-      <li><strong>Compliance &amp; traceability:</strong> regulated documentation, requirements traceability, revision control, and SME review cycles</li>
-    </ul>
-  </div>
-
-  <!-- Samples -->
-  <div id="samples" class="section">
-    <h2>AI Writing Samples</h2>
-    <p class="muted">
-      Original samples published on my documentation site. Systems are fictional unless noted.
-    </p>
-
-    <div class="projects">
-      <div class="proj">
-        <div>
-          <h3>AI Model Card: Runway Debris Detection</h3>
-          <p class="meta">Model documentation • DoD AI Ethical Principles • NIST AI RMF</p>
-          <p class="muted">Intended use, condition-level performance, failure modes, and human-oversight controls for a computer-vision model.</p>
-          <div class="actions">
-            <a href="https://docs.jordanyan.com/docs/samples/model-card" target="_blank">Read sample</a>
-          </div>
-        </div>
+  <main id="main" class="container" tabindex="-1">
+    <div class="hero" id="top">
+      <p class="eyebrow"><span class="nowrap">Technical Writer</span> · <span class="nowrap">AI &amp; Developer Documentation</span> · <span class="nowrap">San Luis Obispo, CA</span></p>
+      <h1>Jordan Yan</h1>
+      <p class="abstract">
+        I write clear, accurate documentation for AI systems: model cards, developer tutorials,
+        API references, and evaluation guides that help engineers build with AI and help users trust it.
+        I also write for defense and aerospace, where the same precision and traceability matter.
+        My background is in compliance-driven documentation, including public HIPAA and ASC X12 companion
+        guides for DC Medicaid EDI transactions.
+      </p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#samples">View writing samples</a>
+        <a class="btn btn-secondary" href="Jordan_Yan_Technical_Writer_2026.pdf" type="application/pdf">Download resume (PDF)</a>
       </div>
-      <div class="proj">
-        <div>
-          <h3>Tutorial: Build a Q&amp;A Bot Over Your Docs</h3>
-          <p class="meta">Developer tutorial • RAG • Python • Claude API</p>
-          <p class="muted">Explains retrieval-augmented generation and walks developers through working, tested code for my ask-my-docs tool.</p>
-          <div class="actions">
-            <a href="https://docs.jordanyan.com/docs/samples/rag-tutorial" target="_blank">Read sample</a>
-          </div>
-        </div>
-      </div>
-      <div class="proj">
-        <div>
-          <h3>API Reference: Document Classification</h3>
-          <p class="meta">REST API reference</p>
-          <p class="muted">Parameters, request and response examples, error handling, and rate limits for an AI classification endpoint.</p>
-          <div class="actions">
-            <a href="https://docs.jordanyan.com/docs/samples/api-reference" target="_blank">Read sample</a>
-          </div>
-        </div>
-      </div>
-      <div class="proj">
-        <div>
-          <h3>LLM Evaluation Rubric: Documentation Q&amp;A</h3>
-          <p class="meta">Evaluation guide • Test-set design</p>
-          <p class="muted">Pass/fail grading criteria, a balanced test set, and reporting by question type to catch hallucinated answers.</p>
-          <div class="actions">
-            <a href="https://docs.jordanyan.com/docs/samples/eval-rubric" target="_blank">Read sample</a>
-          </div>
-        </div>
+      <p class="contact-line">Or email <a href="mailto:jordanxianyan@gmail.com">jordanxianyan@gmail.com</a></p>
+
+      <div class="jump">
+        <p class="jump-label" id="jump-label">On this page</p>
+        <ul class="jump-list" aria-labelledby="jump-label">
+          <li><a href="#focus">Focus</a></li>
+          <li><a href="#samples">Samples</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#resume">Resume</a></li>
+        </ul>
       </div>
     </div>
 
-    <h2>Defense &amp; Aerospace Writing Samples</h2>
-    <div class="projects">
-      <div class="proj">
-        <div>
-          <h3>Maintenance Procedure: UAS Propeller Replacement</h3>
-          <p class="meta">Work package (MIL-STD-40051-2 layout) • MIL-STD-38784 advisories</p>
-          <p class="muted">Field-level removal and installation procedure with WARNING/CAUTION/NOTE advisories, tools and parts tables, and torque values.</p>
-          <div class="actions">
-            <a href="https://docs.jordanyan.com/docs/samples/maintenance-procedure" target="_blank">Read sample</a>
+    <section id="focus" aria-labelledby="focus-title">
+      <h2 id="focus-title" tabindex="-1">Focus areas</h2>
+      <ul class="focus-list">
+        <li>
+          <h3>AI documentation</h3>
+          <p>Model cards and responsible-AI disclosures mapped to the NIST AI RMF, and LLM evaluation rubrics.</p>
+        </li>
+        <li>
+          <h3>Developer documentation</h3>
+          <p>API references and tutorials, with tutorial code tested in CI.</p>
+        </li>
+        <li>
+          <h3>Defense &amp; aerospace</h3>
+          <p>Technical manuals, maintenance procedures, and interface control documents written to MIL-STD conventions.</p>
+        </li>
+        <li>
+          <h3>Compliance &amp; traceability</h3>
+          <p>Regulated documentation, requirements traceability, revision control, and SME review cycles.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section id="samples" aria-labelledby="samples-title">
+      <h2 id="samples-title" tabindex="-1">Writing samples</h2>
+      <div class="note" role="note">
+        <p><strong>About these samples</strong>All samples are original work written for this portfolio. Systems, part numbers and data are fictional. No CUI, export-controlled (ITAR/EAR) or proprietary information is included.</p>
+      </div>
+
+      <h3 class="group-title">AI</h3>
+      <ul class="card-grid">
+        <li>
+          <article class="card card-link">
+            <p class="eyebrow">Model card</p>
+            <h4><a href="https://ai.jordanyan.com/docs/ai/model-card" target="_blank" rel="noopener noreferrer">AI Model Card: Runway Debris Detection<span class="vh"> (opens in a new tab)</span></a></h4>
+            <p>Intended use, condition-level performance, failure modes, and human-oversight controls for a computer-vision model.</p>
+            <p class="tags">DoD AI Ethical Principles · NIST AI RMF</p>
+            <p class="vh">Proof:</p>
+            <ul class="proof">
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Sources checked</li>
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Totals verified</li>
+            </ul>
+            <span class="more" aria-hidden="true">Read sample ↗</span>
+          </article>
+        </li>
+        <li>
+          <article class="card card-link">
+            <p class="eyebrow">Developer tutorial</p>
+            <h4><a href="https://ai.jordanyan.com/docs/ai/rag-tutorial" target="_blank" rel="noopener noreferrer">Tutorial: Build a Q&amp;A Bot Over Your Docs<span class="vh"> (opens in a new tab)</span></a></h4>
+            <p>Explains retrieval-augmented generation and walks developers through working, tested code for my ask-my-docs tool.</p>
+            <p class="tags">RAG · Python · Claude API</p>
+            <p class="vh">Proof:</p>
+            <ul class="proof">
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Code tested in CI</li>
+            </ul>
+            <span class="more" aria-hidden="true">Read sample ↗</span>
+          </article>
+        </li>
+        <li>
+          <article class="card card-link">
+            <p class="eyebrow">API reference</p>
+            <h4><a href="https://ai.jordanyan.com/docs/ai/api-reference" target="_blank" rel="noopener noreferrer">API Reference: Document Classification<span class="vh"> (opens in a new tab)</span></a></h4>
+            <p>Parameters, request and response examples, error handling, and rate limits for an AI classification endpoint.</p>
+            <p class="tags">REST API reference</p>
+            <p class="vh">Proof:</p>
+            <ul class="proof">
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>OpenAPI spec validated</li>
+            </ul>
+            <span class="more" aria-hidden="true">Read sample ↗</span>
+          </article>
+        </li>
+        <li>
+          <article class="card card-link">
+            <p class="eyebrow">Evaluation guide</p>
+            <h4><a href="https://ai.jordanyan.com/docs/ai/eval-rubric" target="_blank" rel="noopener noreferrer">LLM Evaluation Rubric: Documentation Q&amp;A<span class="vh"> (opens in a new tab)</span></a></h4>
+            <p>Pass/fail grading criteria, a balanced test set, and reporting by question type to catch hallucinated answers.</p>
+            <p class="tags">Test-set design</p>
+            <p class="vh">Proof:</p>
+            <ul class="proof">
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Math verified</li>
+            </ul>
+            <span class="more" aria-hidden="true">Read sample ↗</span>
+          </article>
+        </li>
+      </ul>
+
+      <h3 class="group-title">Defense &amp; aerospace</h3>
+      <ul class="card-grid">
+        <li>
+          <article class="card card-link">
+            <p class="eyebrow">Maintenance procedure</p>
+            <h4><a href="https://ai.jordanyan.com/docs/defense/maintenance-procedure" target="_blank" rel="noopener noreferrer">Maintenance Procedure: UAS Propeller Replacement<span class="vh"> (opens in a new tab)</span></a></h4>
+            <p>Field-level removal and installation procedure with WARNING/CAUTION/NOTE advisories, tools and parts tables, and torque values.</p>
+            <p class="tags">Work package (MIL-STD-40051-2 layout) · MIL-STD-38784B advisories</p>
+            <p class="vh">Proof:</p>
+            <ul class="proof">
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Standards cited</li>
+            </ul>
+            <span class="more" aria-hidden="true">Read sample ↗</span>
+          </article>
+        </li>
+        <li>
+          <article class="card card-link">
+            <p class="eyebrow">Interface control document</p>
+            <h4><a href="https://ai.jordanyan.com/docs/defense/interface-control-document" target="_blank" rel="noopener noreferrer">Interface Control Document: Telemetry Message<span class="vh"> (opens in a new tab)</span></a></h4>
+            <p>Byte-level air-vehicle-to-ground-station message definition with units, scaling, ranges, and verification methods.</p>
+            <p class="tags">ICD excerpt · Requirements traceability</p>
+            <p class="vh">Proof:</p>
+            <ul class="proof">
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Layout verified</li>
+            </ul>
+            <span class="more" aria-hidden="true">Read sample ↗</span>
+          </article>
+        </li>
+      </ul>
+
+      <p class="browse"><a href="https://ai.jordanyan.com/" target="_blank" rel="noopener noreferrer">Browse all samples at <span class="nowrap">ai.jordanyan.com<span class="vh"> (opens in a new tab)</span> <span aria-hidden="true">↗</span></span></a></p>
+    </section>
+
+    <section id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title" tabindex="-1">Experience &amp; education</h2>
+      <article class="entry">
+        <h3>Technical Writer Intern</h3>
+        <p class="meta">Gainwell Technologies · Irving, TX · <span class="nowrap">May–Aug 2025</span></p>
+        <p class="lede">
+          Wrote and edited public, HIPAA-compliant Companion Guides for DC Medicaid (DHCF) that clarify
+          the ASC X12N 5010 standards for trading partners. Both guides are published by Gainwell.
+        </p>
+        <ul class="points">
+          <li>Contributed to an 80-page Project Management Plan and Software Design Document that became the team's permanent SOP for EDI workflows.</li>
+          <li>Wrote and revised 6 companion guides for the Washington, D.C. EDI team, reducing vendor onboarding questions by ~30%.</li>
+          <li>Designed and presented an interactive Power BI vendor-tracking dashboard to 15+ stakeholders, adopted for ongoing project monitoring.</li>
+          <li>Consolidated 20+ SME contributions into final deliverables under aggressive deadlines while maintaining HIPAA and ASC X12 compliance.</li>
+        </ul>
+        <div class="deliverable media">
+          <div class="thumb">
+            <img src="assets/837I-title.png" width="480" height="626" loading="lazy" decoding="async"
+                 alt="Title page of the DC Medicaid 837I Fee-for-Service Claims Companion Guide, Version 1.3, dated June 17, 2025">
+          </div>
+          <div class="media-body">
+            <h4>837I FFS Claims Companion Guide</h4>
+            <p class="meta">v1.3 · 21 pages <span class="nowrap">· June 2025</span></p>
+            <p>Wrote the 837I v1.3 update: institutional claims rules, SNIP validation, and submission constraints.</p>
+            <ul class="links">
+              <li><a href="https://www.gainwelltechnologies.com/wp-content/uploads/2025/07/DC_837I-FFS-Claims-Companion-Guide-v1.3.pdf" target="_blank" rel="noopener noreferrer">Official PDF (Gainwell)<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+            </ul>
           </div>
         </div>
-      </div>
-      <div class="proj">
-        <div>
-          <h3>Interface Control Document: Telemetry Message</h3>
-          <p class="meta">ICD excerpt • Requirements traceability</p>
-          <p class="muted">Byte-level air-vehicle-to-ground-station message definition with units, scaling, ranges, and verification methods.</p>
-          <div class="actions">
-            <a href="https://docs.jordanyan.com/docs/samples/interface-control-document" target="_blank">Read sample</a>
+        <div class="deliverable media">
+          <div class="thumb">
+            <img src="assets/276-title.png" width="480" height="625" loading="lazy" decoding="async"
+                 alt="Title page of the DC Medicaid 276/277 Fee-for-Service Claims Companion Guide, Version 1.1, dated February 5, 2025">
+          </div>
+          <div class="media-body">
+            <h4>276/277 FFS Claims Companion Guide</h4>
+            <p class="meta">v1.1 · 30 pages <span class="nowrap">· February 2025</span></p>
+            <p>Edited and enhanced the 276/277 v1.1 guide, then reformatted it into a cited, scannable Markdown version.</p>
+            <ul class="links">
+              <li><a href="https://www.gainwelltechnologies.com/wp-content/uploads/2025/07/DC_276_277FFS-FFS-Claims-Companion-Guide-v1.1.pdf" target="_blank" rel="noopener noreferrer">Official PDF (Gainwell)<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+              <li><a href="https://github.com/kopyk/gainwell-dhcf-companion-guides/blob/main/276-277-enhanced.md" target="_blank" rel="noopener noreferrer">Markdown version<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+            </ul>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
+        <ul class="links">
+          <li><a href="https://github.com/kopyk/gainwell-dhcf-companion-guides" target="_blank" rel="noopener noreferrer">GitHub repository<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+        </ul>
+      </article>
 
-  <!-- Work -->
-  <div id="work" class="section">
-    <h2>Gainwell Technologies — Technical Writing Intern</h2>
-    <p class="muted">
-      Authored public, HIPAA-compliant Companion Guides for DC Medicaid (DHCF),
-      clarifying ASC X12N 5010 standards for trading partners.
-    </p>
+      <h3 class="group-title" id="education">Education &amp; recognition</h3>
+      <ul class="tile-list">
+        <li>
+          <h4>B.A. in English</h4>
+          <p class="meta">University of Houston · <span class="nowrap">December 2025</span></p>
+          <p>Relevant coursework: Technical Communications, Professional Writing, Advanced Composition.</p>
+        </li>
+        <li>
+          <h4>Finalist, Arm Graduate Technical Writer</h4>
+          <p class="meta">Arm · Austin, TX</p>
+          <p>Advanced to the final panel interview stage with Staff and Senior Information Developers.</p>
+        </li>
+        <li>
+          <h4>Editorial Intern, Gulf Coast Journal</h4>
+          <p class="meta"><span class="nowrap">Sept 2024</span> – <span class="nowrap">May 2025</span></p>
+          <p>Edited 50+ submissions and managed the full publication cycle for 3 print and digital issues serving 2,000+ readers. A new submission workflow cut average review time from 14 to 7 days.</p>
+        </li>
+        <li>
+          <h4>Writing Center Lead, University of Houston Writing Center</h4>
+          <p class="meta"><span class="nowrap">Jan 2024</span> – <span class="nowrap">May 2025</span></p>
+          <p>Workshops on research, editing, and technical writing for 100+ students.</p>
+        </li>
+      </ul>
+      <p class="languages"><strong>Languages:</strong> English (native), Mandarin and Cantonese (fluent).</p>
+    </section>
 
-    <div class="projects">
-      <div class="proj">
-        <div class="thumb">
-          <img src="https://github.com/kopyk/gainwell-dhcf-companion-guides/raw/main/837I-title.png" alt="837I Companion Guide">
-        </div>
-        <div>
-          <h3>837I FFS Claims Companion Guide</h3>
-          <p class="meta">21 pages • June 2025</p>
-          <p class="muted">Institutional claims rules, SNIP validation, and submission constraints.</p>
-          <div class="actions">
-            <a href="https://github.com/kopyk/gainwell-dhcf-companion-guides/raw/main/DC_837I-FFS-Claims-Companion-Guide-v1.3.pdf" target="_blank">PDF</a>
-            <a href="https://github.com/kopyk/gainwell-dhcf-companion-guides" target="_blank">Repo</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Projects -->
-  <div id="projects" class="section">
-    <h2>Personal Projects</h2>
-
-    <div class="projects">
-      <div class="proj">
-        <div>
+    <section id="projects" aria-labelledby="projects-title">
+      <h2 id="projects-title" tabindex="-1">Projects</h2>
+      <div class="stack">
+        <article class="entry">
           <h3>ask-my-docs</h3>
-          <p class="meta">Python • Claude API • Retrieval-augmented generation</p>
-          <p class="muted">
+          <p class="meta">Python · Claude API · Retrieval-augmented generation · MCP server</p>
+          <p class="lede">
             A command-line tool that answers questions about a folder of Markdown documentation.
             It finds the relevant sections, sends them to Claude, and returns an answer with sources.
+            The companion tutorial builds a simplified version step by step.
           </p>
-          <div class="actions">
-            <a href="https://github.com/kopyk/ask-my-docs" target="_blank">GitHub</a>
-            <a href="https://docs.jordanyan.com/docs/samples/rag-tutorial" target="_blank">Tutorial</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="proj">
-        <div class="thumb">
-          <img src="https://raw.githubusercontent.com/kopyk/jungle-framework/main/static/img/decision-tree-early.svg" alt="Jungle Decision Framework">
-        </div>
-        <div>
-          <h3>Jungle Decision Framework</h3>
-          <p class="meta">Documentation system • Docusaurus • GitHub Pages</p>
-          <p class="muted">
-            Designed and authored a structured documentation site that teaches complex decision-making
-            through rules, flowcharts, and progressive mental models.
-          </p>
-          <ul class="muted" style="padding-left:18px">
-            <li>Multi-page documentation architecture</li>
-            <li>Visual decision trees (SVG + Mermaid)</li>
-            <li>User progression from beginner to advanced</li>
+          <ul class="points">
+            <li>56 pytest tests pass, and a retrieval eval scores Recall@4 at 10/10 on frozen fixtures (10 questions, so a rough check rather than a precise score).</li>
+            <li>GitHub Actions CI runs the tests on Python 3.10 and 3.13 and fails the build if Recall@4 drops below 100%.</li>
+            <li>An MCP server exposes the same retrieval as a <code>search_docs</code> tool for Claude Code and Claude Desktop.</li>
+            <li>CHANGELOG written from the real commit history.</li>
           </ul>
-          <div class="actions">
-            <a href="https://docs.jordanyan.com/docs/jungle-decision-framework" target="_blank">Live site</a>
-            <a href="https://github.com/kopyk/jungle-framework" target="_blank">Source</a>
-          </div>
-        </div>
-      </div>
+          <p class="vh">Proof:</p>
+          <ul class="proof">
+            <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>56 tests · CI · Recall@4 10/10</li>
+          </ul>
+          <ul class="links">
+            <li><a href="https://github.com/kopyk/ask-my-docs" target="_blank" rel="noopener noreferrer">GitHub<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+            <li><a href="https://ai.jordanyan.com/docs/ai/rag-tutorial" target="_blank" rel="noopener noreferrer">Tutorial<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+          </ul>
+        </article>
 
-      <div class="proj">
-        <div class="thumb"></div>
+        <article class="entry">
+          <div class="media media-banner">
+            <div class="media-body">
+              <h3>Jungle Decision Framework</h3>
+              <p class="meta">Personal documentation project · Docusaurus · GitHub Pages</p>
+              <p class="lede">
+                Designed and authored a structured documentation site that teaches complex decision-making
+                through rules, flowcharts, and progressive mental models.
+              </p>
+              <ul class="points">
+                <li>Multi-page documentation architecture</li>
+                <li>Visual decision trees (SVG + Mermaid)</li>
+                <li>User progression from beginner to advanced</li>
+              </ul>
+              <ul class="links">
+                <li><a href="https://docs.jordanyan.com/docs/jungle-decision-framework" target="_blank" rel="noopener noreferrer">Live site<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+                <li><a href="https://github.com/kopyk/jungle-framework" target="_blank" rel="noopener noreferrer">Source<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+              </ul>
+            </div>
+            <div class="thumb thumb-banner">
+              <img src="assets/decision-tree-early.svg" width="780" height="1180" loading="lazy" decoding="async"
+                   alt="Early-game decision tree from the Jungle Decision Framework: a flowchart of yes/no questions leading to recommended actions">
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills" aria-labelledby="skills-title">
+      <h2 id="skills-title" tabindex="-1">Skills</h2>
+      <div class="skill-groups">
         <div>
-          <h3>mem-analyzer</h3>
-          <p class="meta">C++ • Doxygen • Markdown</p>
-          <p class="muted">
-            Built and documented a low-level C++ memory analysis tool for Windows processes, with
-            anchor-optimized pattern scanning (4–5× faster than a naïve scan) and full API documentation.
-          </p>
-          <div class="actions">
-            <a href="https://github.com/kopyk/mem-analyzer" target="_blank">GitHub</a>
-          </div>
+          <h3>Writing &amp; docs</h3>
+          <ul class="badges">
+            <li>Technical Writing</li>
+            <li>API Documentation</li>
+            <li>Technical Manuals</li>
+            <li>SME Interviews &amp; Review</li>
+          </ul>
+        </div>
+        <div>
+          <h3>AI &amp; evaluation</h3>
+          <ul class="badges">
+            <li>AI Model Cards</li>
+            <li>LLM Evaluation</li>
+            <li>RAG</li>
+            <li>Claude API</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Defense &amp; compliance</h3>
+          <ul class="badges">
+            <li>Interface Control Documents</li>
+            <li>Requirements Traceability</li>
+            <li>HIPAA</li>
+            <li>ASC X12 EDI 5010</li>
+            <li>Plain Language</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Tools</h3>
+          <ul class="badges">
+            <li>Python</li>
+            <li>Markdown</li>
+            <li>Docusaurus</li>
+            <li>Mermaid</li>
+            <li>Git / GitHub Pages</li>
+            <li>Confluence / Jira</li>
+            <li>Power BI</li>
+            <li>Figma</li>
+          </ul>
         </div>
       </div>
+    </section>
+
+    <section id="resume" aria-labelledby="resume-title">
+      <h2 id="resume-title" tabindex="-1">Resume &amp; contact</h2>
+      <p class="lede">For a full summary of experience and education, download the resume. The best way to reach me is email.</p>
+      <p class="lede"><strong>Work status:</strong> U.S. citizen; no current clearance; willing to undergo a background investigation.</p>
+      <a class="btn btn-secondary" href="Jordan_Yan_Technical_Writer_2026.pdf" type="application/pdf">Download resume (PDF)</a>
+      <ul class="contact-list">
+        <li><a href="mailto:jordanxianyan@gmail.com"><span class="label">Email</span><span class="value">jordanxianyan@gmail.com</span></a></li>
+        <li><a href="https://www.linkedin.com/in/jordanxyan/" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span><span class="value">linkedin.com/in/jordanxyan<span class="vh"> (opens in a new tab)</span></span></a></li>
+        <li><a href="https://github.com/kopyk" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span><span class="value">github.com/kopyk<span class="vh"> (opens in a new tab)</span></span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 Jordan Yan · San Luis Obispo, CA</p>
     </div>
-  </div>
-
-  <!-- Skills -->
-  <div id="skills" class="section">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span class="badge">Technical Writing</span>
-      <span class="badge">AI Model Cards</span>
-      <span class="badge">LLM Evaluation</span>
-      <span class="badge">RAG</span>
-      <span class="badge">API Documentation</span>
-      <span class="badge">Python</span>
-      <span class="badge">Claude API</span>
-      <span class="badge">Technical Manuals</span>
-      <span class="badge">Interface Control Documents</span>
-      <span class="badge">Requirements Traceability</span>
-      <span class="badge">SME Interviews &amp; Review</span>
-      <span class="badge">Regulatory Compliance</span>
-      <span class="badge">C++</span>
-      <span class="badge">Power BI</span>
-      <span class="badge">Markdown</span>
-      <span class="badge">Docusaurus</span>
-      <span class="badge">Mermaid</span>
-      <span class="badge">X12N 5010</span>
-      <span class="badge">GitHub Pages</span>
-      <span class="badge">Figma</span>
-    </div>
-  </div>
-
-  <!-- Resume -->
-  <div id="resume" class="section">
-    <h2>Resume</h2>
-    <p><a href="Jordan_Yan_Technical_Writer_2026.pdf" target="_blank">Download PDF</a></p>
-  </div>
-
-  <footer>
-    © 2026 Jordan Yan • San Luis Obispo, CA • Built with GitHub Pages
   </footer>
-</div>
 
+  <script>
+    (function () {
+      // Progressive enhancement: every link works without this. The <details> sheet is
+      // JS-only (hidden by .no-js below 1024px) because only this script closes it.
+      var sheet = document.getElementById("sheet");
+      if (sheet) {
+        var summary = sheet.querySelector("summary");
+        var close = function () { sheet.open = false; };
+
+        // Close after choosing a section; the link is now hidden, so hand focus to the heading.
+        sheet.addEventListener("click", function (e) {
+          var link = e.target.closest && e.target.closest('a[href^="#"]');
+          if (!link) return;
+          close();
+          var heading = document.querySelector(link.hash + " h2");
+          if (heading) setTimeout(function () { heading.focus({ preventScroll: true }); }, 0);
+        });
+        document.addEventListener("pointerdown", function (e) {
+          if (sheet.open && !sheet.contains(e.target)) close();
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && sheet.open) { close(); summary.focus(); }
+        });
+        sheet.addEventListener("focusout", function (e) {
+          if (sheet.open && e.relatedTarget && !sheet.contains(e.relatedTarget)) close();
+        });
+      }
+
+      // Scroll spy: one observer drives every [data-spy] link (rail and sheet).
+      if (!("IntersectionObserver" in window)) return;
+      var spyLinks = document.querySelectorAll("a[data-spy]");
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var id = entry.target.id;
+          spyLinks.forEach(function (a) {
+            if (a.hash === "#" + id) a.setAttribute("aria-current", "location");
+            else a.removeAttribute("aria-current");
+          });
+        });
+      }, { rootMargin: "-40% 0px -55% 0px" });
+      document.querySelectorAll("#top, main section[id]").forEach(function (s) { observer.observe(s); });
+    })();
+  </script>
 </body>
 </html>
