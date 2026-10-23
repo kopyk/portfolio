@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Jordan Yan | Technical Writer: AI &amp; Developer Documentation</title>
   <meta name="description" content="Jordan Yan is a technical writer in San Luis Obispo, CA, creating AI and developer documentation: model cards, tutorials, API references and evaluation guides.">
   <link rel="canonical" href="https://www.jordanyan.com/">
@@ -55,6 +55,9 @@
   </script>
 
   <style>
+    /* ==========================================================
+       Tokens (shared by every layout)
+       ========================================================== */
     :root {
       color-scheme: light dark;
       --bg: #ffffff;
@@ -72,11 +75,14 @@
       --note-text: #1a4fa3;
       --note-border: #c6d8f7;
       --header-bg: rgba(255, 255, 255, 0.86);
+      --scrim: rgba(17, 17, 19, 0.28);
+      --shadow: 0 16px 32px -16px rgba(17, 17, 19, 0.22);
 
       --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       --column: 720px;
       --gutter: 24px;
-      --header-h: 56px;
+      --bar-h: 56px;
+      --rail-w: 256px;
       --r-sm: 6px;
       --r-md: 8px;
       --r-lg: 12px;
@@ -99,9 +105,14 @@
         --note-text: #9ccaff;
         --note-border: rgba(77, 163, 255, 0.28);
         --header-bg: rgba(15, 15, 16, 0.86);
+        --scrim: rgba(0, 0, 0, 0.56);
+        --shadow: 0 16px 32px -16px rgba(0, 0, 0, 0.7);
       }
     }
 
+    /* ==========================================================
+       Base
+       ========================================================== */
     *, *::before, *::after { box-sizing: border-box; }
 
     html {
@@ -127,12 +138,19 @@
     img { display: block; max-width: 100%; height: auto; }
 
     a { color: var(--accent); text-decoration: none; text-underline-offset: 3px; }
-    a:hover { color: var(--accent-hover); text-decoration: underline; }
 
     :focus-visible {
       outline: 2px solid var(--accent);
       outline-offset: 2px;
       border-radius: 2px;
+    }
+
+    /* Anchor jumps land 16px below the sticky bar (bar is 0px tall on desktop),
+       and keyboard focus is never scrolled underneath it. */
+    main section, .hero { scroll-margin-top: calc(var(--bar-h) + 16px); }
+    main :where(a[href], button, summary, [tabindex]) {
+      scroll-margin-top: calc(var(--bar-h) + 16px);
+      scroll-margin-bottom: 16px;
     }
 
     .vh {
@@ -159,72 +177,162 @@
     .skip-link:focus { transform: none; color: var(--on-accent); text-decoration: none; }
 
     .container {
+      width: 100%;
       max-width: calc(var(--column) + 2 * var(--gutter));
       margin: 0 auto;
-      padding: 0 var(--gutter);
+      padding-left: max(var(--gutter), env(safe-area-inset-left));
+      padding-right: max(var(--gutter), env(safe-area-inset-right));
     }
 
-    /* Header */
-    .site-header {
+    /* ==========================================================
+       Shell: shared navigation link (rail + sheet)
+       ========================================================== */
+    .navlist { display: grid; margin: 0; padding: 0; list-style: none; }
+    .navlink {
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      border-radius: 0 var(--r-sm) var(--r-sm) 0;
+      color: var(--text-2);
+      line-height: 1.3;
+    }
+    .navlink[aria-current="location"] {
+      color: var(--text);
+      font-weight: 600;
+      background: var(--surface);
+      box-shadow: inset 3px 0 0 var(--accent);
+    }
+    .navlink:focus-visible { outline-offset: -2px; }
+
+    /* ==========================================================
+       Shell: one <header> and one <nav aria-label="Sections">.
+       Below 1024px it is a 56px sticky top bar with a "Sections"
+       sheet; from 1024px it is the sticky left rail. The half that
+       does not apply is display:none, so one nav is exposed per width.
+       ========================================================== */
+    .shell {
       position: sticky;
       top: 0;
       z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      height: var(--bar-h);
+      padding-left: max(var(--gutter), env(safe-area-inset-left), calc((100% - var(--column)) / 2));
+      padding-right: max(var(--gutter), env(safe-area-inset-right), calc((100% - var(--column)) / 2));
       background: var(--header-bg);
       border-bottom: 1px solid var(--border);
       -webkit-backdrop-filter: saturate(180%) blur(12px);
       backdrop-filter: saturate(180%) blur(12px);
     }
-    .site-header .container {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      height: var(--header-h);
-    }
     .brand {
-      flex: none;
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
       font-weight: 600;
       font-size: 15px;
       letter-spacing: -0.01em;
       color: var(--text);
-      padding: 10px 0;
     }
-    .brand:hover { color: var(--text); text-decoration: none; }
+    .shell-title, .rail-list, .rail-foot { display: none; }
 
-    .site-nav {
-      margin-left: auto;
-      min-width: 0;
-      overflow-x: auto;
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch;
-    }
-    .site-nav::-webkit-scrollbar { display: none; }
-    .site-nav ul {
-      display: flex;
-      gap: 2px;
-      margin: 0;
-      padding: 0 2px;
-      list-style: none;
-    }
-    .site-nav a {
+    /* Top bar: "Sections" disclosure */
+    .sheet > summary {
       display: flex;
       align-items: center;
-      height: 44px;
-      padding: 0 10px;
+      gap: 6px;
+      min-height: 44px;
+      padding: 0 12px 0 14px;
+      list-style: none;
+      background: var(--bg);
+      border: 1px solid var(--border-strong);
       border-radius: var(--r-sm);
-      color: var(--text-2);
-      font-size: 14px;
-      white-space: nowrap;
-    }
-    .site-nav a:hover { color: var(--text); background: var(--surface); text-decoration: none; }
-    .site-nav a[aria-current="location"] {
       color: var(--text);
+      font-size: 14px;
       font-weight: 600;
-      box-shadow: inset 0 -2px 0 var(--accent);
-      border-radius: var(--r-sm) var(--r-sm) 0 0;
+      cursor: pointer;
+      -webkit-user-select: none;
+      user-select: none;
+      -webkit-tap-highlight-color: transparent;
     }
-    .site-nav :focus-visible { outline-offset: -2px; }
+    .sheet > summary::-webkit-details-marker { display: none; }
+    .sheet[open] > summary { background: var(--surface); border-color: var(--muted); }
+    .sheet .chev { flex: none; color: var(--muted); }
+    .sheet[open] .chev { transform: rotate(180deg); }
 
-    /* Typography */
+    /* Scrim: part of the summary, so a tap outside the panel closes it even without JS. */
+    .sheet[open] > summary::after {
+      content: "";
+      position: absolute;
+      top: calc(100% + 1px);
+      left: 0;
+      right: 0;
+      height: calc(100vh - var(--bar-h));
+      height: calc(100dvh - var(--bar-h));
+      background: var(--scrim);
+      cursor: default;
+    }
+    .sheet-panel {
+      position: absolute;
+      top: calc(100% + 1px);
+      left: 0;
+      right: 0;
+      max-height: calc(100vh - var(--bar-h));
+      max-height: calc(100dvh - var(--bar-h));
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .sheet-panel .navlist {
+      gap: 2px;
+      margin: 0 auto;
+      padding: 8px max(0px, calc(var(--gutter) - 16px)) 16px;
+    }
+    .sheet-panel .navlink { min-height: 48px; padding: 0 16px; font-size: 16px; }
+
+    /* Rail parts (shown from 1024px) */
+    .shell-title {
+      margin: 6px 0 0;
+      padding: 0 12px;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    .rail-list { gap: 4px; }
+    .rail-list .navlink { min-height: 40px; font-size: 15px; }
+    .rail-foot {
+      margin-top: auto;
+      padding-top: 24px;
+    }
+    .rail-foot-inner { padding-top: 16px; border-top: 1px solid var(--border); }
+    .rail-label {
+      margin: 0 0 4px;
+      padding: 0 12px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .rail-contact { margin: 0; padding: 0; list-style: none; }
+    .rail-contact a {
+      display: flex;
+      align-items: center;
+      min-height: 32px;
+      padding: 0 12px;
+      border-radius: var(--r-sm);
+      font-size: 14px;
+      color: var(--text-2);
+    }
+    .rail-contact a:focus-visible { outline-offset: -2px; }
+
+    /* ==========================================================
+       Typography
+       ========================================================== */
     h1, h2, h3, h4 {
       margin: 0;
       font-weight: 600;
@@ -251,10 +359,13 @@
       color: var(--accent);
     }
     .meta { font-size: 14px; line-height: 1.5; color: var(--muted); margin: 0; }
+    .nowrap { white-space: nowrap; }
     .lede { color: var(--text-2); }
 
-    /* Hero */
-    .hero { padding: 72px 0 56px; }
+    /* ==========================================================
+       Hero
+       ========================================================== */
+    .hero { padding: 72px 0 64px; }
     .hero h1 { margin-bottom: 16px; }
     .hero .abstract {
       font-size: 18px;
@@ -276,17 +387,56 @@
       font-weight: 600;
       line-height: 1.2;
       text-decoration: none;
-      transition: background-color .15s ease, border-color .15s ease;
     }
-    .btn:hover { text-decoration: none; }
     .btn-primary { background: var(--accent); color: var(--on-accent); }
-    .btn-primary:hover { background: var(--accent-hover); color: var(--on-accent); }
     .btn-secondary { background: var(--bg); color: var(--text); border-color: var(--border-strong); }
-    .btn-secondary:hover { background: var(--surface); color: var(--text); border-color: var(--muted); }
     .hero .contact-line { font-size: 14px; color: var(--muted); margin: 0; }
 
-    /* Sections */
-    main section { padding: 0 0 64px; scroll-margin-top: calc(var(--header-h) + 16px); }
+    /* Jump chips: the visible navigation on mobile and tablet */
+    .jump {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .jump-label {
+      margin: 0 0 12px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.4;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .jump-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .jump-list a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0 8px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-md);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    /* ==========================================================
+       Sections
+       ========================================================== */
+    main section { padding: 0 0 64px; }
+    /* Lets the last section reach the scroll-spy band (40-45% of the viewport) at max scroll. */
+    main section:last-of-type { min-height: 55vh; }
+    main h2[tabindex="-1"]:focus:not(:focus-visible) { outline: none; }
     .group-title { margin: 32px 0 16px; }
     .group-title:first-of-type { margin-top: 0; }
 
@@ -339,7 +489,6 @@
       background: var(--bg);
       border: 1px solid var(--border);
       border-radius: var(--r-lg);
-      transition: border-color .15s ease, background-color .15s ease;
     }
     .card h4 { margin-bottom: 8px; }
     .card p { font-size: 15px; line-height: 1.55; color: var(--text-2); }
@@ -351,7 +500,6 @@
       font-weight: 600;
       color: var(--accent);
     }
-    .card-link:hover { border-color: var(--accent); }
     .card-link h4 a { color: var(--text); }
     .card-link h4 a::after {
       content: "";
@@ -359,8 +507,6 @@
       inset: 0;
       border-radius: var(--r-lg);
     }
-    .card-link h4 a:hover { text-decoration: none; }
-    .card-link:hover .more { text-decoration: underline; }
     .card-link h4 a:focus-visible { outline: none; }
     .card-link h4 a:focus-visible::after {
       outline: 2px solid var(--accent);
@@ -370,7 +516,7 @@
     .browse { margin: 24px 0 0; font-size: 15px; }
     .browse a { font-weight: 600; }
 
-    /* Media cards (experience, projects) */
+    /* Media entries (experience, projects) */
     .stack { display: grid; gap: 16px; }
     .entry {
       padding: 24px;
@@ -395,6 +541,7 @@
       overflow: hidden;
       background: var(--surface);
     }
+    .thumb-banner { width: 160px; }
     .deliverable {
       margin-top: 20px;
       padding: 16px;
@@ -449,65 +596,168 @@
 
     /* Contact */
     .contact-list {
-      display: grid;
-      gap: 0;
       margin: 24px 0 0;
       padding: 0;
       list-style: none;
       border-top: 1px solid var(--border);
     }
-    .contact-list li {
+    .contact-list li { border-bottom: 1px solid var(--border); }
+    .contact-list a {
       display: flex;
       flex-wrap: wrap;
+      align-items: center;
       justify-content: space-between;
-      gap: 4px 16px;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
+      gap: 2px 16px;
+      min-height: 48px;
+      padding: 10px 0;
       font-size: 15px;
+      line-height: 1.5;
     }
     .contact-list .label { color: var(--muted); }
-    .contact-list a { overflow-wrap: anywhere; }
+    .contact-list .value { color: var(--accent); overflow-wrap: anywhere; }
 
     .site-footer {
       border-top: 1px solid var(--border);
-      padding: 24px 0 40px;
+      padding: 24px 0 calc(40px + env(safe-area-inset-bottom));
       font-size: 14px;
       color: var(--muted);
     }
     .site-footer p { margin: 0; }
 
-    @media (min-width: 640px) {
-      .card-grid, .focus-list { grid-template-columns: 1fr 1fr; }
-      .skill-groups { grid-template-columns: 1fr 1fr; gap: 28px 32px; }
-      .hero { padding: 96px 0 72px; }
-      main section { padding-bottom: 72px; }
+    /* ==========================================================
+       Hover (pointer devices only) and motion (opt-in only)
+       ========================================================== */
+    @media (hover: hover) {
+      a:hover { color: var(--accent-hover); text-decoration: underline; }
+      .brand:hover { color: var(--text); text-decoration: none; }
+      .navlink:hover { color: var(--text); background: var(--surface); text-decoration: none; }
+      .rail-contact a:hover { color: var(--text); background: var(--surface); text-decoration: none; }
+      .sheet > summary:hover { background: var(--surface); }
+      .jump-list a:hover { color: var(--text); border-color: var(--accent); text-decoration: none; }
+      .btn:hover { text-decoration: none; }
+      .btn-primary:hover { background: var(--accent-hover); color: var(--on-accent); }
+      .btn-secondary:hover { background: var(--surface); color: var(--text); border-color: var(--muted); }
+      .card-link:hover { border-color: var(--accent); }
+      .card-link h4 a:hover { color: var(--text); text-decoration: none; }
+      .card-link:hover .more { text-decoration: underline; }
+      .contact-list a:hover { text-decoration: none; }
+      .contact-list a:hover .value { color: var(--accent-hover); text-decoration: underline; }
     }
 
+    @media (prefers-reduced-motion: no-preference) {
+      .btn { transition: background-color .15s ease, border-color .15s ease; }
+      .card { transition: border-color .15s ease, background-color .15s ease; }
+      .navlink, .rail-contact a, .jump-list a, .sheet > summary { transition: background-color .15s ease, border-color .15s ease, color .15s ease; }
+      .sheet .chev { transition: transform .15s ease; }
+    }
+
+    /* ==========================================================
+       Mobile: below 640px (16px gutter, one column)
+       ========================================================== */
     @media (max-width: 639px) {
       :root { --gutter: 16px; }
       h1 { font-size: 30px; }
-      .hero { padding: 48px 0 48px; }
-      .hero .abstract { font-size: 17px; }
+      .hero { padding: 40px 0 48px; }
+      .hero .abstract { font-size: 17px; margin-bottom: 28px; }
       .cta-row { flex-direction: column; }
-      .cta-row .btn { width: 100%; }
+      .cta-row .btn, #resume .btn { width: 100%; }
       .brand { font-size: 14px; }
-      .site-header .container { gap: 8px; padding-right: 0; }
-      .site-nav {
-        -webkit-mask-image: linear-gradient(to right, transparent 0, #000 12px, #000 calc(100% - 24px), transparent);
-        mask-image: linear-gradient(to right, transparent 0, #000 12px, #000 calc(100% - 24px), transparent);
-      }
-      .site-nav ul { padding: 0 16px 0 8px; }
+
       .entry { padding: 20px; }
-      .media { gap: 16px; }
-      .thumb { width: 84px; }
       .deliverable { padding: 14px; }
-      .media:has(.thumb-banner) { flex-direction: column; }
-      .thumb-banner { order: -1; width: 100%; aspect-ratio: 16 / 7; }
-      .thumb-banner img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
+      /* Portrait cover floats beside the text; long lines then use the full width. */
+      .deliverable.media { display: flow-root; }
+      .deliverable .thumb { float: left; width: 96px; margin: 0 14px 8px 0; }
+      .deliverable .links { clear: left; padding-top: 4px; }
+
+      /* Jungle tree: under the text, shown whole. */
+      .media-banner { flex-direction: column; align-items: stretch; gap: 16px; }
+      .thumb-banner {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 12px;
+      }
+      .thumb-banner img {
+        width: auto;
+        height: 240px; /* reserves the box before the lazy image loads (no layout shift) */
+        max-height: 240px;
+        object-fit: contain;
+        border-radius: var(--r-sm);
+      }
+
+      .contact-list a {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 0;
+        padding: 8px 0;
+      }
+      .contact-list .label { font-size: 13px; line-height: 1.4; }
     }
 
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
+    /* ==========================================================
+       Tablet and up: 640px+ (2-up grids)
+       ========================================================== */
+    @media (min-width: 640px) {
+      .card-grid, .focus-list { grid-template-columns: 1fr 1fr; }
+      .skill-groups { grid-template-columns: 1fr 1fr; gap: 28px 32px; }
+      main section { padding-bottom: 72px; }
+    }
+
+    /* Touch layouts (below 1024px): taller targets */
+    @media (max-width: 1023px) {
+      .btn { min-height: 48px; }
+    }
+
+    /* ==========================================================
+       Desktop: 1024px+ (256px rail + 720px column, no top bar)
+       ========================================================== */
+    @media (min-width: 1024px) {
+      :root { --bar-h: 0px; }
+      body {
+        display: grid;
+        grid-template-columns: var(--rail-w) minmax(0, 1fr);
+      }
+      .sheet, .jump { display: none; }
+      .shell {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        align-self: start;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+        height: 100vh;
+        height: 100dvh;
+        overflow-y: auto;
+        padding: 40px 16px 24px;
+        background: var(--bg);
+        border-bottom: 0;
+        border-right: 1px solid var(--border);
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+      }
+      .brand {
+        display: block;
+        min-height: 0;
+        padding: 0 12px;
+        font-size: 17px;
+        line-height: 1.3;
+        letter-spacing: -0.015em;
+      }
+      .shell-title, .rail-foot { display: block; }
+      .shell-nav { margin-top: 32px; }
+      .rail-list { display: grid; }
+      main.container, .site-footer { grid-column: 2; }
+      main.container { grid-row: 1; }
+      .site-footer { grid-row: 2; }
+      .hero { padding: 88px 0 72px; }
+    }
+
+    @media print {
+      .shell, .jump, .skip-link { display: none !important; }
+      body { display: block; }
     }
   </style>
 </head>
@@ -515,25 +765,50 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="#top">Jordan Yan</a>
-      <nav class="site-nav" aria-label="Sections">
-        <ul>
-          <li><a href="#focus">Focus</a></li>
-          <li><a href="#samples">Samples</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#resume">Resume</a></li>
+  <header class="shell">
+    <a class="brand" href="#top">Jordan Yan</a>
+    <p class="shell-title">Technical Writer<br>AI &amp; Developer Documentation</p>
+    <nav class="shell-nav" aria-label="Sections">
+      <details class="sheet" id="sheet">
+        <summary>Sections
+          <svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </summary>
+        <div class="sheet-panel">
+          <ul class="navlist container">
+            <li><a class="navlink" href="#focus" data-spy>Focus areas</a></li>
+            <li><a class="navlink" href="#samples" data-spy>Writing samples</a></li>
+            <li><a class="navlink" href="#experience" data-spy>Experience</a></li>
+            <li><a class="navlink" href="#projects" data-spy>Projects</a></li>
+            <li><a class="navlink" href="#skills" data-spy>Skills</a></li>
+            <li><a class="navlink" href="#resume" data-spy>Resume &amp; contact</a></li>
+          </ul>
+        </div>
+      </details>
+      <ul class="navlist rail-list">
+        <li><a class="navlink" href="#focus" data-spy>Focus areas</a></li>
+        <li><a class="navlink" href="#samples" data-spy>Writing samples</a></li>
+        <li><a class="navlink" href="#experience" data-spy>Experience</a></li>
+        <li><a class="navlink" href="#projects" data-spy>Projects</a></li>
+        <li><a class="navlink" href="#skills" data-spy>Skills</a></li>
+        <li><a class="navlink" href="#resume" data-spy>Resume &amp; contact</a></li>
+      </ul>
+    </nav>
+    <div class="rail-foot">
+      <div class="rail-foot-inner">
+        <p class="rail-label" id="rail-contact-label">Contact</p>
+        <ul class="rail-contact" aria-labelledby="rail-contact-label">
+          <li><a href="mailto:jordanxianyan@gmail.com">Email</a></li>
+          <li><a href="https://www.linkedin.com/in/jordanxyan/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+          <li><a href="https://github.com/kopyk" target="_blank" rel="noopener noreferrer">GitHub<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+          <li><a href="Jordan_Yan_Technical_Writer_2026.pdf" type="application/pdf">Resume (PDF)</a></li>
         </ul>
-      </nav>
+      </div>
     </div>
   </header>
 
   <main id="main" class="container" tabindex="-1">
     <div class="hero" id="top">
-      <p class="eyebrow">Technical Writer · AI &amp; Developer Documentation · San Luis Obispo, CA</p>
+      <p class="eyebrow"><span class="nowrap">Technical Writer</span> · <span class="nowrap">AI &amp; Developer Documentation</span> · <span class="nowrap">San Luis Obispo, CA</span></p>
       <h1>Jordan Yan</h1>
       <p class="abstract">
         I write clear, accurate documentation for AI systems: model cards, developer tutorials,
@@ -547,10 +822,22 @@
         <a class="btn btn-secondary" href="Jordan_Yan_Technical_Writer_2026.pdf" type="application/pdf">Download resume (PDF)</a>
       </div>
       <p class="contact-line">Or email <a href="mailto:jordanxianyan@gmail.com">jordanxianyan@gmail.com</a></p>
+
+      <div class="jump">
+        <p class="jump-label" id="jump-label">On this page</p>
+        <ul class="jump-list" aria-labelledby="jump-label">
+          <li><a href="#focus">Focus</a></li>
+          <li><a href="#samples">Samples</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#resume">Resume</a></li>
+        </ul>
+      </div>
     </div>
 
     <section id="focus" aria-labelledby="focus-title">
-      <h2 id="focus-title">Focus areas</h2>
+      <h2 id="focus-title" tabindex="-1">Focus areas</h2>
       <ul class="focus-list">
         <li>
           <h3>AI documentation</h3>
@@ -572,7 +859,7 @@
     </section>
 
     <section id="samples" aria-labelledby="samples-title">
-      <h2 id="samples-title">Writing samples</h2>
+      <h2 id="samples-title" tabindex="-1">Writing samples</h2>
       <div class="note" role="note">
         <p><strong>About these samples</strong>All samples are original work written for this portfolio. Systems, part numbers and data are fictional. No CUI, export-controlled (ITAR/EAR) or proprietary information is included.</p>
       </div>
@@ -643,7 +930,7 @@
     </section>
 
     <section id="experience" aria-labelledby="experience-title">
-      <h2 id="experience-title">Experience</h2>
+      <h2 id="experience-title" tabindex="-1">Experience</h2>
       <article class="entry">
         <h3>Technical Writing Intern</h3>
         <p class="meta">Gainwell Technologies</p>
@@ -658,7 +945,7 @@
           </div>
           <div class="media-body">
             <h4>837I FFS Claims Companion Guide</h4>
-            <p class="meta">21 pages · June 2025</p>
+            <p class="meta">21 pages · <span class="nowrap">June 2025</span></p>
             <p>Institutional claims rules, SNIP validation, and submission constraints.</p>
             <ul class="links">
               <li><a href="https://github.com/kopyk/gainwell-dhcf-companion-guides/raw/main/DC_837I-FFS-Claims-Companion-Guide-v1.3.pdf" target="_blank" rel="noopener noreferrer">PDF<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
@@ -670,7 +957,7 @@
     </section>
 
     <section id="projects" aria-labelledby="projects-title">
-      <h2 id="projects-title">Projects</h2>
+      <h2 id="projects-title" tabindex="-1">Projects</h2>
       <div class="stack">
         <article class="entry">
           <h3>ask-my-docs</h3>
@@ -687,7 +974,7 @@
         </article>
 
         <article class="entry">
-          <div class="media">
+          <div class="media media-banner">
             <div class="media-body">
               <h3>Jungle Decision Framework</h3>
               <p class="meta">Personal documentation project · Docusaurus · GitHub Pages</p>
@@ -727,7 +1014,7 @@
     </section>
 
     <section id="skills" aria-labelledby="skills-title">
-      <h2 id="skills-title">Skills</h2>
+      <h2 id="skills-title" tabindex="-1">Skills</h2>
       <div class="skill-groups">
         <div>
           <h3>Writing &amp; docs</h3>
@@ -773,13 +1060,13 @@
     </section>
 
     <section id="resume" aria-labelledby="resume-title">
-      <h2 id="resume-title">Resume &amp; contact</h2>
+      <h2 id="resume-title" tabindex="-1">Resume &amp; contact</h2>
       <p class="lede">For a full summary of experience and education, download the resume. The best way to reach me is email.</p>
       <a class="btn btn-secondary" href="Jordan_Yan_Technical_Writer_2026.pdf" type="application/pdf">Download resume (PDF)</a>
       <ul class="contact-list">
-        <li><span class="label">Email</span><a href="mailto:jordanxianyan@gmail.com">jordanxianyan@gmail.com</a></li>
-        <li><span class="label">LinkedIn</span><a href="https://www.linkedin.com/in/jordanxyan/" target="_blank" rel="noopener noreferrer">linkedin.com/in/jordanxyan<span class="vh"> (opens in a new tab)</span></a></li>
-        <li><span class="label">GitHub</span><a href="https://github.com/kopyk" target="_blank" rel="noopener noreferrer">github.com/kopyk<span class="vh"> (opens in a new tab)</span></a></li>
+        <li><a href="mailto:jordanxianyan@gmail.com"><span class="label">Email</span><span class="value">jordanxianyan@gmail.com</span></a></li>
+        <li><a href="https://www.linkedin.com/in/jordanxyan/" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span><span class="value">linkedin.com/in/jordanxyan<span class="vh"> (opens in a new tab)</span></span></a></li>
+        <li><a href="https://github.com/kopyk" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span><span class="value">github.com/kopyk<span class="vh"> (opens in a new tab)</span></span></a></li>
       </ul>
     </section>
   </main>
@@ -792,23 +1079,42 @@
 
   <script>
     (function () {
+      // Progressive enhancement only: every link and the <details> sheet work without this.
+      var sheet = document.getElementById("sheet");
+      if (sheet) {
+        var summary = sheet.querySelector("summary");
+        var close = function () { sheet.open = false; };
+
+        // Close after choosing a section; the link is now hidden, so hand focus to the heading.
+        sheet.addEventListener("click", function (e) {
+          var link = e.target.closest && e.target.closest('a[href^="#"]');
+          if (!link) return;
+          close();
+          var heading = document.querySelector(link.hash + " h2");
+          if (heading) setTimeout(function () { heading.focus({ preventScroll: true }); }, 0);
+        });
+        document.addEventListener("pointerdown", function (e) {
+          if (sheet.open && !sheet.contains(e.target)) close();
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && sheet.open) { close(); summary.focus(); }
+        });
+        sheet.addEventListener("focusout", function (e) {
+          if (sheet.open && e.relatedTarget && !sheet.contains(e.relatedTarget)) close();
+        });
+      }
+
+      // Scroll spy: one observer drives every [data-spy] link (rail and sheet).
       if (!("IntersectionObserver" in window)) return;
-      var nav = document.querySelector(".site-nav");
-      var links = {};
-      nav.querySelectorAll('a[href^="#"]').forEach(function (a) {
-        links[a.getAttribute("href").slice(1)] = a;
-      });
-      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var spyLinks = document.querySelectorAll("a[data-spy]");
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (!entry.isIntersecting) return;
-          var active = links[entry.target.id];
-          Object.keys(links).forEach(function (id) { links[id].removeAttribute("aria-current"); });
-          if (!active) return;
-          active.setAttribute("aria-current", "location");
-          if (nav.scrollWidth > nav.clientWidth) {
-            nav.scrollTo({ left: active.offsetLeft - 24, behavior: reduce ? "auto" : "smooth" });
-          }
+          var id = entry.target.id;
+          spyLinks.forEach(function (a) {
+            if (a.hash === "#" + id) a.setAttribute("aria-current", "location");
+            else a.removeAttribute("aria-current");
+          });
         });
       }, { rootMargin: "-40% 0px -55% 0px" });
       document.querySelectorAll("#top, main section[id]").forEach(function (s) { observer.observe(s); });
