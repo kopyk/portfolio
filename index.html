@@ -39,6 +39,12 @@
       "https://www.linkedin.com/in/jordanxyan/",
       "https://github.com/kopyk"
     ],
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "University of Houston",
+      "sameAs": "https://www.uh.edu/"
+    },
+    "knowsLanguage": ["English", "Mandarin", "Cantonese"],
     "knowsAbout": [
       "Technical writing",
       "AI documentation",
@@ -49,7 +55,7 @@
       "Technical manuals",
       "Interface control documents",
       "Requirements traceability",
-      "ASC X12N 5010"
+      "ASC X12 EDI 5010"
     ]
   }
   </script>
@@ -361,6 +367,10 @@
     .meta { font-size: 14px; line-height: 1.5; color: var(--muted); margin: 0; }
     .nowrap { white-space: nowrap; }
     .lede { color: var(--text-2); }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+      font-size: 0.92em;
+    }
 
     /* ==========================================================
        Hero
@@ -440,15 +450,15 @@
     .group-title { margin: 32px 0 16px; }
     .group-title:first-of-type { margin-top: 0; }
 
-    /* Focus areas */
-    .focus-list {
+    /* Tiles: focus areas, and education & recognition */
+    .focus-list, .tile-list {
       display: grid;
       gap: 12px;
       margin: 0;
       padding: 0;
       list-style: none;
     }
-    .focus-list li {
+    .focus-list li, .tile-list li {
       padding: 16px 20px;
       background: var(--surface);
       border: 1px solid var(--border);
@@ -456,6 +466,10 @@
     }
     .focus-list h3 { font-size: 16px; line-height: 1.4; margin-bottom: 4px; }
     .focus-list p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--text-2); }
+    .tile-list h4 { margin-bottom: 2px; }
+    .tile-list p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--text-2); }
+    .tile-list .meta { margin-bottom: 6px; }
+    .languages { margin: 16px 0 0; font-size: 15px; color: var(--text-2); }
 
     /* Note (alert) */
     .note {
@@ -493,7 +507,7 @@
     .card h4 { margin-bottom: 8px; }
     .card p { font-size: 15px; line-height: 1.55; color: var(--text-2); }
     .card .eyebrow { font-size: 13px; line-height: 1.4; color: var(--muted); margin-bottom: 6px; }
-    .card .tags { font-size: 13px; color: var(--muted); margin: 0 0 16px; }
+    .card .tags { font-size: 13px; color: var(--muted); margin: 0 0 12px; }
     .card .more {
       margin-top: auto;
       font-size: 14px;
@@ -513,6 +527,30 @@
       outline-offset: 2px;
     }
 
+    /* Proof chips: what was checked, said in words (never by color alone) */
+    .proof {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 0 0 16px;
+      padding: 0;
+      list-style: none;
+    }
+    .proof li {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 2px 10px 2px 8px;
+      background: var(--surface);
+      border: 1px solid var(--border-strong);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--text);
+    }
+    .proof svg { flex: none; color: var(--accent); }
+
     .browse { margin: 24px 0 0; font-size: 15px; }
     .browse a { font-weight: 600; }
 
@@ -530,6 +568,7 @@
     .entry p:last-child { margin-bottom: 0; }
     .entry ul.points { margin: 0 0 16px; padding-left: 20px; color: var(--text-2); font-size: 15px; }
     .entry ul.points li + li { margin-top: 4px; }
+    .entry > .links { margin-top: 16px; }
 
     .media { display: flex; gap: 20px; align-items: flex-start; }
     .media-body { min-width: 0; flex: 1; }
@@ -700,7 +739,7 @@
        Tablet and up: 640px+ (2-up grids)
        ========================================================== */
     @media (min-width: 640px) {
-      .card-grid, .focus-list { grid-template-columns: 1fr 1fr; }
+      .card-grid, .focus-list, .tile-list { grid-template-columns: 1fr 1fr; }
       .skill-groups { grid-template-columns: 1fr 1fr; gap: 28px 32px; }
       main section { padding-bottom: 72px; }
     }
@@ -777,7 +816,7 @@
           <ul class="navlist container">
             <li><a class="navlink" href="#focus" data-spy>Focus areas</a></li>
             <li><a class="navlink" href="#samples" data-spy>Writing samples</a></li>
-            <li><a class="navlink" href="#experience" data-spy>Experience</a></li>
+            <li><a class="navlink" href="#experience" data-spy>Experience &amp; education</a></li>
             <li><a class="navlink" href="#projects" data-spy>Projects</a></li>
             <li><a class="navlink" href="#skills" data-spy>Skills</a></li>
             <li><a class="navlink" href="#resume" data-spy>Resume &amp; contact</a></li>
@@ -787,7 +826,7 @@
       <ul class="navlist rail-list">
         <li><a class="navlink" href="#focus" data-spy>Focus areas</a></li>
         <li><a class="navlink" href="#samples" data-spy>Writing samples</a></li>
-        <li><a class="navlink" href="#experience" data-spy>Experience</a></li>
+        <li><a class="navlink" href="#experience" data-spy>Experience &amp; education</a></li>
         <li><a class="navlink" href="#projects" data-spy>Projects</a></li>
         <li><a class="navlink" href="#skills" data-spy>Skills</a></li>
         <li><a class="navlink" href="#resume" data-spy>Resume &amp; contact</a></li>
@@ -872,6 +911,10 @@
             <h4><a href="https://ai.jordanyan.com/docs/ai/model-card" target="_blank" rel="noopener noreferrer">AI Model Card: Runway Debris Detection<span class="vh"> (opens in a new tab)</span></a></h4>
             <p>Intended use, condition-level performance, failure modes, and human-oversight controls for a computer-vision model.</p>
             <p class="tags">DoD AI Ethical Principles · NIST AI RMF</p>
+            <ul class="proof" aria-label="Proof">
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Sources checked</li>
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Totals verified</li>
+            </ul>
             <span class="more" aria-hidden="true">Read sample ↗</span>
           </article>
         </li>
@@ -881,6 +924,9 @@
             <h4><a href="https://ai.jordanyan.com/docs/ai/rag-tutorial" target="_blank" rel="noopener noreferrer">Tutorial: Build a Q&amp;A Bot Over Your Docs<span class="vh"> (opens in a new tab)</span></a></h4>
             <p>Explains retrieval-augmented generation and walks developers through working, tested code for my ask-my-docs tool.</p>
             <p class="tags">RAG · Python · Claude API</p>
+            <ul class="proof" aria-label="Proof">
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Code tested in CI</li>
+            </ul>
             <span class="more" aria-hidden="true">Read sample ↗</span>
           </article>
         </li>
@@ -890,6 +936,9 @@
             <h4><a href="https://ai.jordanyan.com/docs/ai/api-reference" target="_blank" rel="noopener noreferrer">API Reference: Document Classification<span class="vh"> (opens in a new tab)</span></a></h4>
             <p>Parameters, request and response examples, error handling, and rate limits for an AI classification endpoint.</p>
             <p class="tags">REST API reference</p>
+            <ul class="proof" aria-label="Proof">
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>OpenAPI spec validated</li>
+            </ul>
             <span class="more" aria-hidden="true">Read sample ↗</span>
           </article>
         </li>
@@ -899,6 +948,9 @@
             <h4><a href="https://ai.jordanyan.com/docs/ai/eval-rubric" target="_blank" rel="noopener noreferrer">LLM Evaluation Rubric: Documentation Q&amp;A<span class="vh"> (opens in a new tab)</span></a></h4>
             <p>Pass/fail grading criteria, a balanced test set, and reporting by question type to catch hallucinated answers.</p>
             <p class="tags">Test-set design</p>
+            <ul class="proof" aria-label="Proof">
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Math verified</li>
+            </ul>
             <span class="more" aria-hidden="true">Read sample ↗</span>
           </article>
         </li>
@@ -912,6 +964,9 @@
             <h4><a href="https://ai.jordanyan.com/docs/defense/maintenance-procedure" target="_blank" rel="noopener noreferrer">Maintenance Procedure: UAS Propeller Replacement<span class="vh"> (opens in a new tab)</span></a></h4>
             <p>Field-level removal and installation procedure with WARNING/CAUTION/NOTE advisories, tools and parts tables, and torque values.</p>
             <p class="tags">Work package (MIL-STD-40051-2 layout) · MIL-STD-38784 advisories</p>
+            <ul class="proof" aria-label="Proof">
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Standards cited</li>
+            </ul>
             <span class="more" aria-hidden="true">Read sample ↗</span>
           </article>
         </li>
@@ -921,6 +976,9 @@
             <h4><a href="https://ai.jordanyan.com/docs/defense/interface-control-document" target="_blank" rel="noopener noreferrer">Interface Control Document: Telemetry Message<span class="vh"> (opens in a new tab)</span></a></h4>
             <p>Byte-level air-vehicle-to-ground-station message definition with units, scaling, ranges, and verification methods.</p>
             <p class="tags">ICD excerpt · Requirements traceability</p>
+            <ul class="proof" aria-label="Proof">
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Layout verified</li>
+            </ul>
             <span class="more" aria-hidden="true">Read sample ↗</span>
           </article>
         </li>
@@ -930,14 +988,20 @@
     </section>
 
     <section id="experience" aria-labelledby="experience-title">
-      <h2 id="experience-title" tabindex="-1">Experience</h2>
+      <h2 id="experience-title" tabindex="-1">Experience &amp; education</h2>
       <article class="entry">
-        <h3>Technical Writing Intern</h3>
-        <p class="meta">Gainwell Technologies</p>
-        <p>
-          Authored public, HIPAA-compliant Companion Guides for DC Medicaid (DHCF),
-          clarifying ASC X12N 5010 standards for trading partners.
+        <h3>Technical Writer Intern</h3>
+        <p class="meta">Gainwell Technologies · Irving, TX · <span class="nowrap">May–Aug 2025</span></p>
+        <p class="lede">
+          Wrote and edited public, HIPAA-compliant Companion Guides for DC Medicaid (DHCF) that clarify
+          the ASC X12N 5010 standards for trading partners. Both guides are published by Gainwell.
         </p>
+        <ul class="points">
+          <li>Contributed to an 80-page Project Management Plan and Software Design Document that became the team's permanent SOP for EDI workflows.</li>
+          <li>Wrote and revised 6 companion guides for the Washington, D.C. EDI team, reducing vendor onboarding questions by ~30%.</li>
+          <li>Designed and presented an interactive Power BI vendor-tracking dashboard to 15+ stakeholders, adopted for ongoing project monitoring.</li>
+          <li>Consolidated 20+ SME contributions into final deliverables under aggressive deadlines while maintaining HIPAA and ASC X12 compliance.</li>
+        </ul>
         <div class="deliverable media">
           <div class="thumb">
             <img src="assets/837I-title.png" width="480" height="626" loading="lazy" decoding="async"
@@ -945,15 +1009,57 @@
           </div>
           <div class="media-body">
             <h4>837I FFS Claims Companion Guide</h4>
-            <p class="meta">21 pages · <span class="nowrap">June 2025</span></p>
-            <p>Institutional claims rules, SNIP validation, and submission constraints.</p>
+            <p class="meta">v1.3 · 21 pages · <span class="nowrap">June 2025</span></p>
+            <p>Wrote the 837I v1.3 update: institutional claims rules, SNIP validation, and submission constraints.</p>
             <ul class="links">
-              <li><a href="https://github.com/kopyk/gainwell-dhcf-companion-guides/raw/main/DC_837I-FFS-Claims-Companion-Guide-v1.3.pdf" target="_blank" rel="noopener noreferrer">PDF<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
-              <li><a href="https://github.com/kopyk/gainwell-dhcf-companion-guides" target="_blank" rel="noopener noreferrer">Repository<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+              <li><a href="https://www.gainwelltechnologies.com/wp-content/uploads/2025/07/DC_837I-FFS-Claims-Companion-Guide-v1.3.pdf" target="_blank" rel="noopener noreferrer">Official PDF (Gainwell)<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
             </ul>
           </div>
         </div>
+        <div class="deliverable media">
+          <div class="thumb">
+            <img src="assets/276-title.png" width="480" height="625" loading="lazy" decoding="async"
+                 alt="Title page of the DC Medicaid 276/277 Fee-for-Service Claims Companion Guide, Version 1.1, dated February 5, 2025">
+          </div>
+          <div class="media-body">
+            <h4>276/277 FFS Claims Companion Guide</h4>
+            <p class="meta">v1.1 · 30 pages · <span class="nowrap">February 2025</span></p>
+            <p>Edited and enhanced the 276/277 v1.1 guide, then reformatted it into a cited, scannable Markdown version.</p>
+            <ul class="links">
+              <li><a href="https://www.gainwelltechnologies.com/wp-content/uploads/2025/07/DC_276_277FFS-FFS-Claims-Companion-Guide-v1.1.pdf" target="_blank" rel="noopener noreferrer">Official PDF (Gainwell)<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+              <li><a href="https://github.com/kopyk/gainwell-dhcf-companion-guides/blob/main/276-277-enhanced.md" target="_blank" rel="noopener noreferrer">Markdown version<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <ul class="links">
+          <li><a href="https://github.com/kopyk/gainwell-dhcf-companion-guides" target="_blank" rel="noopener noreferrer">GitHub repository<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
+        </ul>
       </article>
+
+      <h3 class="group-title" id="education">Education &amp; recognition</h3>
+      <ul class="tile-list">
+        <li>
+          <h4>B.A. in English</h4>
+          <p class="meta">University of Houston · <span class="nowrap">December 2025</span></p>
+          <p>Relevant coursework: Technical Communications, Professional Writing, Advanced Composition.</p>
+        </li>
+        <li>
+          <h4>Finalist, Arm Graduate Technical Writer</h4>
+          <p class="meta">Arm · Austin, TX</p>
+          <p>Advanced to the final panel interview stage with Staff and Senior Information Developers.</p>
+        </li>
+        <li>
+          <h4>Editorial Intern, Gulf Coast Journal</h4>
+          <p class="meta"><span class="nowrap">Sept 2024</span> – <span class="nowrap">May 2025</span></p>
+          <p>Edited 50+ submissions and managed the full publication cycle for 3 print and digital issues serving 2,000+ readers. A new submission workflow cut average review time from 14 to 7 days.</p>
+        </li>
+        <li>
+          <h4>Writing Center Lead, University of Houston Writing Center</h4>
+          <p class="meta"><span class="nowrap">Jan 2024</span> – <span class="nowrap">May 2025</span></p>
+          <p>Workshops on research, editing, and technical writing for 100+ students.</p>
+        </li>
+      </ul>
+      <p class="languages"><strong>Languages:</strong> English (native), Mandarin and Cantonese (fluent).</p>
     </section>
 
     <section id="projects" aria-labelledby="projects-title">
@@ -961,12 +1067,21 @@
       <div class="stack">
         <article class="entry">
           <h3>ask-my-docs</h3>
-          <p class="meta">Python · Claude API · Retrieval-augmented generation</p>
-          <p>
+          <p class="meta">Python · Claude API · Retrieval-augmented generation · MCP server</p>
+          <p class="lede">
             A command-line tool that answers questions about a folder of Markdown documentation.
             It finds the relevant sections, sends them to Claude, and returns an answer with sources.
             The companion tutorial explains how it works and how to evaluate its retrieval.
           </p>
+          <ul class="points">
+            <li>56 pytest tests pass, and a retrieval eval scores Recall@4 at 10/10 on frozen fixtures (10 questions, so a rough check rather than a precise score).</li>
+            <li>GitHub Actions CI runs the tests on Python 3.10 and 3.13 and fails the build if Recall@4 drops below 100%.</li>
+            <li>An MCP server exposes the same retrieval as a <code>search_docs</code> tool for Claude Code and Claude Desktop.</li>
+            <li>CHANGELOG written from the real commit history.</li>
+          </ul>
+          <ul class="proof" aria-label="Proof">
+            <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>56 tests · CI · Recall@4 10/10</li>
+          </ul>
           <ul class="links">
             <li><a href="https://github.com/kopyk/ask-my-docs" target="_blank" rel="noopener noreferrer">GitHub<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
             <li><a href="https://ai.jordanyan.com/docs/ai/rag-tutorial" target="_blank" rel="noopener noreferrer">Tutorial<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
@@ -998,18 +1113,6 @@
             </div>
           </div>
         </article>
-
-        <article class="entry">
-          <h3>mem-analyzer</h3>
-          <p class="meta">C++ · Doxygen · Markdown</p>
-          <p>
-            Built and documented a low-level C++ memory analysis tool for Windows processes, with
-            anchor-optimized pattern scanning (4–5× faster than a naïve scan) and full API documentation.
-          </p>
-          <ul class="links">
-            <li><a href="https://github.com/kopyk/mem-analyzer" target="_blank" rel="noopener noreferrer">GitHub<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
-          </ul>
-        </article>
       </div>
     </section>
 
@@ -1039,19 +1142,20 @@
           <ul class="badges">
             <li>Interface Control Documents</li>
             <li>Requirements Traceability</li>
-            <li>Regulatory Compliance</li>
-            <li>X12N 5010</li>
+            <li>HIPAA</li>
+            <li>ASC X12 EDI 5010</li>
+            <li>Plain Language</li>
           </ul>
         </div>
         <div>
-          <h3>Tools &amp; languages</h3>
+          <h3>Tools</h3>
           <ul class="badges">
             <li>Python</li>
-            <li>C++</li>
             <li>Markdown</li>
             <li>Docusaurus</li>
             <li>Mermaid</li>
-            <li>GitHub Pages</li>
+            <li>Git / GitHub Pages</li>
+            <li>Confluence / Jira</li>
             <li>Power BI</li>
             <li>Figma</li>
           </ul>
@@ -1062,6 +1166,7 @@
     <section id="resume" aria-labelledby="resume-title">
       <h2 id="resume-title" tabindex="-1">Resume &amp; contact</h2>
       <p class="lede">For a full summary of experience and education, download the resume. The best way to reach me is email.</p>
+      <p class="lede"><strong>Work status:</strong> U.S. citizen; no current clearance; willing to undergo a background investigation.</p>
       <a class="btn btn-secondary" href="Jordan_Yan_Technical_Writer_2026.pdf" type="application/pdf">Download resume (PDF)</a>
       <ul class="contact-list">
         <li><a href="mailto:jordanxianyan@gmail.com"><span class="label">Email</span><span class="value">jordanxianyan@gmail.com</span></a></li>
