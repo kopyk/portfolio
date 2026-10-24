@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, "js");</script>
   <title>Jordan Yan | Technical Writer: AI &amp; Developer Documentation</title>
-  <meta name="description" content="Jordan Yan is a technical writer in San Luis Obispo, CA, creating AI and developer documentation: model cards, tutorials, API references and evaluation guides.">
+  <meta name="description" content="Jordan Yan is a Technical Writer II at Zone 5 Technologies in San Luis Obispo, CA, writing manufacturing documentation for defense aerospace, with AI and developer documentation samples: model cards, tutorials, API references and evaluation guides.">
   <link rel="canonical" href="https://www.jordanyan.com/">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -17,7 +17,7 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.jordanyan.com/">
   <meta property="og:title" content="Jordan Yan | Technical Writer: AI &amp; Developer Documentation">
-  <meta property="og:description" content="Technical writer creating AI and developer documentation: model cards, tutorials, API references and evaluation guides, plus defense and aerospace samples.">
+  <meta property="og:description" content="Technical Writer II at Zone 5 Technologies (defense aerospace manufacturing documentation), with AI and developer documentation samples: model cards, tutorials, API references and evaluation guides.">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary">
 
@@ -30,9 +30,19 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Jordan Yan",
-    "jobTitle": "Technical Writer",
+    "jobTitle": "Technical Writer II",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Zone 5 Technologies",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "San Luis Obispo",
+        "addressRegion": "CA",
+        "addressCountry": "US"
+      }
+    },
     "url": "https://www.jordanyan.com/",
-    "email": "mailto:jordanxianyan@gmail.com",
+    "email": "mailto:jxyan@uh.edu",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "San Luis Obispo",
@@ -48,9 +58,11 @@
       "name": "University of Houston",
       "sameAs": "https://www.uh.edu/"
     },
-    "knowsLanguage": ["English", "Mandarin", "Cantonese"],
     "knowsAbout": [
       "Technical writing",
+      "Manufacturing work instructions",
+      "AS9100",
+      "First Article Inspection",
       "AI documentation",
       "Model cards",
       "LLM evaluation",
@@ -158,6 +170,10 @@
     /* Anchor jumps land 16px below the sticky bar (bar is 0px tall on desktop),
        and keyboard focus is never scrolled underneath it. */
     main section, .hero { scroll-margin-top: calc(var(--bar-h) + 16px); }
+    /* The skip link's target starts with the hero's own padding, so it only needs to clear the bar;
+       the programmatic focus it receives draws no ring around the whole column. */
+    #main { scroll-margin-top: var(--bar-h); }
+    main:focus { outline: none; }
     main :where(a[href], button, summary, [tabindex]) {
       scroll-margin-top: calc(var(--bar-h) + 16px);
       scroll-margin-bottom: 16px;
@@ -454,11 +470,13 @@
        Sections
        ========================================================== */
     main section { padding: 0 0 64px; }
-    /* Lets the last section reach the scroll-spy band (40-45% of the viewport) at max scroll. */
+    /* Keeps the last section tall enough to reach the scroll spy's 25% line at max scroll
+       (the spy also marks it whenever the page is scrolled to the bottom). */
     main section:last-of-type { min-height: 55vh; }
     main h2[tabindex="-1"]:focus:not(:focus-visible) { outline: none; }
     .group-title { margin: 32px 0 16px; }
     #samples .group-title:first-of-type { margin-top: 0; }
+    #experience .stack + .group-title { margin-top: 40px; }
 
     /* Tiles: focus areas, and education & recognition */
     .focus-list, .tile-list {
@@ -479,7 +497,6 @@
     .tile-list h4 { margin-bottom: 2px; }
     .tile-list p { margin: 0; font-size: 15px; line-height: 1.55; color: var(--text-2); }
     .tile-list .meta { margin-bottom: 6px; }
-    .languages { margin: 16px 0 0; font-size: 15px; color: var(--text-2); }
 
     /* Note (alert) */
     .note {
@@ -577,6 +594,7 @@
     .entry > p { color: var(--text-2); }
     .entry p:last-child { margin-bottom: 0; }
     .entry ul.points { margin: 0 0 16px; padding-left: 20px; color: var(--text-2); font-size: 15px; }
+    .entry > ul.points:last-child { margin-bottom: 0; }
     .entry ul.points li + li { margin-top: 4px; }
     .entry > .links { margin-top: 16px; }
 
@@ -717,6 +735,10 @@
       /* Portrait cover floats beside the text; long lines then use the full width. */
       .deliverable.media { display: flow-root; }
       .deliverable .thumb { float: left; width: 96px; margin: 0 14px 8px 0; }
+      /* The date takes its own line in the narrow column beside the cover (so at 320px it never
+         drops under the cover), and the separator that led into it goes away. */
+      .deliverable .meta .nowrap { display: block; }
+      .deliverable .meta .sep { display: none; }
       .deliverable .links { clear: left; padding-top: 4px; }
 
       /* Jungle tree: under the text, shown whole. */
@@ -826,7 +848,7 @@
 
   <header class="shell">
     <a class="brand" href="#top">Jordan Yan</a>
-    <p class="shell-title">Technical Writer<br>AI &amp; Developer Documentation</p>
+    <p class="shell-title">Technical Writer II, <span class="nowrap">Zone 5 Technologies</span><br>AI &amp; Developer Documentation</p>
     <nav class="shell-nav" aria-label="Sections">
       <details class="sheet" id="sheet">
         <summary>Sections
@@ -856,10 +878,10 @@
       <div class="rail-foot-inner">
         <p class="rail-label" id="rail-contact-label">Contact</p>
         <ul class="rail-contact" aria-labelledby="rail-contact-label">
-          <li><a href="mailto:jordanxianyan@gmail.com">Email</a></li>
+          <li><a href="mailto:jxyan@uh.edu">Email</a></li>
           <li><a href="https://www.linkedin.com/in/jordanxyan/" target="_blank" rel="noopener noreferrer">LinkedIn<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
           <li><a href="https://github.com/kopyk" target="_blank" rel="noopener noreferrer">GitHub<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
-          <li><a href="Jordan_Yan_Technical_Writer_2026.pdf" type="application/pdf">Resume (PDF)</a></li>
+          <li><a href="Jordan_Yan_Resume_2026.pdf" type="application/pdf">Resume (PDF)</a></li>
         </ul>
       </div>
     </div>
@@ -867,20 +889,20 @@
 
   <main id="main" class="container" tabindex="-1">
     <div class="hero" id="top">
-      <p class="eyebrow"><span class="nowrap">Technical Writer</span> · <span class="nowrap">AI &amp; Developer Documentation</span> · <span class="nowrap">San Luis Obispo, CA</span></p>
+      <p class="eyebrow"><span class="nowrap">Technical Writer II</span> · <span class="nowrap">Zone 5 Technologies</span> · <span class="nowrap">San Luis Obispo, CA</span></p>
       <h1>Jordan Yan</h1>
       <p class="abstract">
-        I write clear, accurate documentation for AI systems: model cards, developer tutorials,
-        API references, and evaluation guides that help engineers build with AI and help users trust it.
-        I also write for defense and aerospace, where the same precision and traceability matter.
-        My background is in compliance-driven documentation, including public HIPAA and ASC X12 companion
-        guides for DC Medicaid EDI transactions.
+        I'm a Technical Writer II at Zone 5 Technologies, where I turn CAD models and engineering drawings
+        into AS9100-compliant work instructions for defense aerospace manufacturing. Before that, I wrote
+        public HIPAA and ASC X12 companion guides for DC Medicaid at Gainwell Technologies.
+        The samples here show where I'm taking that precision next: AI and developer documentation,
+        from model cards and evaluation rubrics to API references and tutorials with code tested in CI.
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="#samples">View writing samples</a>
-        <a class="btn btn-secondary" href="Jordan_Yan_Technical_Writer_2026.pdf" type="application/pdf">Download resume (PDF)</a>
+        <a class="btn btn-secondary" href="Jordan_Yan_Resume_2026.pdf" type="application/pdf">Download resume (PDF)</a>
       </div>
-      <p class="contact-line">Or email <a href="mailto:jordanxianyan@gmail.com">jordanxianyan@gmail.com</a></p>
+      <p class="contact-line">Or email <a href="mailto:jxyan@uh.edu">jxyan@uh.edu</a></p>
 
       <div class="jump">
         <p class="jump-label" id="jump-label">On this page</p>
@@ -908,11 +930,11 @@
         </li>
         <li>
           <h3>Defense &amp; aerospace</h3>
-          <p>Technical manuals, maintenance procedures, and interface control documents written to MIL-STD conventions.</p>
+          <p>AS9100-compliant work instructions, First Article Inspection documentation and build documents for defense aerospace manufacturing, plus technical manual and interface control document samples written to MIL-STD conventions.</p>
         </li>
         <li>
           <h3>Compliance &amp; traceability</h3>
-          <p>Regulated documentation, requirements traceability, revision control, and SME review cycles.</p>
+          <p>Regulated documentation, revision and configuration control, requirements traceability, and SME review cycles.</p>
         </li>
       </ul>
     </section>
@@ -969,7 +991,7 @@
           <article class="card card-link">
             <p class="eyebrow">Evaluation guide</p>
             <h4><a href="https://ai.jordanyan.com/docs/ai/eval-rubric" target="_blank" rel="noopener noreferrer">LLM Evaluation Rubric: Documentation Q&amp;A<span class="vh"> (opens in a new tab)</span></a></h4>
-            <p>Pass/fail grading criteria, a balanced test set, and reporting by question type to catch hallucinated answers.</p>
+            <p>Pass/fail grading criteria, a test set covering four question types, and reporting by question type to catch hallucinated answers.</p>
             <p class="tags">Test-set design</p>
             <p class="vh">Proof:</p>
             <ul class="proof">
@@ -1015,18 +1037,38 @@
 
     <section id="experience" aria-labelledby="experience-title">
       <h2 id="experience-title" tabindex="-1">Experience &amp; education</h2>
+      <div class="stack">
       <article class="entry">
-        <h3>Technical Writer Intern</h3>
-        <p class="meta">Gainwell Technologies · Irving, TX · <span class="nowrap">May–Aug 2025</span></p>
+        <h3>Technical Writer II</h3>
+        <p class="meta">Zone 5 Technologies · San Luis Obispo, CA · <span class="nowrap">Jun 2026 – Present</span></p>
         <p class="lede">
-          Wrote and edited public, HIPAA-compliant Companion Guides for DC Medicaid (DHCF) that clarify
-          the ASC X12N 5010 standards for trading partners. Both guides are published by Gainwell.
+          I write the work instructions and build documentation that assemblers use on the floor for
+          defense aerospace programs. I joined Manufacturing Operations as a Technical Writer and was
+          promoted to Technical Writer II within 4 months based on performance.
         </p>
         <ul class="points">
-          <li>Contributed to an 80-page Project Management Plan and Software Design Document that became the team's permanent SOP for EDI workflows.</li>
-          <li>Wrote and revised 6 companion guides for the Washington, D.C. EDI team, reducing vendor onboarding questions by ~30%.</li>
-          <li>Designed and presented an interactive Power BI vendor-tracking dashboard to 15+ stakeholders, adopted for ongoing project monitoring.</li>
-          <li>Consolidated 20+ SME contributions into final deliverables under aggressive deadlines while maintaining HIPAA and ASC X12 compliance.</li>
+          <li>Led the move of White Spike work instructions to an updated product configuration, keeping revision control and configuration alignment intact across every document.</li>
+          <li>Led First Article Inspection (FAI) documentation for the program's avionics side and wrote 11 new work instructions, which supported on-time first article completion.</li>
+          <li>Created a customer-facing build documentation template that shows how 2 of the company's products are built.</li>
+          <li>Developed and maintained 28 AS9100-compliant work instructions and build documents by turning CAD models and engineering drawings into clear, step-by-step procedures for assemblers.</li>
+          <li>Coordinated daily with manufacturing engineers, mechanical engineers, assemblers, technicians and the manufacturing execution team to keep instructions in line with the current design.</li>
+          <li>Expanded support across programs, bringing the Rusty Dagger work instruction standards to the White Spike program across 35 documents.</li>
+        </ul>
+      </article>
+
+      <article class="entry">
+        <h3>Technical Writer</h3>
+        <p class="meta">Gainwell Technologies · Irving, TX · <span class="nowrap">Feb 2025 – Feb 2026</span></p>
+        <p class="lede">
+          I wrote and edited public, HIPAA-compliant Companion Guides for DC Medicaid (DHCF) that clarify
+          the ASC X12N 5010 standards for trading partners. The two below are published by Gainwell.
+        </p>
+        <ul class="points">
+          <li>Produced clear, step-by-step technical documentation for regulated healthcare workflows used as permanent operational references.</li>
+          <li>Authored and edited SOPs and technical documentation contributing to an 80-page Project Management Plan and Software Design Document, standardizing repeatable EDI processes.</li>
+          <li>Consolidated input from 20+ subject matter experts while adhering to HIPAA and ASC X12 EDI 5010 standards.</li>
+          <li>Developed six user-facing companion guides for the Washington, D.C. EDI team, reducing vendor onboarding questions by approximately 30%.</li>
+          <li>Designed and presented a Power BI vendor-tracking dashboard to 15+ stakeholders.</li>
         </ul>
         <div class="deliverable media">
           <div class="thumb">
@@ -1035,7 +1077,7 @@
           </div>
           <div class="media-body">
             <h4>837I FFS Claims Companion Guide</h4>
-            <p class="meta">v1.3 · 21 pages <span class="nowrap">· June 2025</span></p>
+            <p class="meta">v1.3 · 21 pages <span class="nowrap"><span class="sep">· </span>June 2025</span></p>
             <p>Wrote the 837I v1.3 update: institutional claims rules, SNIP validation, and submission constraints.</p>
             <ul class="links">
               <li><a href="https://www.gainwelltechnologies.com/wp-content/uploads/2025/07/DC_837I-FFS-Claims-Companion-Guide-v1.3.pdf" target="_blank" rel="noopener noreferrer">Official PDF (Gainwell)<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
@@ -1049,7 +1091,7 @@
           </div>
           <div class="media-body">
             <h4>276/277 FFS Claims Companion Guide</h4>
-            <p class="meta">v1.1 · 30 pages <span class="nowrap">· February 2025</span></p>
+            <p class="meta">v1.1 · 30 pages <span class="nowrap"><span class="sep">· </span>February 2025</span></p>
             <p>Edited and enhanced the 276/277 v1.1 guide, then reformatted it into a cited, scannable Markdown version.</p>
             <ul class="links">
               <li><a href="https://www.gainwelltechnologies.com/wp-content/uploads/2025/07/DC_276_277FFS-FFS-Claims-Companion-Guide-v1.1.pdf" target="_blank" rel="noopener noreferrer">Official PDF (Gainwell)<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
@@ -1062,7 +1104,22 @@
         </ul>
       </article>
 
-      <h3 class="group-title" id="education">Education &amp; recognition</h3>
+      <article class="entry">
+        <h3>Editorial Operations Coordinator</h3>
+        <p class="meta">Gulf Coast Journal · Houston, TX · <span class="nowrap">Sep 2023 – Dec 2025</span></p>
+        <p class="lede">
+          I edited fiction, poetry, essays and critical writing into publication-ready content, and ran
+          the submissions and production workflow behind each biannual issue.
+        </p>
+        <ul class="points">
+          <li>Designed and implemented a streamlined submission and review workflow, reducing average turnaround time by 50%.</li>
+          <li>Maintained editorial standards through fact-checking, revision tracking and structured feedback across multiple contributors.</li>
+          <li>Managed submissions, revision cycles and production coordination for biannual issues.</li>
+        </ul>
+      </article>
+      </div>
+
+      <h3 class="group-title" id="education">Education &amp; additional experience</h3>
       <ul class="tile-list">
         <li>
           <h4>B.A. in English</h4>
@@ -1070,22 +1127,11 @@
           <p>Relevant coursework: Technical Communications, Professional Writing, Advanced Composition.</p>
         </li>
         <li>
-          <h4>Finalist, Arm Graduate Technical Writer</h4>
-          <p class="meta">Arm · Austin, TX</p>
-          <p>Advanced to the final panel interview stage with Staff and Senior Information Developers.</p>
-        </li>
-        <li>
-          <h4>Editorial Intern, Gulf Coast Journal</h4>
-          <p class="meta"><span class="nowrap">Sept 2024</span> – <span class="nowrap">May 2025</span></p>
-          <p>Edited 50+ submissions and managed the full publication cycle for 3 print and digital issues serving 2,000+ readers. A new submission workflow cut average review time from 14 to 7 days.</p>
-        </li>
-        <li>
-          <h4>Writing Center Lead, University of Houston Writing Center</h4>
-          <p class="meta"><span class="nowrap">Jan 2024</span> – <span class="nowrap">May 2025</span></p>
-          <p>Workshops on research, editing, and technical writing for 100+ students.</p>
+          <h4>Teaching Fellow, Breakthrough Central Texas</h4>
+          <p class="meta">Austin, TX · <span class="nowrap">Jun – Aug 2024</span></p>
+          <p>Developed structured instructional materials and lesson plans, breaking complex concepts into clear, sequential explanations for diverse learners.</p>
         </li>
       </ul>
-      <p class="languages"><strong>Languages:</strong> English (native), Mandarin and Cantonese (fluent).</p>
     </section>
 
     <section id="projects" aria-labelledby="projects-title">
@@ -1095,15 +1141,14 @@
           <h3>ask-my-docs</h3>
           <p class="meta">Python · Claude API · Retrieval-augmented generation · MCP server</p>
           <p class="lede">
-            A command-line tool that answers questions about a folder of Markdown documentation.
+            A command-line tool I built that answers questions about a folder of Markdown documentation.
             It finds the relevant sections, sends them to Claude, and returns an answer with sources.
-            The companion tutorial builds a simplified version step by step.
+            I wrote the companion tutorial to build a simplified version step by step.
           </p>
           <ul class="points">
-            <li>56 pytest tests pass, and a retrieval eval scores Recall@4 at 10/10 on frozen fixtures (10 questions, so a rough check rather than a precise score).</li>
-            <li>GitHub Actions CI runs the tests on Python 3.10 and 3.13 and fails the build if Recall@4 drops below 100%.</li>
-            <li>An MCP server exposes the same retrieval as a <code>search_docs</code> tool for Claude Code and Claude Desktop.</li>
-            <li>CHANGELOG written from the real commit history.</li>
+            <li>56 automated tests, run by GitHub Actions on Python 3.10 and 3.13 on every push.</li>
+            <li>Retrieval eval scores Recall@4 at 10/10 on a 10-question fixture set, and CI fails if it drops.</li>
+            <li>An MCP server exposes the same search as a <code>search_docs</code> tool for Claude Code and Claude Desktop.</li>
           </ul>
           <p class="vh">Proof:</p>
           <ul class="proof">
@@ -1121,13 +1166,13 @@
               <h3>Jungle Decision Framework</h3>
               <p class="meta">Personal documentation project · Docusaurus · GitHub Pages</p>
               <p class="lede">
-                Designed and authored a structured documentation site that teaches complex decision-making
-                through rules, flowcharts, and progressive mental models.
+                A documentation site I designed and wrote that teaches complex decision-making
+                through rules, flowcharts and progressive mental models.
               </p>
               <ul class="points">
                 <li>Multi-page documentation architecture</li>
-                <li>Visual decision trees (SVG + Mermaid)</li>
-                <li>User progression from beginner to advanced</li>
+                <li>Visual decision trees drawn in SVG</li>
+                <li>A reading path from beginner to advanced</li>
               </ul>
               <ul class="links">
                 <li><a href="https://docs.jordanyan.com/docs/jungle-decision-framework" target="_blank" rel="noopener noreferrer">Live site<span class="vh"> (opens in a new tab)</span><span class="ext" aria-hidden="true">↗</span></a></li>
@@ -1150,6 +1195,9 @@
           <h3>Writing &amp; docs</h3>
           <ul class="badges">
             <li>Technical Writing</li>
+            <li>Work Instructions</li>
+            <li>Build Documentation</li>
+            <li>SOPs</li>
             <li>API Documentation</li>
             <li>Technical Manuals</li>
             <li>SME Interviews &amp; Review</li>
@@ -1162,29 +1210,40 @@
             <li>LLM Evaluation</li>
             <li>RAG</li>
             <li>Claude API</li>
+            <li>OpenAPI</li>
           </ul>
         </div>
         <div>
-          <h3>Defense &amp; compliance</h3>
+          <h3>Standards &amp; compliance</h3>
           <ul class="badges">
-            <li>Interface Control Documents</li>
-            <li>Requirements Traceability</li>
+            <li>AS9100</li>
+            <li>First Article Inspection (FAI)</li>
             <li>HIPAA</li>
             <li>ASC X12 EDI 5010</li>
+            <li>XML</li>
             <li>Plain Language</li>
+            <li>Interface Control Documents</li>
+            <li>Requirements Traceability</li>
           </ul>
         </div>
         <div>
           <h3>Tools</h3>
           <ul class="badges">
-            <li>Python</li>
             <li>Markdown</li>
             <li>Docusaurus</li>
             <li>Mermaid</li>
-            <li>Git / GitHub Pages</li>
-            <li>Confluence / Jira</li>
+            <li>SVG</li>
+            <li>Git</li>
+            <li>GitHub Actions</li>
+            <li>Python</li>
+            <li>C++</li>
+            <li>Doxygen</li>
+            <li>Copilot</li>
             <li>Power BI</li>
-            <li>Figma</li>
+            <li>SharePoint</li>
+            <li>Microsoft 365</li>
+            <li>Adobe Creative Suite</li>
+            <li>CMS</li>
           </ul>
         </div>
       </div>
@@ -1194,9 +1253,9 @@
       <h2 id="resume-title" tabindex="-1">Resume &amp; contact</h2>
       <p class="lede">For a full summary of experience and education, download the resume. The best way to reach me is email.</p>
       <p class="lede"><strong>Work status:</strong> U.S. citizen; no current clearance; willing to undergo a background investigation.</p>
-      <a class="btn btn-secondary" href="Jordan_Yan_Technical_Writer_2026.pdf" type="application/pdf">Download resume (PDF)</a>
+      <a class="btn btn-secondary" href="Jordan_Yan_Resume_2026.pdf" type="application/pdf">Download resume (PDF)</a>
       <ul class="contact-list">
-        <li><a href="mailto:jordanxianyan@gmail.com"><span class="label">Email</span><span class="value">jordanxianyan@gmail.com</span></a></li>
+        <li><a href="mailto:jxyan@uh.edu"><span class="label">Email</span><span class="value">jxyan@uh.edu</span></a></li>
         <li><a href="https://www.linkedin.com/in/jordanxyan/" target="_blank" rel="noopener noreferrer"><span class="label">LinkedIn</span><span class="value">linkedin.com/in/jordanxyan<span class="vh"> (opens in a new tab)</span></span></a></li>
         <li><a href="https://github.com/kopyk" target="_blank" rel="noopener noreferrer"><span class="label">GitHub</span><span class="value">github.com/kopyk<span class="vh"> (opens in a new tab)</span></span></a></li>
       </ul>
@@ -1237,20 +1296,64 @@
         });
       }
 
-      // Scroll spy: one observer drives every [data-spy] link (rail and sheet).
-      if (!("IntersectionObserver" in window)) return;
-      var spyLinks = document.querySelectorAll("a[data-spy]");
-      var observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          var id = entry.target.id;
-          spyLinks.forEach(function (a) {
-            if (a.hash === "#" + id) a.setAttribute("aria-current", "location");
-            else a.removeAttribute("aria-current");
-          });
+      // Scroll spy: position-based, so it also holds on tall screens where the last sections can
+      // never reach the top. The active link (rail and sheet share [data-spy]) is the last of
+      // '#top, main section[id]' whose top is at or above the 25% line of the viewport, or the
+      // last section once the page is scrolled to the bottom. A click or hash change sets the
+      // link right away and pauses recomputing until that scroll ends and the user scrolls again.
+      var spyLinks = Array.prototype.slice.call(document.querySelectorAll("a[data-spy]"));
+      var targets = Array.prototype.slice.call(document.querySelectorAll("#top, main section[id]"));
+      if (!spyLinks.length || !targets.length) return;
+
+      var setCurrent = function (id) {
+        spyLinks.forEach(function (a) {
+          if (a.hash === "#" + id) a.setAttribute("aria-current", "location");
+          else a.removeAttribute("aria-current");
         });
-      }, { rootMargin: "-40% 0px -55% 0px" });
-      document.querySelectorAll("#top, main section[id]").forEach(function (s) { observer.observe(s); });
+      };
+
+      var compute = function () {
+        var line = window.innerHeight * 0.25;
+        var atBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2;
+        var active = targets[0];
+        if (atBottom) active = targets[targets.length - 1];
+        else targets.forEach(function (t) { if (t.getBoundingClientRect().top <= line) active = t; });
+        setCurrent(active.id);
+      };
+
+      var frame = 0;
+      var schedule = function () {
+        if (frame) return;
+        frame = requestAnimationFrame(function () { frame = 0; compute(); });
+      };
+
+      // While a navigation scroll is in flight, the chosen link stays current.
+      var held = false, holdTimer = 0;
+      var release = function () { held = false; clearTimeout(holdTimer); holdTimer = 0; };
+      var armRelease = function (ms) { clearTimeout(holdTimer); holdTimer = setTimeout(release, ms); };
+      var hold = function (hash) {
+        var id = hash.charAt(0) === "#" ? hash.slice(1) : hash;
+        if (!id || !document.getElementById(id)) return;
+        if (frame) { cancelAnimationFrame(frame); frame = 0; }
+        setCurrent(id);
+        held = true;
+        armRelease(1000); // the target may already be in place: nothing scrolls and 'scrollend' never fires
+      };
+
+      document.addEventListener("click", function (e) {
+        var link = e.target.closest && e.target.closest('a[href^="#"]');
+        if (link) hold(link.hash);
+      });
+      window.addEventListener("hashchange", function () { hold(location.hash); });
+      window.addEventListener("scroll", function () {
+        if (held) { armRelease(150); return; } // quiet-time fallback for browsers without 'scrollend'
+        schedule();
+      }, { passive: true });
+      window.addEventListener("scrollend", function () { if (held) release(); });
+      window.addEventListener("resize", schedule);
+
+      if (location.hash && document.getElementById(location.hash.slice(1))) hold(location.hash);
+      else compute();
     })();
   </script>
 </body>

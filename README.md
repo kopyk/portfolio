@@ -2,12 +2,14 @@
 
 # Jordan Yan
 
-**Technical Writer · AI & Developer Documentation**  
+**Technical Writer II, Zone 5 Technologies · AI & Developer Documentation**  
 San Luis Obispo, CA · [jordanyan.com](https://www.jordanyan.com) · [ai.jordanyan.com](https://ai.jordanyan.com)
 
 </div>
 
 This repository is the source of [jordanyan.com](https://www.jordanyan.com): a single static `index.html` served by GitHub Pages.
+
+I write AS9100-compliant work instructions and build documentation for defense aerospace manufacturing at Zone 5 Technologies. Before that I wrote public HIPAA and ASC X12 companion guides for DC Medicaid at Gainwell Technologies. The writing samples below are AI and developer documentation, the direction I'm building toward.
 
 ---
 
@@ -16,9 +18,9 @@ This repository is the source of [jordanyan.com](https://www.jordanyan.com): a s
 | Project | Description | Proof |
 |---------|-------------|-------|
 | [**AI writing samples**](https://ai.jordanyan.com) | Model card, RAG tutorial, API reference and eval rubric, plus defense & aerospace samples (maintenance procedure, interface control document) | Each sample carries a proof label (see [Writing samples](#writing-samples)) |
-| [**ask-my-docs**](https://github.com/kopyk/ask-my-docs) | Python command-line tool that answers questions about Markdown docs with Claude (RAG), plus an MCP server that exposes the same retrieval as a `search_docs` tool | 56 tests · CI · Recall@4 10/10 |
+| [**ask-my-docs**](https://github.com/kopyk/ask-my-docs) | Python command-line tool that answers questions about Markdown docs with Claude (RAG), plus an MCP server that exposes the same search as a `search_docs` tool | 56 tests · CI · Recall@4 10/10 |
 | [**gainwell-dhcf-companion-guides**](https://github.com/kopyk/gainwell-dhcf-companion-guides) | Wrote the 837I v1.3 update and edited and enhanced the 276/277 v1.1 guide: public HIPAA Companion Guides for DC Medicaid (Gainwell) | Official PDFs on gainwelltechnologies.com |
-| [**Jungle Decision Framework**](https://docs.jordanyan.com) | Personal documentation project: a decision-making guide with rules, flowcharts and progressive mental models (Docusaurus, GitHub Pages) | Live site + source |
+| [**Jungle Decision Framework**](https://docs.jordanyan.com) | A documentation site that teaches decision-making through rules, flowcharts and progressive mental models (Docusaurus, GitHub Pages) | Live site + source |
 | [**portfolio**](https://www.jordanyan.com) | Central hub (this repo) | — |
 
 ---
@@ -38,9 +40,24 @@ All samples are original work written for this portfolio. Systems, part numbers 
 
 ---
 
-## Gainwell Technologies — Technical Writer Intern
+## Experience
 
-**May–Aug 2025 · Irving, TX**
+### Zone 5 Technologies — Technical Writer II
+
+**Jun 2026 – Present · San Luis Obispo, CA**
+
+Joined Manufacturing Operations as a Technical Writer; promoted to Technical Writer II within 4 months based on performance.
+
+- Led the move of White Spike work instructions to an updated product configuration, keeping revision control and configuration alignment intact across every document.
+- Led First Article Inspection (FAI) documentation for the program's avionics side and wrote 11 new work instructions, which supported on-time first article completion.
+- Created a customer-facing build documentation template that shows how 2 of the company's products are built.
+- Developed and maintained 28 AS9100-compliant work instructions and build documents by turning CAD models and engineering drawings into clear, step-by-step procedures for assemblers.
+- Coordinated daily with manufacturing engineers, mechanical engineers, assemblers, technicians and the manufacturing execution team to keep instructions in line with the current design.
+- Expanded support across programs, bringing the Rusty Dagger work instruction standards to the White Spike program across 35 documents.
+
+### Gainwell Technologies — Technical Writer
+
+**Feb 2025 – Feb 2026 · Irving, TX**
 
 Wrote the 837I v1.3 update and edited and enhanced the 276/277 v1.1 guide: public, HIPAA-compliant Companion Guides to the ASC X12N 5010 TR3s for DC Medicaid (DHCF) trading partners. Both are published by Gainwell.
 
@@ -49,30 +66,37 @@ Wrote the 837I v1.3 update and edited and enhanced the 276/277 v1.1 guide: publi
 | **837I FFS Claims** | v1.3 (Jun 2025) | 21 | [PDF](https://www.gainwelltechnologies.com/wp-content/uploads/2025/07/DC_837I-FFS-Claims-Companion-Guide-v1.3.pdf) | [Repository](https://github.com/kopyk/gainwell-dhcf-companion-guides) |
 | **276/277 FFS Claims** | v1.1 (Feb 2025) | 30 | [PDF](https://www.gainwelltechnologies.com/wp-content/uploads/2025/07/DC_276_277FFS-FFS-Claims-Companion-Guide-v1.1.pdf) | [Cited Markdown version](https://github.com/kopyk/gainwell-dhcf-companion-guides/blob/main/276-277-enhanced.md) |
 
-- Contributed to an 80-page Project Management Plan and Software Design Document that became the team's permanent SOP for EDI workflows.
-- Wrote and revised 6 companion guides for the Washington, D.C. EDI team, reducing vendor onboarding questions by ~30%.
-- Designed and presented an interactive Power BI vendor-tracking dashboard to 15+ stakeholders, adopted for ongoing project monitoring.
-- Consolidated 20+ SME contributions into final deliverables under aggressive deadlines while maintaining HIPAA and ASC X12 compliance.
+- Produced clear, step-by-step technical documentation for regulated healthcare workflows used as permanent operational references.
+- Authored and edited SOPs and technical documentation contributing to an 80-page Project Management Plan and Software Design Document, standardizing repeatable EDI processes.
+- Consolidated input from 20+ subject matter experts while adhering to HIPAA and ASC X12 EDI 5010 standards.
+- Developed six user-facing companion guides for the Washington, D.C. EDI team, reducing vendor onboarding questions by approximately 30%.
+- Designed and presented a Power BI vendor-tracking dashboard to 15+ stakeholders.
 
-Other internal documentation is under NDA; details available on request.
+### Gulf Coast Journal — Editorial Operations Coordinator
+
+**Sep 2023 – Dec 2025 · Houston, TX**
+
+- Edited fiction, poetry, essays and critical writing into publication-ready content.
+- Designed and implemented a streamlined submission and review workflow, reducing average turnaround time by 50%.
+- Maintained editorial standards through fact-checking, revision tracking and structured feedback across multiple contributors.
+- Managed submissions, revision cycles and production coordination for biannual issues.
+
+### Additional experience
+
+- **Teaching Fellow, Breakthrough Central Texas** (Jun – Aug 2024, Austin, TX) — developed structured instructional materials and lesson plans, breaking complex concepts into clear, sequential explanations for diverse learners.
 
 ---
 
-## Education & recognition
+## Education
 
-- **B.A. in English, University of Houston** — December 2025. Relevant coursework: Technical Communications, Professional Writing, Advanced Composition.
-- **Finalist, Arm Graduate Technical Writer (Austin, TX)** — advanced to the final panel interview stage with Staff and Senior Information Developers.
-- **Editorial Intern, Gulf Coast Journal** (Sept 2024–May 2025) — edited 50+ submissions and managed the full publication cycle for 3 print/digital issues serving 2,000+ readers; a new submission workflow cut average review time from 14 to 7 days.
-- **Writing Center Lead, University of Houston Writing Center** (Jan 2024–May 2025) — workshops on research, editing and technical writing for 100+ students.
-
-**Languages:** English (native), Mandarin and Cantonese (fluent).
+**B.A. in English, University of Houston** — December 2025. Relevant coursework: Technical Communications, Professional Writing, Advanced Composition.
 
 ---
 
 ## Skills
 
 ```text
-Technical Writing • AI Model Cards • LLM Evaluation • RAG • API Documentation • Technical Manuals • Interface Control Documents • Requirements Traceability • HIPAA • ASC X12 EDI 5010 • Plain Language • Python • Markdown • Mermaid • Docusaurus • Git / GitHub Pages • Confluence / Jira • Power BI • Figma
+Technical Writing • Work Instructions • Build Documentation • SOPs • API Documentation • Technical Manuals • SME Interviews & Review • AI Model Cards • LLM Evaluation • RAG • Claude API • OpenAPI • AS9100 • First Article Inspection (FAI) • HIPAA • ASC X12 EDI 5010 • XML • Plain Language • Interface Control Documents • Requirements Traceability • Markdown • Docusaurus • Mermaid • SVG • Git • GitHub Actions • Python • C++ • Doxygen • Copilot • Power BI • SharePoint • Microsoft 365 • Adobe Creative Suite • CMS
 ```
 
 ---
@@ -81,7 +105,7 @@ Technical Writing • AI Model Cards • LLM Evaluation • RAG • API Document
 
 U.S. citizen; no current clearance; willing to undergo a background investigation.
 
-- Email: [jordanxianyan@gmail.com](mailto:jordanxianyan@gmail.com)
+- Email: [jxyan@uh.edu](mailto:jxyan@uh.edu)
 - LinkedIn: [linkedin.com/in/jordanxyan](https://www.linkedin.com/in/jordanxyan/)
 - GitHub: [github.com/kopyk](https://github.com/kopyk)
-- Resume: [Jordan_Yan_Technical_Writer_2026.pdf](Jordan_Yan_Technical_Writer_2026.pdf)
+- Resume: [Jordan_Yan_Resume_2026.pdf](Jordan_Yan_Resume_2026.pdf)
