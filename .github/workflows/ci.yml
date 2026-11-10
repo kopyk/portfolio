@@ -80,6 +80,8 @@ jobs:
             --exclude linkedin.com
             --exclude '^https://www\.jordanyan\.com/'
             --exclude '^https://github\.com/kopyk/portfolio'
+            --root-dir "${{ github.workspace }}/static"
+            --exclude '^file://'
             --max-retries 3
             docs README.md static/index.html
           fail: true
