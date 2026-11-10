@@ -41,7 +41,7 @@ The definitions are in [§ 160.103](https://www.ecfr.gov/current/title-45/sectio
 
 ## The general rules
 
-You must protect the confidentiality, integrity and availability of all ePHI you create, receive, maintain or transmit, and protect against reasonably anticipated threats and impermissible uses ([§ 164.306(a)](https://www.ecfr.gov/current/title-45/section-164.306)).
+You must ensure the confidentiality, integrity and availability of all ePHI you create, receive, maintain or transmit, and protect against reasonably anticipated threats and impermissible uses or disclosures ([§ 164.306(a)](https://www.ecfr.gov/current/title-45/section-164.306)).
 
 The rule does not name products or algorithms. You may use any security measures that reasonably and appropriately implement the standards. In choosing, you must weigh your size, complexity and capabilities, your technical infrastructure, the cost of the measures, and the probability and criticality of the risks (§ 164.306(b)).
 
@@ -108,7 +108,7 @@ Source: [§ 164.312](https://www.ecfr.gov/current/title-45/section-164.312).
 
 ## Documentation
 
-You must keep your security policies and procedures in written form, which may be electronic. Where the rule requires an action, activity or assessment to be documented, you must keep a written record of it ([§ 164.316](https://www.ecfr.gov/current/title-45/section-164.316)). Three specifications apply, all Required:
+You must keep your security policies and procedures in written form, which may be electronic. Where the rule requires an action, activity or assessment to be documented, you must keep a written record of it ([§ 164.316(b)](https://www.ecfr.gov/current/title-45/section-164.316)). Three specifications apply, all Required:
 
 - **Time limit.** Keep the documentation for six years from the date it was created or the date it was last in effect, whichever is later.
 - **Availability.** Make it available to the people who implement the procedures.

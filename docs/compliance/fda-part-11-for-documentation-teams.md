@@ -33,11 +33,11 @@ This page is a writing sample. It summarizes a federal rule in plain language an
 
 ## When Part 11 applies
 
-Part 11 does not create a duty to keep any record. It applies to records in electronic form that you create, modify, maintain, archive, retrieve or transmit under a records requirement in another FDA regulation. It also applies to electronic records you submit to FDA under the Federal Food, Drug, and Cosmetic Act or the Public Health Service Act (§ 11.1(b)).
+This page reads § 11.1(b) to mean that Part 11 does not decide which records you must keep. Other requirements do that. Part 11 applies to records in electronic form that you create, modify, maintain, archive, retrieve or transmit under a records requirement in another FDA regulation. It also applies to electronic records you submit to FDA under the Federal Food, Drug, and Cosmetic Act or the Public Health Service Act (§ 11.1(b)).
 
 FDA guidance calls those other requirements **predicate rules**. The term comes from guidance, not from the rule text.
 
-Systems, controls and their documentation must be readily available for FDA inspection (§ 11.1(e)). Paragraphs (f) through (p) exclude records kept under certain food regulations.
+Systems, controls and their documentation must be readily available for FDA inspection (§ 11.1(e)). Paragraphs (f) through (p) exclude records required by certain food regulations, and electronic signatures obtained under two food labeling provisions (§ 11.1(g) and (h)).
 
 **What this changes in your work:** start from the predicate rule. For each document type, name the regulation that requires it. That list defines which systems this page covers.
 
@@ -98,7 +98,7 @@ Signatures must also be linked to their records so that nobody can cut, copy or 
 
 **General requirements** ([§ 11.100](https://www.ecfr.gov/current/title-21/section-11.100)). Each electronic signature must be unique to one individual and must not be reused by, or reassigned to, anyone else. The organization must verify a person's identity before it assigns that person a signature. Before or at the time of use, people who use electronic signatures must certify to FDA that the signatures are intended as the legally binding equivalent of handwritten signatures.
 
-**Components and controls** ([§ 11.200](https://www.ecfr.gov/current/title-21/section-11.200)). A signature that is not biometric must use at least two distinct identification components, such as an identification code and a password. The first signing in a continuous session uses all components. Later signings in that session may use one. Biometric signatures must be designed so that only their genuine owners can use them.
+**Components and controls** ([§ 11.200](https://www.ecfr.gov/current/title-21/section-11.200)). A signature that is not biometric must use at least two distinct identification components, such as an identification code and a password. The first signing in a continuous session uses all components. Later signings in that session must use at least one component that only the individual can execute and that is designed for use only by that individual (§ 11.200(a)(1)(i)). Biometric signatures must be designed so that only their genuine owners can use them.
 
 **Identification codes and passwords** ([§ 11.300](https://www.ecfr.gov/current/title-21/section-11.300)). Where signatures rely on codes and passwords, the rule requires controls that:
 
@@ -120,7 +120,7 @@ The guidance states that Part 11 remains in effect, that FDA will enforce the ot
 
 ## Device manufacturers: the quality system context
 
-For medical devices, 21 CFR Part 820 is one source of predicate record requirements. FDA amended Part 820 in a final rule published on February 2, 2024 ([89 FR 7496](https://www.federalregister.gov/documents/2024/02/02/2024-01709/medical-devices-quality-system-regulation-amendments)). The rule took effect on February 2, 2026.
+FDA's 2003 guidance names 21 CFR Part 820 as one example of a regulation whose record requirements bring Part 11 into play. FDA amended Part 820 in a final rule published on February 2, 2024 ([89 FR 7496](https://www.federalregister.gov/documents/2024/02/02/2024-01709/medical-devices-quality-system-regulation-amendments)). The rule took effect on February 2, 2026.
 
 Part 820 is now titled the Quality Management System Regulation. It incorporates ISO 13485:2016 by reference ([§ 820.7](https://www.ecfr.gov/current/title-21/section-820.7)). A manufacturer must document a quality management system that complies with the applicable requirements of that standard and of Part 820 ([§ 820.10(a)](https://www.ecfr.gov/current/title-21/section-820.10)).
 
@@ -128,12 +128,12 @@ Part 820 is now titled the Quality Management System Regulation. It incorporates
 
 ## Audit-readiness checklist
 
-Answer yes or no for one system at a time. Raise each "no" or "not sure" with your quality lead. The checklist is a reading aid, not a list of what an inspector will ask.
+Answer yes or no for one system at a time. Raise each "no" or "not sure" with your quality lead. The checklist is a reading aid, not a list of what an inspector will ask. Rows marked **Practice** are this page's practical reading. The rule does not require that document, and the section named is the one the practice rests on.
 
 | # | Question | Traces to |
 | --- | --- | --- |
-| 1 | Do we have a list of our electronic records and the predicate rule behind each one? | § 11.1(b) |
-| 2 | Have we recorded whether the system is closed or open? | § 11.3(b)(4), (9) |
+| 1 | Do we have a list of our electronic records and the predicate rule behind each one? | **Practice.** Not required by the rule. FDA guidance recommends it. Rests on § 11.1(b) |
+| 2 | Have we recorded whether the system is closed or open? | **Practice.** Not required by the rule. Rests on § 11.3(b)(4), (9) |
 | 3 | Is the system validated, including its ability to discern invalid or altered records? | § 11.10(a) |
 | 4 | Can we produce a complete, accurate copy of any record, in human readable and electronic form? | § 11.10(b) |
 | 5 | Can we retrieve every record for its whole retention period? | § 11.10(c) |
@@ -142,14 +142,14 @@ Answer yes or no for one system at a time. Raise each "no" or "not sure" with yo
 | 8 | Do we keep audit trails at least as long as the records? | § 11.10(e) |
 | 9 | Does the workflow enforce the required order of steps? | § 11.10(f) |
 | 10 | Does the system check a person's authority before that person signs or alters a record? | § 11.10(g) |
-| 11 | Can we show that system developers, administrators and users have the training for their tasks? | § 11.10(i) |
+| 11 | Can we show that system developers, administrators and users have the education, training and experience for their tasks? | § 11.10(i) |
 | 12 | Is there a written policy that holds people accountable for actions under their signatures? | § 11.10(j) |
 | 13 | Is the system's own documentation under distribution and change control? | § 11.10(k) |
 | 14 | For an open system, are there added measures such as encryption? | § 11.30 |
 | 15 | Does every signed record show printed name, date and time, and meaning, on screen and on printouts? | § 11.50 |
 | 16 | Is each signature linked to its record so that it cannot be copied or moved by ordinary means? | § 11.70 |
 | 17 | Is every electronic signature unique to one person, and do we verify identity before we assign it? | § 11.100(a), (b) |
-| 18 | Has the organization certified to FDA that its electronic signatures are legally binding? | § 11.100(c) |
+| 18 | Has the organization certified to FDA that its electronic signatures are intended as the legally binding equivalent of handwritten signatures? | § 11.100(c) |
 | 19 | Does each non-biometric signature use at least two distinct components? | § 11.200(a)(1) |
 | 20 | Do we periodically check, recall or revise passwords and identification codes? | § 11.300(b) |
 | 21 | Is there a procedure to deauthorize a lost or compromised token or card? | § 11.300(c) |
