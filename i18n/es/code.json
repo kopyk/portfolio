@@ -1,0 +1,10 @@
+{
+  "checklist.status": {
+    "message": "{done} de {total} completados",
+    "description": "Progress line under a checklist"
+  },
+  "checklist.clear": {
+    "message": "Borrar marcas",
+    "description": "Button that unticks every item"
+  }
+}

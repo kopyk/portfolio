@@ -1,0 +1,10 @@
+# A summary of a law should not promise an outcome.
+extends: existence
+message: "'%s' promises a legal outcome. Say what the rule requires and cite it."
+level: error
+ignorecase: true
+tokens:
+  - guarantees? compliance
+  - fully compliant
+  - ensures? compliance
+  - legally safe

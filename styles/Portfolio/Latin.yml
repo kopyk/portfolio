@@ -1,0 +1,12 @@
+# Latin abbreviations are easy to misread and translate badly.
+# See docs/process/writing-for-translation.md.
+extends: substitution
+message: "Use '%s' instead of '%s'."
+level: error
+ignorecase: true
+nonword: true
+swap:
+  '\be\.g\.': for example
+  '\bi\.e\.': that is
+  '\betc\.': and so on
+  '\bvia\b': through

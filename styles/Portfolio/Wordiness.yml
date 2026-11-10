@@ -1,0 +1,17 @@
+# Shorter words with the same meaning. Shorter source text is clearer and
+# costs less to translate.
+extends: substitution
+message: "Use '%s' instead of '%s'."
+level: error
+ignorecase: true
+swap:
+  in order to: to
+  utilize: use
+  utilizes: uses
+  prior to: before
+  in the event that: if
+  at this point in time: now
+  due to the fact that: because
+  a number of: several
+  is able to: can
+  are able to: can

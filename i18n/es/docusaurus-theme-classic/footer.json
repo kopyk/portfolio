@@ -1,0 +1,6 @@
+{
+  "link.item.label.Home": {"message": "Inicio", "description": "The label of footer link with label=Home"},
+  "link.item.label.Source and change log": {"message": "Código fuente y registro de cambios", "description": "The label of footer link with label=Source and change log"},
+  "link.item.label.LinkedIn": {"message": "LinkedIn", "description": "The label of footer link with label=LinkedIn"},
+  "copyright": {"message": "© 2026 Jordan Yan. Las muestras son trabajo original. Los nombres de empresas y productos que aparecen en ellas son ficticios, salvo que la página indique lo contrario.", "description": "The footer copyright"}
+}

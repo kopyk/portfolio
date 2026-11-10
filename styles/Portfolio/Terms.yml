@@ -1,0 +1,14 @@
+# One term for one thing.
+extends: substitution
+message: "Use '%s' instead of '%s'."
+level: error
+ignorecase: false
+swap:
+  e-mail: email
+  log in to: sign in to
+  login to: sign in to
+  click on: select
+  Click on: Select
+  parental PIN: guardian PIN
+  passcode: guardian PIN
+  work-flow: workflow

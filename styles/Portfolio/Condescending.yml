@@ -1,0 +1,12 @@
+# Words that tell the reader a task is easy. If the reader is stuck, they
+# read as blame. If the reader is not stuck, they add nothing.
+extends: existence
+message: "Remove '%s'. Do not tell the reader how hard a step is."
+level: error
+ignorecase: true
+tokens:
+  - simply
+  - easily
+  - obviously
+  - of course
+  - just (?:click|select|enter|open|go|use|add|run)

@@ -1,0 +1,10 @@
+# Readers use phones, tablets, consoles and keyboards. "Select" fits all of
+# them. "Click" and "tap" each leave someone out.
+extends: existence
+message: "Use 'select' instead of '%s' so the step fits any device."
+level: warning
+ignorecase: true
+tokens:
+  - click
+  - tap
+  - press

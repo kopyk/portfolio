@@ -1,111 +1,112 @@
-<div align="center">
+# Jordan Yan: portfolio
 
-# Jordan Yan
+Source of [jordanyan.com](https://www.jordanyan.com). I am a Technical Writer II at Zone 5 Technologies, and I write regulated, safety and compliance documentation.
 
-**Technical Writer II, Zone 5 Technologies · AI & Developer Documentation**  
-San Luis Obispo, CA · [jordanyan.com](https://www.jordanyan.com) · [ai.jordanyan.com](https://ai.jordanyan.com)
-
-</div>
-
-This repository is the source of [jordanyan.com](https://www.jordanyan.com): a single static `index.html` served by GitHub Pages.
-
-I write AS9100-compliant work instructions and build documentation for defense aerospace manufacturing at Zone 5 Technologies. Before that I wrote public HIPAA and ASC X12 companion guides for DC Medicaid at Gainwell Technologies. The writing samples below are AI and developer documentation, the direction I'm building toward.
-
----
-
-## Pinned projects
-
-| Project | Description | Proof |
-|---------|-------------|-------|
-| [**AI writing samples**](https://ai.jordanyan.com) | Model card, RAG tutorial, API reference and eval rubric, plus defense & aerospace samples (maintenance procedure, interface control document) | Each sample carries a proof label (see [Writing samples](#writing-samples)) |
-| [**ask-my-docs**](https://github.com/kopyk/ask-my-docs) | Python command-line tool that answers questions about Markdown docs with Claude (RAG), plus an MCP server that exposes the same search as a `search_docs` tool | 56 tests · CI · Recall@4 10/10 |
-| [**gainwell-dhcf-companion-guides**](https://github.com/kopyk/gainwell-dhcf-companion-guides) | Wrote the 837I v1.3 update and edited and enhanced the 276/277 v1.1 guide: public HIPAA Companion Guides for DC Medicaid (Gainwell) | Official PDFs on gainwelltechnologies.com |
-| [**Jungle Decision Framework**](https://docs.jordanyan.com) | A documentation site that teaches decision-making through rules, flowcharts and progressive mental models (Docusaurus, GitHub Pages) | Live site + source |
-| [**portfolio**](https://www.jordanyan.com) | Central hub (this repo) | — |
-
----
+This repository is a docs-as-code project. Pages are Markdown, changes go through pull requests, and every change is built, linted and tested before it is published.
 
 ## Writing samples
 
-All samples are original work written for this portfolio. Systems, part numbers and data are fictional. No CUI, export-controlled (ITAR/EAR) or proprietary information is included.
+| Sample | Written for | What it shows |
+| --- | --- | --- |
+| [Family safety guides](https://www.jordanyan.com/docs/family-safety) | Trust and safety documentation | A help-center set for guardians: one concept page, three task guides, a quick reference. Reading level is tested in CI. |
+| [COPPA for product teams](https://www.jordanyan.com/docs/compliance/coppa-for-product-teams) | Trust and safety; policy and procedure | A regulation explained for the people who act on it, cited to the rule text. |
+| [Policy and procedure set](https://www.jordanyan.com/docs/policy-procedure) | Policy and procedure writing | One Regulation E requirement as a policy, a procedure and a customer notice, with a traceability table. |
+| [Documentation update process](https://www.jordanyan.com/docs/process/doc-update-process) | Regulated product and audit documentation | The change-control process this repository follows. |
+| [Writing for translation](https://www.jordanyan.com/docs/process/writing-for-translation) | Trust and safety documentation | A one-page guide to source text that translates cleanly. |
 
-| Sample | Proof |
-|--------|-------|
-| [AI Model Card: Runway Debris Detection](https://ai.jordanyan.com/docs/ai/model-card) | Sources checked (DoD AI Ethical Principles via ai.mil; NIST AI 100-1) · Totals verified |
-| [Tutorial: Build a Q&A Bot Over Your Docs](https://ai.jordanyan.com/docs/ai/rag-tutorial) | Code tested in CI |
-| [API Reference: Document Classification](https://ai.jordanyan.com/docs/ai/api-reference) | OpenAPI spec validated |
-| [LLM Evaluation Rubric: Documentation Q&A](https://ai.jordanyan.com/docs/ai/eval-rubric) | Math verified |
-| [Maintenance Procedure: UAS Propeller Replacement](https://ai.jordanyan.com/docs/defense/maintenance-procedure) | Standards cited (MIL-STD-38784B advisory definitions; MIL-STD-40051-2 work-package structure) |
-| [Interface Control Document: Telemetry Message](https://ai.jordanyan.com/docs/defense/interface-control-document) | Layout verified (byte offsets checked by a test) |
+AI and developer documentation samples are in a separate repository, [kopyk/ai-docs](https://github.com/kopyk/ai-docs).
 
----
-
-## Experience
-
-### Zone 5 Technologies — Technical Writer II
-
-**Jun 2026 – Present · San Luis Obispo, CA**
-
-Joined Manufacturing Operations as a Technical Writer; promoted to Technical Writer II within 4 months based on performance.
-
-- Led the move of White Spike work instructions to an updated product configuration, keeping revision control and configuration alignment intact across every document.
-- Led First Article Inspection (FAI) documentation for the program's avionics side and wrote 11 new work instructions, which supported on-time first article completion.
-- Created a customer-facing build documentation template that shows how 2 of the company's products are built.
-- Developed and maintained 28 AS9100-compliant work instructions and build documents by turning CAD models and engineering drawings into clear, step-by-step procedures for assemblers.
-- Coordinated daily with manufacturing engineers, mechanical engineers, assemblers, technicians and the manufacturing execution team to keep instructions in line with the current design.
-- Expanded support across programs, bringing the Rusty Dagger work instruction standards to the White Spike program across 35 documents.
-
-### Gainwell Technologies — Technical Writer
-
-**Feb 2025 – Feb 2026 · Irving, TX**
-
-Wrote the 837I v1.3 update and edited and enhanced the 276/277 v1.1 guide: public, HIPAA-compliant Companion Guides to the ASC X12N 5010 TR3s for DC Medicaid (DHCF) trading partners. Both are published by Gainwell.
-
-| Guide | Version | Pages | Official PDF (Gainwell) | More |
-|-------|---------|-------|-------------------------|------|
-| **837I FFS Claims** | v1.3 (Jun 2025) | 21 | [PDF](https://www.gainwelltechnologies.com/wp-content/uploads/2025/07/DC_837I-FFS-Claims-Companion-Guide-v1.3.pdf) | [Repository](https://github.com/kopyk/gainwell-dhcf-companion-guides) |
-| **276/277 FFS Claims** | v1.1 (Feb 2025) | 30 | [PDF](https://www.gainwelltechnologies.com/wp-content/uploads/2025/07/DC_276_277FFS-FFS-Claims-Companion-Guide-v1.1.pdf) | [Cited Markdown version](https://github.com/kopyk/gainwell-dhcf-companion-guides/blob/main/276-277-enhanced.md) |
-
-- Produced clear, step-by-step technical documentation for regulated healthcare workflows used as permanent operational references.
-- Authored and edited SOPs and technical documentation contributing to an 80-page Project Management Plan and Software Design Document, standardizing repeatable EDI processes.
-- Consolidated input from 20+ subject matter experts while adhering to HIPAA and ASC X12 EDI 5010 standards.
-- Developed six user-facing companion guides for the Washington, D.C. EDI team, reducing vendor onboarding questions by approximately 30%.
-- Designed and presented a Power BI vendor-tracking dashboard to 15+ stakeholders.
-
-### Gulf Coast Journal — Editorial Operations Coordinator
-
-**Sep 2023 – Dec 2025 · Houston, TX**
-
-- Edited fiction, poetry, essays and critical writing into publication-ready content.
-- Designed and implemented a streamlined submission and review workflow, reducing average turnaround time by 50%.
-- Maintained editorial standards through fact-checking, revision tracking and structured feedback across multiple contributors.
-- Managed submissions, revision cycles and production coordination for biannual issues.
-
-### Additional experience
-
-- **Teaching Fellow, Breakthrough Central Texas** (Jun – Aug 2024, Austin, TX) — developed structured instructional materials and lesson plans, breaking complex concepts into clear, sequential explanations for diverse learners.
-
----
-
-## Education
-
-**B.A. in English, University of Houston** — December 2025. Relevant coursework: Technical Communications, Professional Writing, Advanced Composition.
-
----
-
-## Skills
+## How the site is organized
 
 ```text
-Technical Writing • Work Instructions • Build Documentation • SOPs • API Documentation • Technical Manuals • SME Interviews & Review • AI Model Cards • LLM Evaluation • RAG • Claude API • OpenAPI • AS9100 • First Article Inspection (FAI) • HIPAA • ASC X12 EDI 5010 • XML • Plain Language • Interface Control Documents • Requirements Traceability • Markdown • Docusaurus • Mermaid • SVG • Git • GitHub Actions • Python • C++ • Doxygen • Copilot • Power BI • SharePoint • Microsoft 365 • Adobe Creative Suite • CMS
+static/index.html      Home page. Hand-written HTML, CSS and JavaScript, copied to the site root as is.
+docs/                  Writing samples. One folder per sample set. Built by Docusaurus under /docs.
+  family-safety/         Guardian guide set (concept, tasks, quick reference)
+  compliance/            Regulation explainers
+  policy-procedure/      Policy, procedure and customer notice from one requirement
+  process/               How these docs are changed and written
+  case-studies/          Past work, process and outcomes only (drafts until complete)
+  creator/               Roblox Studio and Luau tutorial (draft until run in Studio)
+i18n/es/               Spanish: UI strings, translated pages, and the term list for translators
+examples/filtered-sign/ Luau code for the creator tutorial, with unit tests
+src/components/        AboutSample, Steps, Checklist
+src/css/custom.css     Styles for the docs and the components
+styles/Portfolio/      Vale rules: the style guide in checkable form
+scripts/               Reading-level check and its tests
+sidebars.js            Navigation for /docs
+CHANGELOG.md           Dated list of content changes
 ```
 
----
+Three choices shape the structure:
 
-## Work status & contact
+- **Samples are grouped by reader, then tagged by role type.** A folder holds everything one audience needs. The "About this sample" note on each page and the [samples index](https://www.jordanyan.com/docs) say which kind of team the sample is written for.
+- **Each set follows concept, task, reference.** A reader can learn how something works, do it, or look it up, and each page does only one of those.
+- **Every sample opens with an "About this sample" note** that gives the audience, goal, constraints, tools and decisions.
 
-U.S. citizen; no current clearance; willing to undergo a background investigation.
+A page with `draft: true` in its front matter is left out of the published site.
+
+## Checks
+
+GitHub Actions runs these on every push and pull request ([`ci.yml`](.github/workflows/ci.yml)).
+
+| Check | Command | Fails when |
+| --- | --- | --- |
+| Build | `npm run build` | The site does not build in English or Spanish, or an internal link or anchor is broken |
+| Prose style | `vale docs` | A page breaks an error-level rule in [`styles/Portfolio`](styles/Portfolio) |
+| Reading level | `npm run check:reading-level` | A page in `docs/family-safety` scores above grade 8 (Flesch-Kincaid) |
+| Scorer tests | `npm test` | The reading-level script's own unit tests fail |
+| External links | lychee | A link to another site does not resolve |
+| Tutorial code | `luau SignRules.spec.luau` | A unit test for the tutorial's module fails |
+
+### The style rules
+
+| Rule | Level | What it catches |
+| --- | --- | --- |
+| `Condescending` | error | "simply", "easily", "obviously" and similar |
+| `Wordiness` | error | "in order to", "utilize", "prior to" and similar |
+| `Latin` | error | "e.g.", "i.e.", "etc.", "via" |
+| `Terms` | error | Variants of a fixed term, such as "passcode" for "guardian PIN" |
+| `LegalCertainty` | error | Phrases that promise a legal outcome |
+| `UIVerbs` | warning | "click", "tap" and "press" where "select" fits any device |
+| `SentenceLength` | suggestion | Sentences over 30 words |
+
+## Work on the site
+
+You need Node.js 20 or later.
+
+```bash
+npm ci
+npm start                    # English, with live reload, at http://localhost:3000/docs
+npm start -- --locale es     # Spanish
+npm run build && npm run serve   # the full site, home page included
+```
+
+The home page is a static file, so it appears only in the built site (`npm run serve`), not under `npm start`.
+
+## Contribute a change
+
+The full process, with change classes and the fast track for urgent fixes, is the [documentation update process](https://www.jordanyan.com/docs/process/doc-update-process). In short:
+
+1. Open a branch from `main`.
+2. Make the change. Follow the [writing-for-translation guide](https://www.jordanyan.com/docs/process/writing-for-translation).
+3. Add an entry to [`CHANGELOG.md`](CHANGELOG.md) with the change class: Minor, Standard, Regulated or Urgent.
+4. Run `npm run build`, `npm test` and `npm run check:reading-level`.
+5. Open a pull request and state the class. For a Regulated change, re-check the cited source and update the "checked on" date on the page.
+6. Merge when the checks pass and the owner approves. The site deploys from `main` ([`deploy.yml`](.github/workflows/deploy.yml)).
+
+To add a page, create the Markdown file under `docs/`, start it with an `<AboutSample>` note, and add its ID to `sidebars.js`.
+
+To translate a page, copy it to the same path under `i18n/es/docusaurus-plugin-content-docs/current/` and translate it using [`i18n/es/TERMS.md`](i18n/es/TERMS.md).
+
+## Content rules
+
+- Samples are original work. Companies and products in them are fictional unless a page says otherwise.
+- No employer documents, screenshots or proprietary detail.
+- A page about a real product is based on public information and labeled unofficial.
+- A page that summarizes a law cites the primary source, carries a "not legal advice" note, and shows the date it was checked.
+
+## Contact
 
 - Email: [jxyan@uh.edu](mailto:jxyan@uh.edu)
 - LinkedIn: [linkedin.com/in/jordanxyan](https://www.linkedin.com/in/jordanxyan/)
-- GitHub: [github.com/kopyk](https://github.com/kopyk)
-- Resume: [Jordan_Yan_Resume_2026.pdf](Jordan_Yan_Resume_2026.pdf)
+- Resume: [Jordan_Yan_Resume_2026.pdf](static/Jordan_Yan_Resume_2026.pdf)

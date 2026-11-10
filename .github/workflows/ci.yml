@@ -1,0 +1,98 @@
+# Checks that run on every push and pull request. Deployment is separate
+# (deploy.yml) and only runs on main.
+#
+#   build     the site builds in every locale; a broken internal link or anchor fails it
+#   prose     Vale lints the docs against the rules in styles/Portfolio
+#   reading   family safety pages must score at or below grade 8; the scorer has unit tests
+#   links     lychee checks links to other sites
+#   luau      unit tests for the creator tutorial's module run on the Luau CLI
+name: CI
+
+on:
+  push:
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # "last updated" dates come from Git history
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+
+  prose:
+    name: Prose style (Vale)
+    runs-on: ubuntu-latest
+    env:
+      VALE_VERSION: 3.12.0
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install Vale
+        run: |
+          curl -sSfL "https://github.com/errata-ai/vale/releases/download/v${VALE_VERSION}/vale_${VALE_VERSION}_Linux_64-bit.tar.gz" \
+            | tar -xz -C "$RUNNER_TEMP" vale
+      - name: Lint the docs
+        run: '"$RUNNER_TEMP/vale" docs'
+
+  reading:
+    name: Reading level
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+      - name: Test the scorer
+        run: npm test
+      - name: Score the family safety pages
+        run: npm run check:reading-level
+
+  links:
+    name: External links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          # Relative links between pages are checked by the build job. Links to
+          # this site and this repository are skipped: on a branch they point at
+          # pages and files that exist only after the merge.
+          # Government and social sites often refuse automated requests with
+          # 403 or 429; those are accepted so the check stays meaningful.
+          args: >-
+            --no-progress
+            --scheme https
+            --accept 200..=299,403,429
+            --exclude linkedin.com
+            --exclude '^https://www\.jordanyan\.com/'
+            --exclude '^https://github\.com/kopyk/portfolio'
+            --max-retries 3
+            docs README.md static/index.html
+          fail: true
+
+  luau:
+    name: Tutorial code (Luau)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Install the Luau CLI
+        run: |
+          curl -sSfL -o "$RUNNER_TEMP/luau.zip" https://github.com/luau-lang/luau/releases/latest/download/luau-ubuntu.zip
+          unzip -q "$RUNNER_TEMP/luau.zip" -d "$RUNNER_TEMP/luau"
+      - name: Run the module tests
+        run: '"$RUNNER_TEMP/luau/luau" SignRules.spec.luau'
+        working-directory: examples/filtered-sign

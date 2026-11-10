@@ -1,0 +1,6 @@
+{
+  "title": {"message": "Jordan Yan", "description": "The title in the navbar"},
+  "item.label.Writing samples": {"message": "Muestras de redacción", "description": "Navbar item with label Writing samples"},
+  "item.label.Experience": {"message": "Experiencia", "description": "Navbar item with label Experience"},
+  "item.label.Source": {"message": "Código fuente", "description": "Navbar item with label Source"}
+}
