@@ -46,7 +46,7 @@ The rule covers all customer information in your possession, including informati
 
 ## The core duty
 
-You must develop, implement and maintain a comprehensive information security program. It must be written, in one or more readily accessible parts. Its safeguards must fit your size and complexity, your activities and the sensitivity of the customer information ([§ 314.3(a)](https://www.ecfr.gov/current/title-16/section-314.3)).
+You must develop, implement and maintain a comprehensive, written information security program. Its safeguards must fit your size and complexity, your activities and the sensitivity of the customer information ([§ 314.3(a)](https://www.ecfr.gov/current/title-16/section-314.3)).
 
 ## How to read the tables
 
@@ -110,7 +110,7 @@ If a notification event involves the information of **at least 500 consumers**, 
 
 Discovery is the first day the event is known to you. You are deemed to know when any employee, officer or agent knows, other than the person who committed the breach (§ 314.4(j)(2)). This paragraph took effect on May 13, 2024 ([§ 314.5](https://www.ecfr.gov/current/title-16/section-314.5)).
 
-**What this changes in your work:** the clock can start when an agent of yours notices, not when the security team confirms. Each incident record needs a discovery date, a count of affected consumers and the reasoning behind the decision to file or not.
+**What this changes in your work:** the clock can start before the security team confirms anything. Record a discovery date, a consumer count and the reason for the decision to file or not.
 
 ## The small-institution exception
 
@@ -127,12 +127,10 @@ The rest of § 314.4 is not on the list. That includes the risk assessment duty 
 
 ## Amendment history
 
-Checked on November 10, 2026. Summaries written before these dates may not match the current text.
+Checked on November 10, 2026. On that date, the eCFR listed May 13, 2024 as the latest amendment to Part 314.
 
 - **2021.** A final rule published on December 9, 2021 rewrote § 314.4 and added the exception in § 314.6 ([86 FR 70272](https://www.federalregister.gov/documents/2021/12/09/2021-25736/standards-for-safeguarding-customer-information)). It took effect on January 10, 2022. Several paragraphs of § 314.4 had a later date of December 9, 2022, which the FTC then delayed to June 9, 2023 ([87 FR 71509](https://www.federalregister.gov/documents/2022/11/23/2022-25201/standards-for-safeguarding-customer-information)).
 - **2023.** A final rule published on November 13, 2023 added the notification duty ([88 FR 77499](https://www.federalregister.gov/documents/2023/11/13/2023-24412/standards-for-safeguarding-customer-information)). It took effect on May 13, 2024.
-
-On the date checked, the eCFR listed May 13, 2024 as the latest amendment to Part 314.
 
 ## Sources
 
