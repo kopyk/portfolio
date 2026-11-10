@@ -200,3 +200,4 @@ All statements about what the rule requires come from these primary sources.
 - Children's Online Privacy Protection Rule, [16 CFR Part 312](https://www.ecfr.gov/current/title-16/part-312) (eCFR).
 - Children's Online Privacy Protection Rule, final rule amendments, [90 FR 16918](https://www.federalregister.gov/documents/2025/04/22/2025-05904/childrens-online-privacy-protection-rule) (April 22, 2025).
 - Civil penalty amounts, [16 CFR 1.98](https://www.ecfr.gov/current/title-16/section-1.98).
+- FTC, [Complying with COPPA: Frequently Asked Questions](https://www.ftc.gov/business-guidance/resources/complying-coppa-frequently-asked-questions). FTC staff guidance, used for orientation only.

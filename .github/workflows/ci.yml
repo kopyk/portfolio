@@ -73,11 +73,15 @@ jobs:
           # pages and files that exist only after the merge.
           # Government and social sites often refuse automated requests with
           # 403 or 429; those are accepted so the check stays meaningful.
+          # ftc.gov and fda.gov answer automated requests with 404 for pages
+          # that open in a browser, so they are skipped and checked by hand
+          # in the scheduled review.
           args: >-
             --no-progress
             --scheme https
             --accept 200..=299,403,429
             --exclude linkedin.com
+            --exclude '^https://www\.(ftc|fda)\.gov/'
             --exclude '^https://www\.jordanyan\.com/'
             --exclude '^https://github\.com/kopyk/portfolio'
             --root-dir "${{ github.workspace }}/static"

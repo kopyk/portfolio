@@ -35,7 +35,7 @@ Each item below was checked against the eCFR text of 16 CFR Part 312 on 2026-11-
 - [ ] Security program elements and third-party assurances (§ 312.8).
 - [ ] Retention (§ 312.10).
 - [ ] 2025 amendments: published April 22, 2025 at 90 FR 16918, effective June 23, 2025, general compliance date April 22, 2026.
-- [ ] The FTC's COPPA FAQ link was removed from Sources because it returned 404 to the link checker. Add it back if it opens for you.
+- [ ] Links to ftc.gov and fda.gov are skipped by the automated link check, because those sites return 404 to automated requests. Open each one in a browser.
 - [ ] Penalty: $53,088 per violation (16 CFR 1.98(d)). No 2026 adjustment had been published on 2026-11-10. **Check again each January.**
 - [ ] The "What this changes in your work" paragraphs are practical reading, not statements of law. Decide whether you agree with each.
 
