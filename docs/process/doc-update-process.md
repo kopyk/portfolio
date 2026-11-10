@@ -116,7 +116,7 @@ flowchart LR
 
 | Pages | When | What to check |
 | --- | --- | --- |
-| Compliance explainer | Each January, and when the rule is amended | The penalty figure. The current rule text against each cited section. |
+| Regulation pages | Each January, and when a rule is amended | Penalty figures and other dollar amounts. The current rule text against each cited section. The status of any proposed rule the page mentions. |
 | Policy and procedure set | Every 12 months | Each deadline against the regulation. |
 | Family safety guides | Every 6 months | Steps still agree across the five pages. Reading level. |
 | All pages | Every 6 months | External links. The "about this sample" note still matches the page. |

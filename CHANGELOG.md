@@ -17,6 +17,9 @@ Minor, Standard, Regulated or Urgent.
   (45 CFR Part 164, Subpart C), the GLBA Safeguards Rule (16 CFR Part 314),
   21 CFR Part 11, and ITAR and EAR basics for technical writers. Each was
   checked against the current eCFR text on 2026-11-10.
+- **Standard.** Added a draft design review guide to the UK Children's Code.
+  Not published: its standards are not yet checked against the regulator's
+  own text.
 - **Standard.** Added the documentation update process and the
   writing-for-translation guide.
 - **Standard.** Added a draft Spanish translation of the family safety quick

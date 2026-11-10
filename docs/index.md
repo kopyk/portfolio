@@ -36,7 +36,7 @@ For quality, regulatory and security compliance teams.
 
 ## Regulatory range
 
-Six regulations from five fields, each written for the people who have to act on it and each in a different form. Every requirement is cited to the rule text.
+Six regulations, each from a different field, each written for the people who have to act on it, and each in a different form. Every requirement is cited to the rule text.
 
 | Sample | Field | Form | Source |
 | --- | --- | --- | --- |
