@@ -97,6 +97,17 @@ This page carries the most risk if a reader misreads it. Have someone with expor
 - [ ] **Pending change:** proposed rule 91 FR 62361 (October 1, 2026) would revise § 120.33. Comments close November 30, 2026.
 - [ ] Flowchart question 3 and the "writer's day" table are practice, not regulatory tests.
 
+### UK Children's Code (`uk-childrens-code-design-review-guide.md`) — not published yet
+
+This page has `draft: true`. The ICO's website blocked every automated request, so **the 15 standards were not checked against the ICO's own text**. They follow a UK government summary from 2021.
+
+- [ ] Open the ICO's Age appropriate design code in a browser. Check the name and one-line summary of each of the 15 standards against it, and the definition of a child (under 18).
+- [ ] Confirm on the ICO site: in force September 2, 2020; transition ended September 2, 2021. The page currently links a republished copy of the ICO news release. Replace it with the ICO's own page.
+- [ ] Checked on legislation.gov.uk: Data Protection Act 2018 ss. 123, 125, 126, 127; UK GDPR Articles 8 and 25(1A) and (1B); Data (Use and Access) Act 2025 s. 81.
+- [ ] "No parent's consent switches the standards off" and the four-theme grouping are this page's reading.
+- [ ] Check whether the ICO has updated the code, or announced a review, since the Data (Use and Access) Act 2025.
+- [ ] Remove `draft: true`, then add the page to `docs/index.md`, the home page and the README.
+
 ## Process pages (`docs/process`)
 
 - [ ] `doc-update-process.md` describes how this repository works. Make sure you will follow it, including the 1-business-day and 5-business-day commitments and the review schedule.

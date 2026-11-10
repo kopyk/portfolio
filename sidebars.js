@@ -25,6 +25,7 @@ const sidebars = {
         'compliance/glba-safeguards-rule-evidence-guide',
         'compliance/fda-part-11-for-documentation-teams',
         'compliance/export-controls-for-technical-writers',
+        'compliance/uk-childrens-code-design-review-guide',
       ],
     },
     {
