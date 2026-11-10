@@ -114,7 +114,7 @@
   content: counter(step);
   position: absolute;
   left: 0;
-  top: 0.75rem;
+  top: 1.5rem;
   display: grid;
   place-items: center;
   width: 2.25rem;
