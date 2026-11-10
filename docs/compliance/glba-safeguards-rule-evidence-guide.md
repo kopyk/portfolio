@@ -14,7 +14,7 @@ import AboutSample from '@site/src/components/AboutSample';
   tools="Markdown, Docusaurus, eCFR, the Federal Register and govinfo as sources, Vale.">
 
 - **Organized in the rule's own paragraph order.** A reviewer works through § 314.4 from (a) to (j) and asks for evidence by paragraph. The page follows the same path, so a reader can use it as a checklist.
-- **Three columns keep rule text and practice apart.** The first two columns of each table summarize the rule. The evidence column is my practical reading, and the page says so before the first table and in each column heading.
+- **Three columns keep rule text and practice apart.** Only the first column of each table summarizes the rule. The page says before the first table that the other two are practical reading, and the evidence column heading repeats it.
 - **The small-institution exception is marked on the rows it affects.** A reader at a small lender can see which rows do not apply without first reading to the end.
 - **The notification duty gets prose, not a table row.** It has a threshold, a clock and a list of contents, and a table cell would hide the conditions.
 - **Dates and thresholds are called out as things that expire.** The amendment history has its own section with the date I checked it.
@@ -31,16 +31,16 @@ This page is a writing sample. It summarizes a federal rule in plain language an
 
 The Gramm-Leach-Bliley Act (GLBA) tells federal agencies to set safeguard standards for financial institutions' customer records ([15 U.S.C. § 6801(b)](https://www.law.cornell.edu/uscode/text/15/6801)). The Federal Trade Commission (FTC) version of those standards is the Safeguards Rule, [16 CFR Part 314](https://www.ecfr.gov/current/title-16/part-314).
 
-The rule asks for one thing: a written information security program that contains ten listed elements. For each element, this guide names the document that usually states it and the evidence that shows it happens.
+The rule requires a written information security program with ten listed elements. For each element, this guide names the document that usually states it and the evidence that shows it happens.
 
 ## Who is covered
 
 The rule applies to financial institutions under FTC jurisdiction. These are institutions that no other regulator enforces GLBA against ([§ 314.1(b)](https://www.ecfr.gov/current/title-16/section-314.1)). Banks and federally insured credit unions answer to their own regulators, which set their own standards ([15 U.S.C. § 6805(a)](https://www.law.cornell.edu/uscode/text/15/6805)).
 
-| Term | What the rule says |
-| --- | --- |
-| Financial institution | A business that engages in an activity that is financial in nature, or incidental to such an activity ([§ 314.2(h)](https://www.ecfr.gov/current/title-16/section-314.2)). Examples in § 314.1(b) include mortgage lenders, finance companies, collection agencies and tax preparation firms. |
-| Customer information | Any record that contains nonpublic personal information about a customer of a financial institution, in paper, electronic or other form, that you or your affiliates handle or maintain (§ 314.2(d)). |
+Two definitions set the scope ([§ 314.2](https://www.ecfr.gov/current/title-16/section-314.2)):
+
+- A **financial institution** is a business that engages in an activity that is financial in nature, or incidental to such an activity (§ 314.2(h)). Examples in § 314.1(b) include mortgage lenders, finance companies and collection agencies.
+- **Customer information** is any record that contains nonpublic personal information about a customer of a financial institution, in any form, that you or your affiliates handle or maintain (§ 314.2(d)).
 
 The rule covers all customer information in your possession, including information that other financial institutions gave you about their customers (§ 314.1(b)).
 
@@ -52,11 +52,11 @@ You must develop, implement and maintain a comprehensive information security pr
 
 Only the first column of each table summarizes the rule, [§ 314.4](https://www.ecfr.gov/current/title-16/section-314.4). The **document** and **evidence** columns are practical reading, not rule text. The rule does not name policy documents or list evidence.
 
-Rows marked **Small-institution exception** do not apply to some institutions. See [The small-institution exception](#the-small-institution-exception).
+Rows marked **Small-institution exception** are explained in [The small-institution exception](#the-small-institution-exception).
 
 ## Governance and risk: § 314.4(a) and (b)
 
-| What the rule says | Document that states it | Evidence a reviewer would expect |
+| What the rule says | Document that states it | Evidence a reviewer would expect (practical reading) |
 | --- | --- | --- |
 | [(a)](https://www.ecfr.gov/current/title-16/section-314.4) Designate a Qualified Individual to oversee, implement and enforce the program. If the person works for an affiliate or a service provider, you keep responsibility and name a senior person to direct them. | Information security program charter | Signed designation. Role description. For an outside provider, the contract and the named senior overseer. |
 | [(b)](https://www.ecfr.gov/current/title-16/section-314.4) Base the program on an assessment of foreseeable internal and external risks to customer information. Repeat it periodically. | Risk management policy | Dated assessments. A risk register that links each risk to a safeguard. |
@@ -68,7 +68,7 @@ Rows marked **Small-institution exception** do not apply to some institutions. S
 
 You must design and implement safeguards to control the risks you identified, including the eight below.
 
-| What the rule says | Document that states it | Evidence a reviewer would expect |
+| What the rule says | Document that states it | Evidence a reviewer would expect (practical reading) |
 | --- | --- | --- |
 | [(c)(1)](https://www.ecfr.gov/current/title-16/section-314.4) Implement and periodically review access controls. Admit only authorized users, and limit each to the customer information the user needs. | Access control policy | Access review records with dates and reviewers. Joiner, mover and leaver tickets. |
 | [(c)(2)](https://www.ecfr.gov/current/title-16/section-314.4) Identify and manage the data, personnel, devices, systems and facilities that support your business. | Asset management standard | Data inventory and system inventory, with owners and a last-reviewed date. |
@@ -83,7 +83,7 @@ You must design and implement safeguards to control the risks you identified, in
 
 ## Testing, people and providers: § 314.4(d) to (f)
 
-| What the rule says | Document that states it | Evidence a reviewer would expect |
+| What the rule says | Document that states it | Evidence a reviewer would expect (practical reading) |
 | --- | --- | --- |
 | [(d)(1)](https://www.ecfr.gov/current/title-16/section-314.4) Regularly test or otherwise monitor the effectiveness of key controls, systems and procedures. | Security testing policy | Test plan and results. Tracked findings with closure dates. |
 | [(d)(2)](https://www.ecfr.gov/current/title-16/section-314.4) For information systems, use continuous monitoring, or periodic penetration testing and vulnerability assessments. Without effective continuous monitoring, you must run annual penetration tests, plus vulnerability assessments at least every six months and after material changes. **Small-institution exception.** | Vulnerability management standard | Penetration test reports. Scan reports no more than six months apart. Remediation tickets. |
@@ -94,10 +94,10 @@ You must design and implement safeguards to control the risks you identified, in
 
 ## Evaluation, incident response and reporting: § 314.4(g) to (i)
 
-| What the rule says | Document that states it | Evidence a reviewer would expect |
+| What the rule says | Document that states it | Evidence a reviewer would expect (practical reading) |
 | --- | --- | --- |
 | [(g)](https://www.ecfr.gov/current/title-16/section-314.4) Evaluate and adjust the program in light of test results, material business changes, new risk assessments and other material circumstances. | Program review procedure | Review minutes. A log that links each program change to its trigger. |
-| [(h)](https://www.ecfr.gov/current/title-16/section-314.4) Establish a written incident response plan. It must address seven areas: goals, internal processes, roles and decision authority, communications, remediation requirements, documentation and reporting, and revision after an event. **Small-institution exception.** | Incident response plan | The plan, mapped to the seven areas. Incident records. Post-incident reviews. |
+| [(h)](https://www.ecfr.gov/current/title-16/section-314.4) Establish a written incident response plan. It must address seven listed areas, including roles and decision authority, communications, and revision after an event. **Small-institution exception.** | Incident response plan | The plan, mapped to the seven areas. Incident records. Post-incident reviews. |
 | [(i)](https://www.ecfr.gov/current/title-16/section-314.4) The Qualified Individual must report in writing, regularly and at least once a year, to the board or an equivalent body. Without one, the report goes to a senior officer. It covers overall status, compliance with the rule and material matters. **Small-institution exception.** | Board reporting procedure | The dated report. Board minutes or an agenda that shows the board received it. |
 
 **What this changes in your work:** paragraph (i)(2) lists matters the report addresses, such as test results, security events and service provider arrangements. Use that list as the report's outline.
@@ -106,7 +106,7 @@ You must design and implement safeguards to control the risks you identified, in
 
 A **notification event** is the acquisition of unencrypted customer information without the authorization of the individual it pertains to. Encrypted information counts as unencrypted if an unauthorized person accessed the key. The rule presumes that unauthorized access is acquisition unless you have reliable evidence that it was not ([§ 314.2(m)](https://www.ecfr.gov/current/title-16/section-314.2)).
 
-If a notification event involves the information of **at least 500 consumers**, you must notify the FTC as soon as possible, and **no later than 30 days after discovery** ([§ 314.4(j)(1)](https://www.ecfr.gov/current/title-16/section-314.4)). You file the notice electronically on the FTC's form. Among other items, it must give the types of information involved, the date or date range if you can determine it, and the number of consumers affected or potentially affected.
+If a notification event involves the information of **at least 500 consumers**, you must notify the FTC as soon as possible, and **no later than 30 days after discovery** ([§ 314.4(j)(1)](https://www.ecfr.gov/current/title-16/section-314.4)). The notice goes on the FTC's electronic form. It must include six listed items, such as the types of information involved and the number of consumers affected.
 
 Discovery is the first day the event is known to you. You are deemed to know when any employee, officer or agent knows, other than the person who committed the breach (§ 314.4(j)(2)). This paragraph took effect on May 13, 2024 ([§ 314.5](https://www.ecfr.gov/current/title-16/section-314.5)).
 
@@ -116,10 +116,10 @@ Discovery is the first day the event is known to you. You are deemed to know whe
 
 Four paragraphs do not apply to a financial institution that maintains customer information about **fewer than 5,000 consumers** ([§ 314.6](https://www.ecfr.gov/current/title-16/section-314.6)):
 
-- § 314.4(b)(1), the written risk assessment and its required contents.
-- § 314.4(d)(2), continuous monitoring, or penetration tests and vulnerability assessments.
+- § 314.4(b)(1), the written risk assessment.
+- § 314.4(d)(2), the monitoring and testing schedule.
 - § 314.4(h), the written incident response plan.
-- § 314.4(i), the written report to the board.
+- § 314.4(i), the report to the board.
 
 The rest of § 314.4 is not on the list. That includes the risk assessment duty in paragraph (b) and the FTC notification in paragraph (j).
 

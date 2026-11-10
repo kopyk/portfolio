@@ -31,18 +31,13 @@ This page is a writing sample. It summarizes a federal rule in plain language an
 
 [21 CFR Part 11](https://www.ecfr.gov/current/title-21/part-11) is the Food and Drug Administration (FDA) rule on electronic records and electronic signatures. It sets the criteria under which FDA treats them as trustworthy, reliable and generally equivalent to paper records and handwritten signatures ([§ 11.1(a)](https://www.ecfr.gov/current/title-21/section-11.1)).
 
-For a documentation team, that means three things to show: the record is genuine, you know who changed it and when, and each signature belongs to one person and stays with its record.
-
 ## When Part 11 applies
 
 Part 11 does not create a duty to keep any record. It applies to records in electronic form that you create, modify, maintain, archive, retrieve or transmit under a records requirement in another FDA regulation. It also applies to electronic records you submit to FDA under the Federal Food, Drug, and Cosmetic Act or the Public Health Service Act (§ 11.1(b)).
 
 FDA guidance calls those other requirements **predicate rules**. The term comes from guidance, not from the rule text.
 
-Two more points from § 11.1:
-
-- Systems, controls and their documentation must be readily available for FDA inspection (§ 11.1(e)).
-- Paragraphs (f) through (p) exclude records kept under certain food regulations.
+Systems, controls and their documentation must be readily available for FDA inspection (§ 11.1(e)). Paragraphs (f) through (p) exclude records kept under certain food regulations.
 
 **What this changes in your work:** start from the predicate rule. For each document type, name the regulation that requires it. That list defines which systems this page covers.
 
@@ -57,7 +52,7 @@ These come from [§ 11.3](https://www.ecfr.gov/current/title-21/section-11.3).
 | Closed system | An environment where the people responsible for the content of the records control access to the system. |
 | Open system | An environment where the people responsible for the content of the records do not control access to the system. |
 
-**What this changes in your work:** the definition of an electronic record is broad. Decide whether each system is closed or open, and write the reason down.
+**What this changes in your work:** decide whether each system is closed or open, and write the reason down.
 
 ## Controls for closed systems
 
@@ -77,7 +72,7 @@ People who use a closed system must have procedures and controls designed to pro
 | (j) | Establish and follow written policies that hold individuals accountable for actions taken under their electronic signatures. |
 | (k) | Control the distribution and use of systems documentation, and keep a time-sequenced audit trail of its revisions. |
 
-**What this changes in your work:** several of these controls are documents your team writes or owns. Paragraph (j) is a policy. Paragraph (i) is a training record. Paragraph (k) puts the system's own manuals under change control. Paragraph (f) is your approval workflow.
+**What this changes in your work:** several of these controls are documents your team writes. Paragraph (j) is a policy. Paragraph (i) is a training record. Paragraph (k) puts the system's own manuals under change control.
 
 ## Open systems
 
@@ -125,7 +120,7 @@ The guidance states that Part 11 remains in effect, that FDA will enforce the ot
 
 ## Device manufacturers: the quality system context
 
-For medical devices, 21 CFR Part 820 is a main source of predicate record requirements. FDA amended Part 820 in a final rule published on February 2, 2024 ([89 FR 7496](https://www.federalregister.gov/documents/2024/02/02/2024-01709/medical-devices-quality-system-regulation-amendments)). The rule took effect on February 2, 2026.
+For medical devices, 21 CFR Part 820 is one source of predicate record requirements. FDA amended Part 820 in a final rule published on February 2, 2024 ([89 FR 7496](https://www.federalregister.gov/documents/2024/02/02/2024-01709/medical-devices-quality-system-regulation-amendments)). The rule took effect on February 2, 2026.
 
 Part 820 is now titled the Quality Management System Regulation. It incorporates ISO 13485:2016 by reference ([§ 820.7](https://www.ecfr.gov/current/title-21/section-820.7)). A manufacturer must document a quality management system that complies with the applicable requirements of that standard and of Part 820 ([§ 820.10(a)](https://www.ecfr.gov/current/title-21/section-820.10)).
 
