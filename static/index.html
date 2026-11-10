@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, "js");</script>
   <title>Jordan Yan | Technical Writer: Regulated, Safety &amp; Compliance Documentation</title>
-  <meta name="description" content="Jordan Yan is a technical writer focused on regulated, safety and compliance documentation. Samples: family safety guides, a COPPA explainer for product teams, a policy and procedure set, and a documentation update process.">
+  <meta name="description" content="Jordan Yan is a technical writer focused on regulated, safety and compliance documentation. Samples: family safety guides, regulation explainers, a policy and procedure set, and AI documentation including a model card and an evaluation rubric.">
   <link rel="canonical" href="https://www.jordanyan.com/">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
@@ -67,6 +67,9 @@
       "Plain language",
       "Document change control",
       "Docs as code",
+      "AI documentation",
+      "Model cards",
+      "LLM evaluation",
       "AS9100",
       "HIPAA",
       "ASC X12 EDI 5010",
@@ -895,8 +898,9 @@
         I write regulated, safety and compliance documentation: the kind where a wrong step or a missed
         deadline has consequences. I have written public HIPAA and ASC X12 companion guides for DC Medicaid
         at Gainwell Technologies, and I now write AS9100-compliant work instructions at Zone 5 Technologies.
-        The samples here apply that discipline to family safety guides, a children's privacy explainer for
-        product teams, and a policy and procedure set, all built and checked as docs-as-code.
+        The samples here apply that discipline to family safety guides, regulations explained for the teams
+        who act on them, a policy and procedure set, and AI documentation that includes a model card and an
+        evaluation rubric, all built and checked as docs-as-code.
       </p>
       <div class="cta-row">
         <a class="btn btn-primary" href="docs/family-safety">Read the family safety guides</a>
@@ -932,6 +936,14 @@
         <li>
           <h3>Regulated product documentation</h3>
           <p>AS9100-compliant work instructions, First Article Inspection documentation, and revision and configuration control across document sets.</p>
+        </li>
+        <li>
+          <h3>AI documentation</h3>
+          <p>Model cards and responsible-AI disclosures mapped to the NIST AI RMF, and LLM evaluation rubrics.</p>
+        </li>
+        <li>
+          <h3>Developer documentation</h3>
+          <p>API references and tutorials, with tutorial code tested in CI.</p>
         </li>
         <li>
           <h3>Docs-as-code</h3>
@@ -974,6 +986,63 @@
               <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Checked against rule text</li>
             </ul>
             <span class="more" aria-hidden="true">Read sample →</span>
+          </article>
+        </li>
+      </ul>
+
+      <h3 class="group-title">AI and developer documentation</h3>
+      <ul class="card-grid">
+        <li>
+          <article class="card card-link">
+            <p class="eyebrow">Model card</p>
+            <h4><a href="https://ai.jordanyan.com/docs/ai/model-card" target="_blank" rel="noopener noreferrer">AI Model Card: Runway Debris Detection<span class="vh"> (opens in a new tab)</span></a></h4>
+            <p>Intended use, condition-level performance, failure modes, and human-oversight controls for a computer-vision model.</p>
+            <p class="tags">DoD AI Ethical Principles · NIST AI RMF</p>
+            <p class="vh">Proof:</p>
+            <ul class="proof">
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Sources checked</li>
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Totals verified</li>
+            </ul>
+            <span class="more" aria-hidden="true">Read sample ↗</span>
+          </article>
+        </li>
+        <li>
+          <article class="card card-link">
+            <p class="eyebrow">Developer tutorial</p>
+            <h4><a href="https://ai.jordanyan.com/docs/ai/rag-tutorial" target="_blank" rel="noopener noreferrer">Tutorial: Build a Q&amp;A Bot Over Your Docs<span class="vh"> (opens in a new tab)</span></a></h4>
+            <p>Explains retrieval-augmented generation and walks developers through working, tested code for my ask-my-docs tool.</p>
+            <p class="tags">RAG · Python · Claude API</p>
+            <p class="vh">Proof:</p>
+            <ul class="proof">
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Code tested in CI</li>
+            </ul>
+            <span class="more" aria-hidden="true">Read sample ↗</span>
+          </article>
+        </li>
+        <li>
+          <article class="card card-link">
+            <p class="eyebrow">API reference</p>
+            <h4><a href="https://ai.jordanyan.com/docs/ai/api-reference" target="_blank" rel="noopener noreferrer">API Reference: Document Classification<span class="vh"> (opens in a new tab)</span></a></h4>
+            <p>Parameters, request and response examples, error handling, and rate limits for an AI classification endpoint.</p>
+            <p class="tags">REST API reference</p>
+            <p class="vh">Proof:</p>
+            <ul class="proof">
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>OpenAPI spec validated</li>
+            </ul>
+            <span class="more" aria-hidden="true">Read sample ↗</span>
+          </article>
+        </li>
+        <li>
+          <article class="card card-link">
+            <p class="eyebrow">Evaluation guide</p>
+            <h4><a href="https://ai.jordanyan.com/docs/ai/eval-rubric" target="_blank" rel="noopener noreferrer">LLM Evaluation Rubric: Documentation Q&amp;A<span class="vh"> (opens in a new tab)</span></a></h4>
+            <p>Pass/fail grading criteria, a test set covering four question types, and reporting by question type to catch hallucinated answers.</p>
+            <p class="tags">Test-set design</p>
+            <p class="vh">Proof:</p>
+            <ul class="proof">
+              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Math verified</li>
+            </ul>
+            <span class="more" aria-hidden="true">Read sample ↗</span>
           </article>
         </li>
       </ul>
@@ -1087,63 +1156,6 @@
       </ul>
 
       <p class="browse"><a href="docs">Browse all samples by role type <span aria-hidden="true">→</span></a></p>
-
-      <h3 class="group-title">AI and developer documentation</h3>
-      <ul class="card-grid">
-        <li>
-          <article class="card card-link">
-            <p class="eyebrow">Model card</p>
-            <h4><a href="https://ai.jordanyan.com/docs/ai/model-card" target="_blank" rel="noopener noreferrer">AI Model Card: Runway Debris Detection<span class="vh"> (opens in a new tab)</span></a></h4>
-            <p>Intended use, condition-level performance, failure modes, and human-oversight controls for a computer-vision model.</p>
-            <p class="tags">DoD AI Ethical Principles · NIST AI RMF</p>
-            <p class="vh">Proof:</p>
-            <ul class="proof">
-              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Sources checked</li>
-              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Totals verified</li>
-            </ul>
-            <span class="more" aria-hidden="true">Read sample ↗</span>
-          </article>
-        </li>
-        <li>
-          <article class="card card-link">
-            <p class="eyebrow">Developer tutorial</p>
-            <h4><a href="https://ai.jordanyan.com/docs/ai/rag-tutorial" target="_blank" rel="noopener noreferrer">Tutorial: Build a Q&amp;A Bot Over Your Docs<span class="vh"> (opens in a new tab)</span></a></h4>
-            <p>Explains retrieval-augmented generation and walks developers through working, tested code for my ask-my-docs tool.</p>
-            <p class="tags">RAG · Python · Claude API</p>
-            <p class="vh">Proof:</p>
-            <ul class="proof">
-              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Code tested in CI</li>
-            </ul>
-            <span class="more" aria-hidden="true">Read sample ↗</span>
-          </article>
-        </li>
-        <li>
-          <article class="card card-link">
-            <p class="eyebrow">API reference</p>
-            <h4><a href="https://ai.jordanyan.com/docs/ai/api-reference" target="_blank" rel="noopener noreferrer">API Reference: Document Classification<span class="vh"> (opens in a new tab)</span></a></h4>
-            <p>Parameters, request and response examples, error handling, and rate limits for an AI classification endpoint.</p>
-            <p class="tags">REST API reference</p>
-            <p class="vh">Proof:</p>
-            <ul class="proof">
-              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>OpenAPI spec validated</li>
-            </ul>
-            <span class="more" aria-hidden="true">Read sample ↗</span>
-          </article>
-        </li>
-        <li>
-          <article class="card card-link">
-            <p class="eyebrow">Evaluation guide</p>
-            <h4><a href="https://ai.jordanyan.com/docs/ai/eval-rubric" target="_blank" rel="noopener noreferrer">LLM Evaluation Rubric: Documentation Q&amp;A<span class="vh"> (opens in a new tab)</span></a></h4>
-            <p>Pass/fail grading criteria, a test set covering four question types, and reporting by question type to catch hallucinated answers.</p>
-            <p class="tags">Test-set design</p>
-            <p class="vh">Proof:</p>
-            <ul class="proof">
-              <li><svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 6.5l2.3 2.3L9.5 4" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/></svg>Math verified</li>
-            </ul>
-            <span class="more" aria-hidden="true">Read sample ↗</span>
-          </article>
-        </li>
-      </ul>
 
       <h3 class="group-title">Defense &amp; aerospace</h3>
       <ul class="card-grid">
