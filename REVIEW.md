@@ -35,6 +35,7 @@ Each item below was checked against the eCFR text of 16 CFR Part 312 on 2026-11-
 - [ ] Security program elements and third-party assurances (§ 312.8).
 - [ ] Retention (§ 312.10).
 - [ ] 2025 amendments: published April 22, 2025 at 90 FR 16918, effective June 23, 2025, general compliance date April 22, 2026.
+- [ ] The FTC's COPPA FAQ link was removed from Sources because it returned 404 to the link checker. Add it back if it opens for you.
 - [ ] Penalty: $53,088 per violation (16 CFR 1.98(d)). No 2026 adjustment had been published on 2026-11-10. **Check again each January.**
 - [ ] The "What this changes in your work" paragraphs are practical reading, not statements of law. Decide whether you agree with each.
 
@@ -52,6 +53,49 @@ Fernhill Bank, its document numbers, roles, letter codes, phone number and addre
 - [ ] Policy 4.4 "bank standard" (full provisional credit, no $50 withholding), the day 8 progress check and second-analyst review are invented internal rules.
 - [ ] The Regulation T exception to provisional credit (§ 1005.11(c)(2)(i)(B)) is left out on purpose. Decide whether to mention it.
 - [ ] The revision history dates (version 1.0 on November 12, 2025) are invented for the sample.
+
+## More regulation samples (`docs/compliance`)
+
+Each page was drafted from the current eCFR text and then checked a second time, independently, on 2026-11-10. Both passes were automated. Re-read each cited section yourself before publishing, and click every eCFR and Federal Register link once in a browser: those sites block automated checks.
+
+Each "About this sample" note lists Vale under tools and describes decisions made while drafting. Edit both to match what you did.
+
+### HIPAA Security Rule (`hipaa-security-rule-for-engineers.md`)
+
+- [ ] Every Required or Addressable label matches §§ 164.308, 164.310 and 164.312. Standards with no implementation specifications are shown as "None".
+- [ ] "Addressable does not mean optional" is a plain-language reading of § 164.306(d)(3), not rule wording.
+- [ ] The PHI and business associate definitions are compressed to one sentence each (§ 160.103).
+- [ ] The "What an engineering team typically owns" column is practice, not law. Examples such as "no shared accounts" and "removes access on the day someone leaves" go beyond the rule text.
+- [ ] **Pending change:** the proposed rule at 90 FR 898 (January 6, 2025) was not final on 2026-11-10. The Unified Agenda showed final action projected for July 2027. Recheck before publishing and at each review.
+
+### GLBA Safeguards Rule (`glba-safeguards-rule-evidence-guide.md`)
+
+- [ ] Each row of § 314.4(a) to (j), the 500-consumer and 30-day notification rule, and the § 314.6 exception (fewer than 5,000 consumers; paragraphs (b)(1), (d)(2), (h), (i)).
+- [ ] The "Document that states it" and "Evidence a reviewer would expect" columns are practice, not rule text.
+- [ ] Coverage is simplified: banks, credit unions, securities firms and insurers have their own regulators, and the page says so only briefly.
+- [ ] "The clock can start before the security team confirms anything" is an inference from § 314.4(j)(2).
+- [ ] The page is about 1,700 words, a little over the others.
+
+### 21 CFR Part 11 (`fda-part-11-for-documentation-teams.md`)
+
+- [ ] Checklist rows 1 and 2 are marked **Practice**. The rule does not require those documents.
+- [ ] The sentence on § 11.1(b) ("Part 11 does not decide which records you must keep") is worded as this page's reading.
+- [ ] Summaries of §§ 11.10, 11.100, 11.200 and 11.300 drop detail, including the non-repudiation clause and § 11.200(a)(1)(ii), (a)(2) and (a)(3).
+- [ ] FDA's 2003 "Scope and Application" guidance was still listed as final on 2026-11-10. It is used for orientation and labeled as guidance.
+- [ ] Quality Management System Regulation: 89 FR 7496, effective February 2, 2026.
+
+### Export controls (`export-controls-for-technical-writers.md`)
+
+This page carries the most risk if a reader misreads it. Have someone with export compliance experience read it before it goes live.
+
+- [ ] It is generic: no program, product, company or part names, and no technical content. Keep it that way when you rewrite.
+- [ ] Confirm with your employer that publishing a general explainer on this topic under your name is fine.
+- [ ] "Why publishing is not your decision": the ITAR part rests on §§ 120.34(a)(7) and 127.1(a)(1). The EAR part is labeled practical reading.
+- [ ] The encryption conditions condense 22 CFR 120.54(a)(5) and (b) and 15 CFR 734.18(a)(5) and (b).
+- [ ] "This review did not find a section" that requires marking controlled documents. That is a limit of the review, not a legal conclusion.
+- [ ] Penalty figures: $1,271,078 (22 CFR 127.10) and $374,474 (15 CFR 6.3), both from January 2025. **Check again each January.**
+- [ ] **Pending change:** proposed rule 91 FR 62361 (October 1, 2026) would revise § 120.33. Comments close November 30, 2026.
+- [ ] Flowchart question 3 and the "writer's day" table are practice, not regulatory tests.
 
 ## Process pages (`docs/process`)
 

@@ -38,7 +38,7 @@ Two sets of US regulations control who may receive certain technical information
 | | ITAR | EAR |
 | --- | --- | --- |
 | Full name | International Traffic in Arms Regulations | Export Administration Regulations |
-| Where | [22 CFR Parts 120 to 130](https://www.ecfr.gov/current/title-22/chapter-I/subchapter-M) | [15 CFR Parts 730 to 774](https://www.ecfr.gov/current/title-15/subtitle-B/chapter-VII/subchapter-C) |
+| Where | [22 CFR Parts 120 to 130](https://www.ecfr.gov/current/title-22/chapter-I/subchapter-M) | [15 CFR chapter VII, subchapter C](https://www.ecfr.gov/current/title-15/subtitle-B/chapter-VII/subchapter-C) (Parts 730 to 774) |
 | Who administers it | Department of State, Directorate of Defense Trade Controls (DDTC) ([§ 120.1](https://www.ecfr.gov/current/title-22/section-120.1)) | Department of Commerce, Bureau of Industry and Security (BIS) ([§ 730.1](https://www.ecfr.gov/current/title-15/section-730.1)) |
 | What it covers | Defense articles and defense services on the U.S. Munitions List ([§ 120.2](https://www.ecfr.gov/current/title-22/section-120.2)) | Items "subject to the EAR". Items controlled only under the ITAR are excluded ([§ 734.3](https://www.ecfr.gov/current/title-15/section-734.3)) |
 | Term for controlled information | Technical data | Technology |
@@ -62,7 +62,7 @@ flowchart TD
 | Question | Definition behind it |
 | --- | --- |
 | 1. Is it controlled? | "Technical data" ([22 CFR 120.33](https://www.ecfr.gov/current/title-22/section-120.33)), "technology" ([15 CFR 772.1](https://www.ecfr.gov/current/title-15/section-772.1)), "public domain" ([22 CFR 120.34](https://www.ecfr.gov/current/title-22/section-120.34)), "published" ([15 CFR 734.7](https://www.ecfr.gov/current/title-15/section-734.7)) |
-| 2. Could a foreign person receive it? | "Foreign person" ([22 CFR 120.63](https://www.ecfr.gov/current/title-22/section-120.63)), "release" ([22 CFR 120.56](https://www.ecfr.gov/current/title-22/section-120.56); [15 CFR 734.15](https://www.ecfr.gov/current/title-15/section-734.15)), deemed export ([22 CFR 120.50(a)(2)](https://www.ecfr.gov/current/title-22/section-120.50); [15 CFR 734.13(a)(2)](https://www.ecfr.gov/current/title-15/section-734.13)) |
+| 2. Could a foreign person receive it? | "Foreign person" ([22 CFR 120.63](https://www.ecfr.gov/current/title-22/section-120.63); [15 CFR 772.1](https://www.ecfr.gov/current/title-15/section-772.1)), "release" ([22 CFR 120.56](https://www.ecfr.gov/current/title-22/section-120.56); [15 CFR 734.15](https://www.ecfr.gov/current/title-15/section-734.15)), deemed export ([22 CFR 120.50(a)(2)](https://www.ecfr.gov/current/title-22/section-120.50); [15 CFR 734.13(a)(2)](https://www.ecfr.gov/current/title-15/section-734.13)) |
 | 3. Will it leave the United States or an approved system? | "Export" ([22 CFR 120.50(a)(1)](https://www.ecfr.gov/current/title-22/section-120.50); [15 CFR 734.13(a)(1)](https://www.ecfr.gov/current/title-15/section-734.13)), activities that are not exports ([22 CFR 120.54](https://www.ecfr.gov/current/title-22/section-120.54); [15 CFR 734.18](https://www.ecfr.gov/current/title-15/section-734.18)) |
 
 "Stop" does not mean "no". A license or exemption may allow the transfer. Applying one is the compliance team's work.
@@ -83,31 +83,39 @@ flowchart TD
 
 Under both regimes, "export" includes sending something out of the United States, and releasing controlled information to a foreign person inside the United States. The regulations call the second case a **deemed export** (22 CFR 120.50(a)(2); 15 CFR 734.13(a)(2)).
 
-A release can be oral, written or visual (22 CFR 120.56(a); 15 CFR 734.15(a)). Under the ITAR, it also includes using a password or key to give a foreign person access to unencrypted technical data (§ 120.56(a)(3)).
+A release can be oral, written or visual (22 CFR 120.56(a); 15 CFR 734.15(a)). Under the ITAR, it also includes using "access information", such as a decryption key or password, to cause or enable a foreign person to access unencrypted technical data (§ 120.55; § 120.56(a)(3)). The EAR addresses access information at 15 CFR 734.15(b).
 
-Sending technical data from one U.S. person in the United States to another is not an export (22 CFR 120.54(a)(2)).
+Transferring technical data to a U.S. person in the United States from a person in the United States is not an export (22 CFR 120.54(a)(2)).
 
 ### U.S. person and foreign person
 
-Under the ITAR, a U.S. person is a lawful permanent resident or a "protected individual" under 8 U.S.C. 1324b(a)(3), a category that includes US citizens. US-incorporated entities and US government bodies also count ([§ 120.62](https://www.ecfr.gov/current/title-22/section-120.62)). A foreign person is any natural person who is neither, and any entity not incorporated or organized to do business in the United States (§ 120.63).
+Under the ITAR, a U.S. person is a lawful permanent resident or a "protected individual" under 8 U.S.C. 1324b(a)(3), a category that includes US citizens. US-incorporated entities and US government bodies also count ([§ 120.62](https://www.ecfr.gov/current/title-22/section-120.62)). A foreign person is any natural person who is neither, and any entity not incorporated or organized to do business in the United States. International organizations and foreign governments are also foreign persons (§ 120.63).
 
-**What this changes in your work:** the definitions turn on a person's status. They contain no exception for an employer, a job title or a signed confidentiality agreement. You cannot tell someone's status from a name or a location, so ask compliance who is cleared for a document.
+**What this changes in your work:** for a natural person, the definitions in § 120.62 and § 120.63 turn on citizenship and immigration status, not on an employer, a job title or a signed confidentiality agreement. You cannot tell someone's status from a name or a location, so ask compliance who is cleared for a document.
 
 ### Public domain and published
 
-ITAR "public domain" means information that is published and generally available to the public through one of the listed routes, such as bookstores, public libraries, patents or open conferences in the United States (§ 120.34(a)). One route is public release "after approval by the cognizant U.S. Government department or agency" (§ 120.34(a)(7)). Posting to a website is not on the list.
+ITAR "public domain" means information that is published and generally available to the public through one of the listed routes, such as bookstores, public libraries, patents or open conferences in the United States (§ 120.34(a)). One route is public release "after approval by the cognizant U.S. Government department or agency" (§ 120.34(a)(7)). The list does not name posting to a website.
 
-EAR "published" is broader. It includes posting on a public website (§ 734.7(a)(4)).
+EAR "published" is worded differently. Unclassified technology or software is published when it has been "made available to the public without restrictions upon its further dissemination". The examples include "posting on the Internet on sites available to the public" (§ 734.7(a)(4)). Paragraphs (b) and (c) of § 734.7 list exceptions.
 
-**Why you cannot make something public domain by publishing it.** Under the ITAR, exporting technical data without a required license or approval is unlawful ([§ 127.1(a)(1)](https://www.ecfr.gov/current/title-22/section-127.1)). Putting controlled technical data where foreign persons can read it can be a release (§ 120.56). Neither definition gives a writer authority to decide on release. That authority sits with the company and, where the rule says so, the government.
+**Why publishing is not your decision.** Under the ITAR, the public release route applies "after approval by the cognizant U.S. Government department or agency" (§ 120.34(a)(7)), and exporting technical data without a required license or written approval is unlawful ([§ 127.1(a)(1)](https://www.ecfr.gov/current/title-22/section-127.1)). The EAR text describes when information is published. It does not say who inside a company may publish it. Practical reading, not a statement of law: treat an EAR release as a question of who at your company has authority to release information, and ask export compliance before you make anything public.
 
 ### The encryption carve-out
 
-Both regimes say that sending, taking or storing unclassified controlled information is not an export when it is secured with end-to-end encryption that meets the stated standard, and when other location conditions are met (22 CFR 120.54(a)(5); 15 CFR 734.18(a)(5)). "End-to-end" means the data is never unencrypted between originator and intended recipient, and no third party holds the means to decrypt it (22 CFR 120.54(b); 15 CFR 734.18(b)). Whether a specific tool meets every condition is a question for your security and compliance teams.
+Both regimes say that sending, taking or storing controlled information is not an export when every listed condition is met (22 CFR 120.54(a)(5); 15 CFR 734.18(a)(5)). Encryption alone is not enough. In brief, the conditions are:
+
+- The information is unclassified.
+- It is secured using end-to-end encryption. This means the data is not in unencrypted form between the originator and the intended recipient, or their in-country security boundaries, and the means of decryption are not provided to any third party (22 CFR 120.54(b)(1); 15 CFR 734.18(b)).
+- It is secured using cryptographic modules compliant with FIPS 140-2 or its successors, supplemented by procedures and controls in accordance with current NIST guidance. Each rule also names an alternative: under the ITAR, other cryptographic means with security strength "at least comparable to the minimum 128 bits of security strength achieved by the Advanced Encryption Standard (AES-128)"; under the EAR, "other equally or more effective cryptographic means".
+- Location limits apply. Under the ITAR, the data is not intentionally sent to a person in, or stored in, a country proscribed in 22 CFR 126.1, and is not sent from such a country. Under the EAR, the data is not intentionally stored in a Country Group D:5 country. Both rules have a note on data in transit over the internet.
+- Under the ITAR, the intended recipient must be the originator, a U.S. person in the United States, or a person otherwise authorized to receive the technical data (§ 120.54(b)(2)).
+
+Whether a specific tool or setup meets every condition is a compliance decision. Do not make it yourself.
 
 ## Marking and recordkeeping
 
-**Marking is common practice, not a general rule requirement.** This review found no section of either regulation that requires an export-control legend on every controlled technical document. Many companies require one in their own procedures. The regulations do require a destination control statement on the commercial invoice for certain shipments ([22 CFR 123.9(b)](https://www.ecfr.gov/current/title-22/section-123.9); [15 CFR 758.6](https://www.ecfr.gov/current/title-15/section-758.6)). A missing marking never means a document is uncontrolled.
+**Marking is treated here as company practice.** This review did not find a section of either regulation that requires an export-control legend on every controlled technical document. That is a limit of this review, not a legal conclusion. Many companies require a legend in their own procedures, and your company's procedure governs. The regulations do require a destination control statement on the commercial invoice for certain shipments in tangible form ([22 CFR 123.9(b)](https://www.ecfr.gov/current/title-22/section-123.9); [15 CFR 758.6](https://www.ecfr.gov/current/title-15/section-758.6)). A missing marking never means a document is uncontrolled.
 
 **Records are a rule requirement.** ITAR registrants must keep records about technical data and exports for five years from the expiration of the license or other approval, or from the date of the transaction ([22 CFR 122.5(a)](https://www.ecfr.gov/current/title-22/section-122.5)). Records required by the EAR must be kept for five years from the latest of several events listed in [15 CFR 762.6(a)](https://www.ecfr.gov/current/title-15/section-762.6).
 
@@ -115,7 +123,7 @@ Both regimes say that sending, taking or storing unclassified controlled informa
 
 ## What is at stake
 
-A willful violation of the Arms Export Control Act or the ITAR carries a fine of up to $1,000,000 per violation, up to 20 years in prison, or both ([22 U.S.C. 2778(c)](https://www.law.cornell.edu/uscode/text/22/2778)). Subsection (e) of the same statute lets the Secretary of State assess civil penalties. The ITAR civil maximum is the greater of $1,271,078 or twice the value of the transaction, per violation ([22 CFR 127.10(a)(1)(i)](https://www.ecfr.gov/current/title-22/section-127.10)). For the EAR, the criminal maximum is $1,000,000 and, for an individual, 20 years ([50 U.S.C. 4819(b)](https://www.law.cornell.edu/uscode/text/50/4819)). The civil maximum is $300,000 or twice the transaction value, whichever is greater (50 U.S.C. 4819(c)); the $300,000 figure is adjusted to $374,474 ([15 CFR 6.3(c)(6)](https://www.ecfr.gov/current/title-15/section-6.3)). Civil figures are adjusted for inflation and were checked on November 10, 2026.
+A willful violation of 22 U.S.C. 2778 (part of the Arms Export Control Act) or of the regulations issued under it carries a fine of up to $1,000,000 per violation, up to 20 years in prison, or both ([22 U.S.C. 2778(c)](https://www.law.cornell.edu/uscode/text/22/2778)). Subsection (e) of the same statute lets the Secretary of State assess civil penalties. The ITAR civil maximum is the greater of $1,271,078 or twice the value of the transaction, per violation ([22 CFR 127.10(a)(1)(i)](https://www.ecfr.gov/current/title-22/section-127.10)). For the EAR, the criminal maximum is $1,000,000 and, for an individual, 20 years ([50 U.S.C. 4819(b)](https://www.law.cornell.edu/uscode/text/50/4819)). The civil maximum is $300,000 or twice the transaction value, whichever is greater (50 U.S.C. 4819(c)); the $300,000 figure is adjusted to $374,474 ([15 CFR 6.3(c)(6)](https://www.ecfr.gov/current/title-15/section-6.3)). Civil figures are adjusted for inflation and were checked on November 10, 2026.
 
 ## What this changes in a writer's day
 
@@ -145,9 +153,9 @@ A "not sure" on any of these means stop and ask.
 All statements about what the regulations say come from these primary sources.
 
 - International Traffic in Arms Regulations, [22 CFR Parts 120 to 130](https://www.ecfr.gov/current/title-22/chapter-I/subchapter-M) (eCFR).
-- Export Administration Regulations, [15 CFR Parts 730 to 774](https://www.ecfr.gov/current/title-15/subtitle-B/chapter-VII/subchapter-C) (eCFR).
+- Export Administration Regulations, [15 CFR chapter VII, subchapter C](https://www.ecfr.gov/current/title-15/subtitle-B/chapter-VII/subchapter-C), Parts 730 to 774 (eCFR).
 - Arms Export Control Act, [22 U.S.C. 2778](https://www.law.cornell.edu/uscode/text/22/2778).
 - Export Control Reform Act of 2018, [50 U.S.C. 4819](https://www.law.cornell.edu/uscode/text/50/4819).
 - "Protected individual", [8 U.S.C. 1324b(a)(3)](https://www.law.cornell.edu/uscode/text/8/1324b).
 - Commerce Department civil penalty adjustments, [15 CFR 6.3](https://www.ecfr.gov/current/title-15/section-6.3).
-- Department of State, proposed rule to revise ITAR definitions, including § 120.33, [91 FR 62361](https://www.federalregister.gov/documents/2026/10/01/2026-20079/international-traffic-in-arms-regulations-itar-review-of-the-us-munitions-list-and-related) (October 1, 2026). Proposed only, with comments due November 30, 2026. This page describes the text in force.
+- Department of State, proposed rule to revise the U.S. Munitions List and related ITAR definitions, including § 120.33, [91 FR 62361](https://www.federalregister.gov/documents/2026/10/01/2026-20079/international-traffic-in-arms-regulations-itar-review-of-the-us-munitions-list-and-related) (October 1, 2026). Proposed only, with comments due November 30, 2026. This page describes the text in force.

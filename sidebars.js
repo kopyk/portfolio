@@ -17,9 +17,15 @@ const sidebars = {
     },
     {
       type: 'category',
-      label: 'Compliance',
+      label: 'Regulations explained',
       collapsible: false,
-      items: ['compliance/coppa-for-product-teams'],
+      items: [
+        'compliance/coppa-for-product-teams',
+        'compliance/hipaa-security-rule-for-engineers',
+        'compliance/glba-safeguards-rule-evidence-guide',
+        'compliance/fda-part-11-for-documentation-teams',
+        'compliance/export-controls-for-technical-writers',
+      ],
     },
     {
       type: 'category',

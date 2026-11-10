@@ -11,6 +11,10 @@ This repository is a docs-as-code project. Pages are Markdown, changes go throug
 | [Family safety guides](https://www.jordanyan.com/docs/family-safety) | Trust and safety documentation | A help-center set for guardians: one concept page, three task guides, a quick reference. Reading level is tested in CI. |
 | [COPPA for product teams](https://www.jordanyan.com/docs/compliance/coppa-for-product-teams) | Trust and safety; policy and procedure | A regulation explained for the people who act on it, cited to the rule text. |
 | [Policy and procedure set](https://www.jordanyan.com/docs/policy-procedure) | Policy and procedure writing | One Regulation E requirement as a policy, a procedure and a customer notice, with a traceability table. |
+| [The HIPAA Security Rule for engineering teams](https://www.jordanyan.com/docs/compliance/hipaa-security-rule-for-engineers) | Security and audit compliance | A requirements crosswalk: each safeguard, required or addressable, and who owns it. |
+| [The GLBA Safeguards Rule](https://www.jordanyan.com/docs/compliance/glba-safeguards-rule-evidence-guide) | Security and audit compliance; policy and procedure | A control-to-evidence guide to 16 CFR Part 314. |
+| [21 CFR Part 11 for documentation teams](https://www.jordanyan.com/docs/compliance/fda-part-11-for-documentation-teams) | Regulated product documentation | Electronic records and signatures, with an audit-readiness checklist. |
+| [Export controls for technical writers](https://www.jordanyan.com/docs/compliance/export-controls-for-technical-writers) | Regulated product documentation | A decision guide to ITAR and EAR basics for people who handle controlled documents. |
 | [Documentation update process](https://www.jordanyan.com/docs/process/doc-update-process) | Regulated product and audit documentation | The change-control process this repository follows. |
 | [Writing for translation](https://www.jordanyan.com/docs/process/writing-for-translation) | Trust and safety documentation | A one-page guide to source text that translates cleanly. |
 
